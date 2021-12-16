@@ -1,3 +1,57 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* https://medium.com/swlh/explainlikeim5-1-dark-mode-on-css-react-and-gatsby-and-a-beautiful-toggle-40ccbcf01f8c */
+/* estilos de https://gist.github.com/xdebbie/ebd638fb277b33b7068fadc9218e25bc*/
+.dark-button {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -3px;
+  }
+  .dark-button:before,
+  .dark-button:after {
+    box-sizing: border-box;
+  }
+  .dark-button label {
+    position: relative;
+    display: block;
+    width: 45px;
+    height: 25px;
+    border-radius: 100px;
+    background-color: #252525;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .dark-button label:before,
+  .dark-button label:after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    transition: 0.5s ease;
+  }
+  .dark-button label:before {
+    background-color: #e9e940;
+  }
+  .dark-button label:after {
+    background-color: #252525;
+    left: -58px;
+    transform: scale(0.00001);
+  }
+  .dark-button input[type="checkbox"] {
+    display: none;
+  }
+  .dark-button input[type="checkbox"]:checked + label:before {
+    background-color: #fff;
+    transform: translateX(20px);
+  }
+  .dark-button input[type="checkbox"]:checked + label:after {
+    transform: translateX(75px) scale(1);
+  }

@@ -21,13 +21,17 @@ const BlogPostTemplate = ({ data, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
+        <header className="text-center pb-4">
+          <h1 itemProp="headline" className="text-4xl font-semibold ">
+            {post.frontmatter.title}
+          </h1>
           <p>{post.frontmatter.date}</p>
+          <p>{post.timeToRead} min</p>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
+          className="prose lg:prose-xl dark:prose-dark"
         />
         <hr />
         <footer>
@@ -36,13 +40,14 @@ const BlogPostTemplate = ({ data, location }) => {
       </article>
       <nav className="blog-post-nav">
         <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
+          // style={{
+          //   display: `flex`,
+          //   flexWrap: `wrap`,
+          //   justifyContent: `space-between`,
+          //   listStyle: `none`,
+          //   padding: 0,
+          // }}
+          className="flex flex-wrap justify-between list-none p-0"
         >
           <li>
             {previous && (
@@ -83,9 +88,10 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "DD.MM.YYYY")
         description
       }
+      timeToRead
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
       fields {

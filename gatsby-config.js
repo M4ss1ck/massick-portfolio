@@ -16,6 +16,15 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-webpack-bundle-analyser-v2`,
+    `gatsby-plugin-dark-mode`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svg/,
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

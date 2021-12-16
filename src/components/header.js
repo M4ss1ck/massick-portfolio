@@ -67,6 +67,7 @@ function Header() {
                     alt="logo"
                     className="h-10 w-28"
                   /> */}
+                  <span>Inicio</span>
                 </div>
                 <div className="max-h-full inline-flex sm:hidden items-center">
                   {/* <GatsbyImage
