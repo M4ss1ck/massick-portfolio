@@ -15,6 +15,7 @@ module.exports = {
     `gatsby-plugin-pnpm`,
     `gatsby-plugin-image`,
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-webpack-bundle-analyser-v2`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
