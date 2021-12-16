@@ -21,50 +21,62 @@ const BlogPostTemplate = ({ data, location }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header className="text-center pb-4">
-          <h1 itemProp="headline" className="text-4xl font-semibold ">
-            {post.frontmatter.title}
-          </h1>
-          <p>{post.frontmatter.date}</p>
-          <p>{post.timeToRead} min</p>
-        </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-          className="prose lg:prose-xl dark:prose-dark"
-        />
-        <hr />
-        <footer>
-          <Bio />
-        </footer>
-      </article>
-      <nav className="blog-post-nav">
-        <ul
-          // style={{
-          //   display: `flex`,
-          //   flexWrap: `wrap`,
-          //   justifyContent: `space-between`,
-          //   listStyle: `none`,
-          //   padding: 0,
-          // }}
-          className="flex flex-wrap justify-between list-none p-0"
+        <div
+          className="divide-y lg:divide-y-0 divide-gray-200 lg:grid lg:grid-cols-4 lg:col-gap-6 pb-16 lg:pb-20"
+          style={{ gridTemplateRows: "auto 1fr" }}
         >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+          <div className="lg:sticky top-12">
+            <Bio />
+            <nav className="blog-post-nav">
+              <ul
+                // style={{
+                //   display: `flex`,
+                //   flexWrap: `wrap`,
+                //   justifyContent: `space-between`,
+                //   listStyle: `none`,
+                //   padding: 0,
+                // }}
+                className="flex flex-row lg:flex-col flex-wrap justify-between list-none p-2 last:pb-4"
+              >
+                <li>
+                  {previous && (
+                    <>
+                      <p className="pt-4 uppercase font-light">Anterior</p>
+                      <Link to={previous.fields.slug} rel="prev">
+                        ← {previous.frontmatter.title}
+                      </Link>
+                    </>
+                  )}
+                </li>
+                <li>
+                  {next && (
+                    <>
+                      <p className="pt-4 uppercase font-light">Siguiente</p>
+                      <Link to={next.fields.slug} rel="next">
+                        {next.frontmatter.title} →
+                      </Link>
+                    </>
+                  )}
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div className="divide-y divide-gray-200 lg:pb-0 lg:col-span-3 lg:row-span-2 mx-4">
+            <header className="text-center pb-4">
+              <h1 itemProp="headline" className="text-4xl font-semibold ">
+                {post.frontmatter.title}
+              </h1>
+              <p className="pt-4">{post.frontmatter.date}</p>
+              <p>{post.timeToRead} min</p>
+            </header>
+            <section
+              dangerouslySetInnerHTML={{ __html: post.html }}
+              itemProp="articleBody"
+              className="prose lg:prose-xl dark:prose-dark"
+            />
+          </div>
+        </div>
+      </article>
     </Layout>
   )
 }

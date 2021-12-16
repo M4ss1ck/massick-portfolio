@@ -31,7 +31,7 @@ const Bio = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="flex flex-row py-4 items-center justify-center">
+    <div className="flex flex-col py-4 items-center justify-center">
       <StaticImage
         className="rounded-full w-12"
         layout="fixed"
@@ -43,17 +43,23 @@ const Bio = () => {
         alt="Foto de perfil"
       />
       {author?.name && (
-        <p className="pl-4">
-          Escrito por <strong>{author.name}</strong>: {author?.summary || null}
+        <p className="text-center">
+          <strong>{author.name}</strong>
           {` `}
-          <a
-            href={`https://twitter.com/${social?.twitter || ``}`}
-            className="text-gray-500 hover:text-purple-500"
-          >
-            Síguelo en Twitter
-          </a>
         </p>
       )}
+      {author?.summary && (
+        <p className="text-center">
+          {author?.summary || null}
+          {` `}
+        </p>
+      )}
+      <a
+        href={`https://twitter.com/${social?.twitter || ``}`}
+        className="text-gray-500 hover:text-purple-500"
+      >
+        Sígueme en Twitter
+      </a>
     </div>
   )
 }

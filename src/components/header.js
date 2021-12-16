@@ -67,7 +67,19 @@ function Header() {
                     alt="logo"
                     className="h-10 w-28"
                   /> */}
-                  <span>Inicio</span>
+                  <span
+                    className={cx(
+                      "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-150 ease-in-out",
+                      {
+                        "border-purple-500 text-gray-900 dark:text-purple-500 focus:border-purple-600":
+                          location.pathname.startsWith(`/blog`),
+                        "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
+                          !location.pathname.startsWith(`/blog`),
+                      }
+                    )}
+                  >
+                    Inicio
+                  </span>
                 </div>
                 <div className="max-h-full inline-flex sm:hidden items-center">
                   {/* <GatsbyImage
@@ -108,18 +120,18 @@ function Header() {
 
         <div className="hidden md:flex md:ml-10 md:pr-4 space-x-8">
           <Link
-            to={`/blog`}
+            to={`/about`}
             className={cx(
               "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-150 ease-in-out",
               {
                 "border-purple-500 text-gray-900 dark:text-purple-500 focus:border-purple-600":
-                  location.pathname.startsWith(`/blog`),
+                  location.pathname.startsWith(`/about`),
                 "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
-                  !location.pathname.startsWith(`/blog`),
+                  !location.pathname.startsWith(`/about`),
               }
             )}
           >
-            Publicaciones
+            Acerca de
           </Link>
           {/* {pages.nodes.map((page) => {
             const isActive = location.pathname.startsWith(`/${page.slug}`);

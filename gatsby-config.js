@@ -3,7 +3,7 @@ module.exports = {
     title: `Massick Blog`,
     author: {
       name: `Massick`,
-      summary: `mathematician, bot maker, web lover.`,
+      summary: `Matemático y desarrollador web`,
     },
     description: `Blog con Gatsby, Markdown y TailwindCSS.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,

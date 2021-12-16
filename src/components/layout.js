@@ -10,7 +10,7 @@ const Layout = ({ location, title, children }) => {
 
   if (isRootPath) {
     header = (
-      <h1 className="text-center text-5xl font-extrabold font-montserrat uppercase pt-6 pb-0">
+      <h1 className="text-center text-2xl lg:text-5xl font-extrabold font-montserrat uppercase pt-6 pb-2">
         <Link to="/">{title}</Link>
       </h1>
     )
@@ -23,8 +23,10 @@ const Layout = ({ location, title, children }) => {
       className="global-wrapper w-full text-primario dark:text-gray-500 dark:bg-black"
       data-is-root-path={isRootPath}
     >
-      <header className="w-full sticky top-0 z-50">{header}</header>
-      <main className="text-justify flex flex-col items-center flex-wrap px-2 justify-center container mx-auto">
+      <header className={isRootPath ? "w-full" : "w-full sticky lg:top-0 z-50"}>
+        {header}
+      </header>
+      <main className="text-justify flex flex-col items-center px-2 container max-w-pantalla min-h-full">
         {children}
       </main>
       <Footer />
