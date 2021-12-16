@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { globalHistory, useLocation } from "@reach/router"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import DarkToggle from "../lib/darkToggle"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import cx from "classnames"
 
@@ -154,7 +155,8 @@ function Header() {
             );
           })} */}
         </div>
-        <ThemeToggler>
+        <DarkToggle />
+        {/* <ThemeToggler>
           {({ theme, toggleTheme }) => (
             <div className="dark-button mx-4">
               <input
@@ -166,7 +168,7 @@ function Header() {
               <label for="toggle" htmlFor="toggle"></label>
             </div>
           )}
-        </ThemeToggler>
+        </ThemeToggler> */}
       </nav>
       <Transition
         show={mobileNavOpen}
@@ -177,7 +179,7 @@ function Header() {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <div className="absolute top-0 inset-x-0 py-2 -mx-2 transition transform origin-top-right md:hidden z-50 md:z-10">
+        <div className="absolute top-0 inset-x-0 py-2 -mx-2 transition transform origin-top-right md:hidden z-50 md:z-10 px-4">
           <div className="rounded-lg shadow-md">
             <div
               className="rounded-lg bg-white dark:bg-black shadow-xs overflow-hidden"
@@ -220,19 +222,26 @@ function Header() {
               </div>
               <div className="mt-1 px-2 pt-2 pb-3 space-y-1">
                 <Link
-                  to={`/blog`}
+                  to={`/`}
+                  className="block pl-3 pr-4 py-2 border-l-4 font-medium focus:outline-none transition duration-150 ease-in-out border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600"
+                  role="menuitem"
+                >
+                  Inicio
+                </Link>
+                <Link
+                  to={`/about`}
                   className={cx(
                     "block pl-3 pr-4 py-2 border-l-4 font-medium focus:outline-none transition duration-150 ease-in-out",
                     {
                       "border-purple-500 text-gray-900 dark:text-purple-500 focus:border-purple-600":
-                        location.pathname.startsWith(`/blog`),
+                        location.pathname.startsWith(`/about`),
                       "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
-                        !location.pathname.startsWith(`/blog`),
+                        !location.pathname.startsWith(`/about`),
                     }
                   )}
                   role="menuitem"
                 >
-                  Publicaciones
+                  Acerca de
                 </Link>
                 {/* {pages.nodes.map((page) => {
                   const isActive = location.pathname.startsWith(

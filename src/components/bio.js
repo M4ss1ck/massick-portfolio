@@ -54,12 +54,21 @@ const Bio = () => {
           {` `}
         </p>
       )}
-      <a
-        href={`https://twitter.com/${social?.twitter || ``}`}
-        className="text-gray-500 hover:text-purple-500"
-      >
-        Sígueme en Twitter
-      </a>
+      <span>
+        <a
+          href={`https://twitter.com/${social?.twitter || ``}`}
+          className="text-gray-500 hover:text-purple-500"
+        >
+          Twitter
+        </a>{" "}
+        /{" "}
+        <a
+          href={`https://t.me/m4ss1ck`}
+          className="text-gray-500 hover:text-purple-500"
+        >
+          Telegram
+        </a>
+      </span>
     </div>
   )
 }

@@ -25,7 +25,7 @@ const BlogPostTemplate = ({ data, location }) => {
           className="divide-y lg:divide-y-0 divide-gray-200 lg:grid lg:grid-cols-4 lg:col-gap-6 pb-16 lg:pb-20"
           style={{ gridTemplateRows: "auto 1fr" }}
         >
-          <div className="lg:sticky top-12">
+          <div className="lg:sticky top-14">
             <Bio />
             <nav className="blog-post-nav">
               <ul

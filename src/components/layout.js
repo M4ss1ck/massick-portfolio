@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import Footer from "./footer"
 import Header from "./header"
+import DarkToggle from "../lib/darkToggle"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -10,9 +11,16 @@ const Layout = ({ location, title, children }) => {
 
   if (isRootPath) {
     header = (
-      <h1 className="text-center text-2xl lg:text-5xl font-extrabold font-montserrat uppercase pt-6 pb-2">
-        <Link to="/">{title}</Link>
-      </h1>
+      <>
+        <h1 className="text-center text-2xl lg:text-5xl font-extrabold font-montserrat uppercase pt-6 pb-2">
+          <Link to="/">{title}</Link>
+        </h1>
+
+        <h2 className="text-center text-lg lg:text-2xl pb-4">
+          <Link to="/about">¿Quién soy? &#x1F914;</Link>
+        </h2>
+        <DarkToggle />
+      </>
     )
   } else {
     header = <Header />
