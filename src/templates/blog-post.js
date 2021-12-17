@@ -22,10 +22,10 @@ const BlogPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <div
-          className="divide-y lg:divide-y-0 divide-gray-200 lg:grid lg:grid-cols-4 lg:col-gap-6 pb-16 lg:pb-20"
-          style={{ gridTemplateRows: "auto 1fr" }}
+          className="divide-y lg:divide-y-0 divide-gray-200 grid grid-flow-col lg:grid-flow-row grid-cols-1 lg:grid-cols-4 lg:gap-6 pb-16 lg:pb-20 grid-rows-[auto_1fr] px-4 lg:px-2"
+          //style={{ gridTemplateRows: "auto 1fr" }}
         >
-          <div className="lg:sticky top-14">
+          <aside className="lg:sticky top-14  px-4">
             <Bio />
             <nav className="blog-post-nav">
               <ul
@@ -60,9 +60,10 @@ const BlogPostTemplate = ({ data, location }) => {
                 </li>
               </ul>
             </nav>
-          </div>
-          <div className="divide-y divide-gray-200 lg:pb-0 lg:col-span-3 lg:row-span-2 mx-4">
-            <header className="text-center pb-4">
+          </aside>
+          {/* Main article */}
+          <div className="divide-y divide-gray-200 col-span-full lg:col-span-3 lg:row-span-2">
+            <header className="text-center py-4">
               <h1 itemProp="headline" className="text-4xl font-semibold ">
                 {post.frontmatter.title}
               </h1>
