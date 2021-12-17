@@ -11,21 +11,22 @@ const About = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="Acerca De" />
-      <StaticImage
-        className="rounded-full w-42"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/profile.jpg"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Foto de perfil"
-      />
-      <p>
-        No blog posts found. Add markdown posts to "content/blog" (or the
-        directory you specified for the "gatsby-source-filesystem" plugin in
-        gatsby-config.js).
-      </p>
+      <div className="flex flex-col md:flex-row items-center justify-center px-10 md:px-20 py-6 md:py-4">
+        <StaticImage
+          className="rounded-full w-40 pt-8"
+          layout="fixed"
+          formats={["auto", "webp", "avif"]}
+          src="../images/profile.jpg"
+          width={160}
+          height={160}
+          quality={95}
+          alt="Foto de perfil"
+        />
+        <p className="text-xl font-montserrat font-semibold px-4 md:w-1/2 pt-8 md:pt-4">
+          Mi nombre es Andy. Soy Licenciado en Matemática, programador de
+          corazón y adicto a la tecnología.
+        </p>
+      </div>
     </Layout>
   )
 }
