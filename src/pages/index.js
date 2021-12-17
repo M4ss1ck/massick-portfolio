@@ -12,11 +12,11 @@ const BlogIndex = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Seo title="Publicaciones" />
+        <Seo title="Sin Publicaciones" />
         <Bio />
         <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
+          No se encontraron publicaciones. Añade algunas a "content/blog" (o el
+          que tengas configurado en el plugin "gatsby-source-filesystem" en
           gatsby-config.js).
         </p>
       </Layout>
