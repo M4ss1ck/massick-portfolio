@@ -58,7 +58,6 @@
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
-    "prebuild": "test \"$CI\" = true && npx pnpm install -r --store=node_modules/.pnpm-store || echo skipping pnpm install",
     "build": "gatsby build",
     "develop": "gatsby develop -H 0.0.0.0 -o",
     "dev": "gatsby develop -H 0.0.0.0 -o",
