@@ -20,7 +20,7 @@ module.exports = {
       },
       colors: {
         primario: "#252f3f",
-        secundario: "#0276df",
+        secundario: "#a72772",
         terciario: "#02b3dd",
       },
       typography(theme) {

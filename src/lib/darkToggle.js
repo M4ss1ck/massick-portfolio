@@ -5,7 +5,7 @@ const darkToggle = () => {
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => (
-        <div className="dark-button mx-4">
+        <div className="dark-button mx-4 py-4">
           <input
             type="checkbox"
             id="toggle"

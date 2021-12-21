@@ -1,9 +1,9 @@
 import * as React from "react"
-import { Link } from "gatsby"
+//import { Link } from "gatsby"
 import Footer from "./footer"
 import Header from "./header"
 //import DarkToggle from "../lib/darkToggle"
-import LandingPage from "./landingPage"
+import LandingPage from "./LandingPage"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -23,12 +23,12 @@ const Layout = ({ location, title, children }) => {
     >
       <header
         className={
-          isRootPath ? "w-full h-[100vh]" : "w-full sticky lg:top-0 z-50"
+          isRootPath ? "w-full h-[100vh]" : "w-full sticky lg:top-0 z-30"
         }
       >
         {header}
       </header>
-      <main className="text-justify flex flex-col items-center px-2 container max-w-pantalla min-h-[90vh]">
+      <main className="text-justify flex flex-col items-center px-2 container max-w-pantalla min-h-[90vh] z-20">
         {children}
       </main>
       <Footer />
