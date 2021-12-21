@@ -3,7 +3,7 @@ import * as React from "react"
 import Footer from "./footer"
 import Header from "./header"
 //import DarkToggle from "../lib/darkToggle"
-import LandingPage from "./LandingPage"
+import LandingPage from "./landingPage"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
