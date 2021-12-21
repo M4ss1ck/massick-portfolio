@@ -43,7 +43,7 @@ const Bio = () => {
         alt="Foto de perfil"
       />
       {author?.name && (
-        <p className="text-center">
+        <p className="text-center text-secundario">
           <strong>{author.name}</strong>
           {` `}
         </p>
@@ -57,14 +57,14 @@ const Bio = () => {
       <span>
         <a
           href={`https://twitter.com/${social?.twitter || ``}`}
-          className="text-gray-500 hover:text-purple-500"
+          className="text-gray-500 hover:text-secundario"
         >
           Twitter
         </a>{" "}
         /{" "}
         <a
           href={`https://t.me/m4ss1ck`}
-          className="text-gray-500 hover:text-purple-500"
+          className="text-gray-500 hover:text-secundario"
         >
           Telegram
         </a>
