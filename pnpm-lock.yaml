@@ -38,7 +38,6 @@ specifiers:
   react-helmet: ^6.1.0
   react-transition-group: ^4.4.2
   tailwindcss: ^3.0.5
-  typeface-merriweather: 0.0.72
 
 dependencies:
   '@fontsource/merriweather': 4.5.3
@@ -72,7 +71,6 @@ dependencies:
   react-dom: 17.0.2_react@17.0.2
   react-helmet: 6.1.0_react@17.0.2
   react-transition-group: 4.4.2_react-dom@17.0.2+react@17.0.2
-  typeface-merriweather: 0.0.72
 
 devDependencies:
   autoprefixer: 10.4.0_postcss@8.4.5
@@ -11926,10 +11924,6 @@ packages:
 
   /typedarray/0.0.6:
     resolution: {integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=}
-    dev: false
-
-  /typeface-merriweather/0.0.72:
-    resolution: {integrity: sha512-gO0+fcZ1fTyKUsYY1ltYOOTI6FmBGeEdyIfeQg9NL8aInndk0feiJJVJsKHm/DiyYrnQEezraAQhz/KQoqMGtw==}
     dev: false
 
   /unbox-primitive/1.0.1:
