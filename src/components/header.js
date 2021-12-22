@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import { globalHistory, useLocation } from "@reach/router"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+//import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import DarkToggle from "../lib/darkToggle"
-import { ThemeToggler } from "gatsby-plugin-dark-mode"
+//import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import cx from "classnames"
 
 import Transition from "./transition"
@@ -70,7 +70,7 @@ function Header() {
                   /> */}
                   <span
                     className={cx(
-                      "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-150 ease-in-out",
+                      "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out",
                       {
                         "border-purple-500 text-gray-900 dark:text-purple-500 focus:border-purple-600":
                           location.pathname.startsWith(`/blog`),
@@ -123,7 +123,7 @@ function Header() {
           <Link
             to={`/about`}
             className={cx(
-              "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-150 ease-in-out",
+              "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out",
               {
                 "border-purple-500 text-gray-900 dark:text-purple-500 focus:border-purple-600":
                   location.pathname.startsWith(`/about`),

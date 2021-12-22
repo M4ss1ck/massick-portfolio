@@ -1,6 +1,9 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@fontsource/merriweather': ^4.5.3
+  '@fontsource/montserrat': ^4.5.1
+  '@fontsource/rammetto-one': ^4.5.0
   '@tailwindcss/typography': ^0.5.0
   autoprefixer: ^10.4.0
   classnames: ^2.3.1
@@ -36,9 +39,11 @@ specifiers:
   react-transition-group: ^4.4.2
   tailwindcss: ^3.0.5
   typeface-merriweather: 0.0.72
-  typeface-montserrat: 0.0.75
 
 dependencies:
+  '@fontsource/merriweather': 4.5.3
+  '@fontsource/montserrat': 4.5.1
+  '@fontsource/rammetto-one': 4.5.0
   '@tailwindcss/typography': 0.5.0_tailwindcss@3.0.5
   classnames: 2.3.1
   gatsby: 4.4.0_react-dom@17.0.2+react@17.0.2
@@ -68,7 +73,6 @@ dependencies:
   react-helmet: 6.1.0_react@17.0.2
   react-transition-group: 4.4.2_react-dom@17.0.2+react@17.0.2
   typeface-merriweather: 0.0.72
-  typeface-montserrat: 0.0.75
 
 devDependencies:
   autoprefixer: 10.4.0_postcss@8.4.5
@@ -1468,6 +1472,18 @@ packages:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@fontsource/merriweather/4.5.3:
+    resolution: {integrity: sha512-R56u/DD82mA/dGdDcGcWhG2eMdsOtgE1RUro3Tx5tRBqYOcDR62nOXkNGvatPv9ItV8wGmAQiarDf56NnfSm0A==}
+    dev: false
+
+  /@fontsource/montserrat/4.5.1:
+    resolution: {integrity: sha512-xdMkzsnFlzDt5Vj9+AWuUp4Vd9F3hYN2I0GTZZYscWN/bQ20wVOGtdWLO8Okfv7SZ9t/z39/EayAAt+f/8tAvw==}
+    dev: false
+
+  /@fontsource/rammetto-one/4.5.0:
+    resolution: {integrity: sha512-0DZqOy/oe52Idz4ejGjJFjKZsbZqcoWeT7Qc9XOLK9vOyHSK8+Dl/uP3Ecg411wRzkz7LqBfYct/88OkNw7KSg==}
     dev: false
 
   /@gatsbyjs/reach-router/1.3.6_react-dom@17.0.2+react@17.0.2:
@@ -11914,10 +11930,6 @@ packages:
 
   /typeface-merriweather/0.0.72:
     resolution: {integrity: sha512-gO0+fcZ1fTyKUsYY1ltYOOTI6FmBGeEdyIfeQg9NL8aInndk0feiJJVJsKHm/DiyYrnQEezraAQhz/KQoqMGtw==}
-    dev: false
-
-  /typeface-montserrat/0.0.75:
-    resolution: {integrity: sha512-8ski20t3hdwu2T85pVfjK4jsDbwW8yWzd+LAKxYEmu+JVLVlB7G2yfmdKZz06pUwYCLVFvHvup+NYYulHDpE+w==}
     dev: false
 
   /unbox-primitive/1.0.1:

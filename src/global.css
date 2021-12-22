@@ -32,9 +32,13 @@
     height: 25px;
     border-radius: 100px;
     background-color: #252525;
+    /* background-color: #a5a1a1; */
     overflow: hidden;
     cursor: pointer;
   }
+  /* .dark .dark-button label {
+    background-color: #252525;
+  } */
   .dark-button label:before,
   .dark-button label:after {
     display: block;
@@ -52,9 +56,14 @@
   }
   .dark-button label:after {
     background-color: #252525;
+    /* background-color: #a5a1a1; */
     left: -58px;
     transform: scale(0.00001);
   }
+  /* .dark .dark-button label:after {
+    background-color: #252525;
+
+  } */
   .dark-button input[type="checkbox"] {
     display: none;
   }

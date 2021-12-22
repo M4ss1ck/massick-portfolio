@@ -16,9 +16,9 @@ const LandingPage = ({ title }) => {
         //style={{ height: "50vh" }}
       >
         <Canvas />
-        <aside className="flex flex-row md:flex-col justify-evenly absolute w-full md:w-fit left-0 top-0 md:top-[30vh] z-20  md:border-t-4 border-b-4 md:border-r-4 border-secundario md:rounded-tr-lg md:rounded-br-lg ">
+        <aside className="flex flex-row md:flex-col justify-evenly absolute w-full md:w-fit left-0 top-0 md:top-[30vh] z-20  md:border-t-4 border-b-4 md:border-r-4 border-secundario hover:-rotate-45 border-l-4 rounded-lg -translate-x-2 hover:translate-x-1 lg:transition hover:scale-125 shadow-md dark:shadow-2xl shadow-primario dark:shadow-secundario">
           <DarkToggle />
-          <h2 className="text-center text-sm lg:text-lg py-8 pr-4">
+          <h2 className="text-center text-sm lg:text-lg py-8 px-4 font-montserrat">
             <Link to="/about" className="text-secundario">
               ¿Quién soy?
             </Link>
@@ -26,13 +26,13 @@ const LandingPage = ({ title }) => {
         </aside>
         <h1
           aria-label={title}
-          className="absolute text-center text-5xl lg:text-7xl font-montserrat uppercase flex flex-wrap items-center justify-center h-[calc(100%-8rem)] z-10"
+          className="absolute text-center text-5xl lg:text-7xl font-rammetto uppercase flex flex-wrap items-center justify-center h-[calc(100%-8rem)] z-10"
         >
           {letrasTitulo.map((letra, index) => {
             return (
               <span
                 key={index}
-                className="hover:animate-bounce hover:text-secundario min-w-[1rem] cursor-default"
+                className="transition hover:animate-bounce hover:text-secundario min-w-[1rem] cursor-default "
               >
                 {letra}
               </span>

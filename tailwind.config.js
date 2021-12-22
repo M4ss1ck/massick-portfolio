@@ -12,7 +12,8 @@ module.exports = {
     },
     fontFamily: {
       montserrat: ["Montserrat, sans-serif"],
-      rammett0: ["Rammetto One, cursive"],
+      rammetto: ["Rammetto One, cursive"],
+      merriweather: ["Merriweather, serif"],
     },
     extend: {
       maxWidth: {
