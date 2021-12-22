@@ -16,7 +16,7 @@ const LandingPage = ({ title }) => {
         //style={{ height: "50vh" }}
       >
         <Canvas />
-        <aside className="flex flex-row md:flex-col justify-evenly absolute w-full md:w-fit left-0 top-0 md:top-[30vh] z-20  md:border-t-4 border-b-4 md:border-r-4 border-secundario hover:-rotate-45 border-l-4 rounded-lg -translate-x-2 hover:translate-x-1 lg:transition hover:scale-125 shadow-md dark:shadow-2xl shadow-primario dark:shadow-secundario">
+        <aside className="flex flex-row md:flex-col justify-evenly absolute w-full md:w-fit left-0 top-0 md:top-[30vh] z-20  md:border-t-4 border-b-4 md:border-r-4 border-secundario md:-rotate-45 hover:rotate-0 border-l-4 rounded-lg md:-translate-x-2 md:hover:translate-x-1 lg:transition md:hover:scale-125 shadow-md dark:shadow-2xl shadow-primario dark:shadow-secundario bg-slate-200 dark:bg-black">
           <DarkToggle />
           <h2 className="text-center text-sm lg:text-lg py-8 px-4 font-montserrat">
             <Link to="/about" className="text-secundario">
