@@ -37,7 +37,7 @@ function Canvas() {
 
     const animatePoints = () => {
       ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-      const duration = (0.7 * (1 * 1000)) / 60 // Last 80% of a frame per point
+      const duration = (6 * (1 * 1000)) / 60 // Last longer now
 
       for (let i = 0; i < points.length; ++i) {
         const point = points[i]
@@ -57,15 +57,15 @@ function Canvas() {
 
           // As the lifetime goes on, lifePercent goes from 0 to 1.
           const lifePercent = point.lifetime / duration
-          const spreadRate = 7 * (1 - lifePercent)
+          const spreadRate = 12 * (1 - lifePercent) // originally 7 * (1 - lifePercent)
 
-          ctx.lineJoin = "round"
+          ctx.lineJoin = "round" // "round" or "bevel"
           ctx.lineWidth = spreadRate
 
           // As time increases decrease r and b, increase g to go from purple to green.
-          const red = Math.floor(190 - 190 * lifePercent)
-          const green = 0
-          const blue = Math.floor(210 + 210 * lifePercent)
+          const red = Math.floor(167 - 167 * lifePercent) // originally Math.floor(190 - 190 * lifePercent)
+          const green = 39
+          const blue = Math.floor(114 + 114 * lifePercent) // originally Math.floor(210 + 210 * lifePercent)
           ctx.strokeStyle = `rgb(${red},${green},${blue}`
 
           ctx.beginPath()
@@ -113,8 +113,9 @@ function Canvas() {
     <canvas
       ref={canvasRef}
       width={cWidth}
-      height={cHeight}
-      style={{ maxHeight: "100vh", maxWidth: "100vw" }}
+      height={cHeight / 2}
+      //style={{ zIndex: -1 }}
+      //className="-z-10 dark:-z-10"
     />
   )
 }
