@@ -5,8 +5,8 @@ module.exports = {
       name: `Massick`,
       summary: `Matemático y desarrollador web`,
     },
-    description: `Blog con Gatsby, Markdown y TailwindCSS.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Mi portafolio`,
+    siteUrl: `https://massick.netlify.app/`,
     social: {
       twitter: `M4ss1ck`,
     },
@@ -134,7 +134,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/massick-1x1.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,

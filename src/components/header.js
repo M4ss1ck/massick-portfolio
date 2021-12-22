@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import { globalHistory, useLocation } from "@reach/router"
-//import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 import DarkToggle from "../lib/darkToggle"
 //import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import cx from "classnames"
@@ -11,32 +11,6 @@ import Transition from "./transition"
 function Header() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const location = useLocation()
-  // const { pages, logo3, logo2, logo1 } = useStaticQuery(graphql`
-  //   {
-  //     pages: allGraphCmsPage {
-  //       nodes {
-  //         id
-  //         slug
-  //         title
-  //       }
-  //     }
-  //     logo3: file(relativePath: { eq: "logo3.jpg" }) {
-  //       childImageSharp {
-  //         gatsbyImageData
-  //       }
-  //     }
-  //     logo2: file(relativePath: { eq: "logo2.jpg" }) {
-  //       childImageSharp {
-  //         gatsbyImageData
-  //       }
-  //     }
-  //     logo1: file(relativePath: { eq: "logo1.jpg" }) {
-  //       childImageSharp {
-  //         gatsbyImageData
-  //       }
-  //     }
-  //   }
-  // `);
 
   useEffect(
     () =>
@@ -54,8 +28,8 @@ function Header() {
 
   return (
     <header className="w-full py-0 px-4 sticky top-0 z-30 bg-gradient-to-r from-white via-transparent to-white dark:from-black dark:via-gray-800 dark:to-black dark:text-white">
-      <nav className="relative flex items-center flex-wrap justify-between sm:h-14 md:h-12 lg:justify-center">
-        <div className="flex items-center flex-grow flex-shrink-0 sm:h-14 md:h-12">
+      <nav className="relative flex items-center flex-wrap justify-between md:h-20 lg:justify-center">
+        <div className="flex items-center flex-grow flex-shrink-0 h-full">
           <div className="flex items-center justify-between w-full">
             <div
               className="h-full justify-center align-middle"
@@ -63,16 +37,21 @@ function Header() {
             >
               <Link to="/" aria-label="Wasting Time Blog">
                 <div className="h-10 logoh hidden sm:inline-flex items-center">
-                  {/* <GatsbyImage
-                    image={image3}
-                    alt="logo"
-                    className="h-10 w-28"
-                  /> */}
+                  <StaticImage
+                    className="rounded-md w-12"
+                    layout="fixed"
+                    formats={["auto", "webp", "avif"]}
+                    src="../images/massick-1x1.png"
+                    width={50}
+                    height={50}
+                    quality={95}
+                    alt="Logo"
+                  />
                   <span
                     className={cx(
-                      "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out",
+                      "inline-flex items-center ml-2 px-3 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out",
                       {
-                        "border-purple-500 text-gray-900 dark:text-purple-500 focus:border-purple-600":
+                        "border-secundario text-gray-900 dark:text-secundario focus:border-secundario":
                           location.pathname.startsWith(`/blog`),
                         "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
                           !location.pathname.startsWith(`/blog`),
@@ -125,7 +104,7 @@ function Header() {
             className={cx(
               "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out",
               {
-                "border-purple-500 text-gray-900 dark:text-purple-500 focus:border-purple-600":
+                "border-secundario text-gray-900 dark:text-secundario focus:border-secundario":
                   location.pathname.startsWith(`/about`),
                 "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
                   !location.pathname.startsWith(`/about`),
@@ -226,14 +205,23 @@ function Header() {
                   className="block pl-3 pr-4 py-2 border-l-4 font-medium focus:outline-none transition duration-150 ease-in-out border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600"
                   role="menuitem"
                 >
-                  Inicio
+                  <StaticImage
+                    className="rounded-md w-12"
+                    layout="fixed"
+                    formats={["auto", "webp", "avif"]}
+                    src="../images/massick-1x1.png"
+                    width={50}
+                    height={50}
+                    quality={95}
+                    alt="Logo"
+                  />
                 </Link>
                 <Link
                   to={`/about`}
                   className={cx(
                     "block pl-3 pr-4 py-2 border-l-4 font-medium focus:outline-none transition duration-150 ease-in-out",
                     {
-                      "border-purple-500 text-gray-900 dark:text-purple-500 focus:border-purple-600":
+                      "border-secundario text-gray-900 dark:text-secundario focus:border-secundario":
                         location.pathname.startsWith(`/about`),
                       "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
                         !location.pathname.startsWith(`/about`),

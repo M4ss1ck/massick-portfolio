@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import DarkToggle from "../lib/darkToggle"
 import Canvas from "../lib/canvas"
-//import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 //import coding from "../svg/coding.svg"
 
 const LandingPage = ({ title }) => {
@@ -16,7 +16,34 @@ const LandingPage = ({ title }) => {
         //style={{ height: "50vh" }}
       >
         <Canvas />
-        <aside className="flex flex-row md:flex-col justify-evenly absolute w-full md:w-fit left-0 top-0 md:top-[30vh] z-20  md:border-t-4 border-b-4 md:border-r-4 border-secundario md:-rotate-45 hover:rotate-0 border-l-4 rounded-lg md:-translate-x-2 md:hover:translate-x-1 lg:transition md:hover:scale-125 shadow-md dark:shadow-2xl shadow-primario dark:shadow-secundario bg-slate-200 dark:bg-black">
+        <Link
+          to="/"
+          className="absolute hidden md:block top-8 right-12 shadow-md dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario"
+        >
+          <StaticImage
+            className="rounded-md w-36"
+            //layout="fixed"
+            formats={["auto", "webp", "avif"]}
+            src="../images/massick-2x3.png"
+            width={200}
+            height={300}
+            quality={95}
+            alt="Logo"
+          />
+        </Link>
+        <aside className="flex flex-row py-1 px-4 md:flex-col justify-between items-center absolute w-full md:w-fit left-0 top-0 md:top-[60vh] z-20  md:border-4 border-b-4 border-secundario md:-rotate-45 hover:rotate-0  rounded-lg md:-translate-x-2 md:hover:translate-x-12 lg:transition md:hover:scale-150 shadow-md dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario bg-slate-200 dark:bg-black">
+          <Link to="/" className="md:hidden">
+            <StaticImage
+              className="rounded-md w-12"
+              //layout="fixed"
+              formats={["auto", "webp", "avif"]}
+              src="../images/massick-1x1.png"
+              width={200}
+              height={200}
+              quality={95}
+              alt="Logo"
+            />
+          </Link>
           <DarkToggle />
           <h2 className="text-center text-sm lg:text-lg py-8 px-4 font-montserrat">
             <Link to="/about" className="text-secundario">
@@ -32,7 +59,8 @@ const LandingPage = ({ title }) => {
             return (
               <span
                 key={index}
-                className="transition hover:animate-bounce hover:text-secundario min-w-[1rem] cursor-default "
+                //className="transition hover:animate-bounce hover:text-secundario min-w-[1rem] cursor-default "
+                className="transition duration-300 hover:skew-y-12 hover:even:-skew-y-12 hover:-translate-y-16 hover:even:-translate-y-14 hover:scale-125 hover:text-secundario min-w-[1rem] cursor-default "
               >
                 {letra}
               </span>

@@ -52,7 +52,7 @@
     transition: 0.5s ease;
   }
   .dark-button label:before {
-    background-color: #a72772;
+    background-color: rgb(167, 39, 114);
   }
   .dark-button label:after {
     background-color: #252525;
