@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
-import { Link } from "gatsby"
+//import { Link } from "gatsby"
+import { FormattedMessage, Link } from "gatsby-plugin-intl"
 import { globalHistory, useLocation } from "@reach/router"
 import { StaticImage } from "gatsby-plugin-image"
 import DarkToggle from "../lib/darkToggle"
@@ -59,7 +60,7 @@ function Header() {
                       }
                     )}
                   >
-                    Inicio
+                    <FormattedMessage id="home" />
                   </span>
                 </div>
                 <div className="max-h-full inline-flex sm:hidden items-center">
@@ -112,7 +113,7 @@ function Header() {
               }
             )}
           >
-            Acerca de
+            <FormattedMessage id="about" />
           </Link>
           {/* {pages.nodes.map((page) => {
             const isActive = location.pathname.startsWith(`/${page.slug}`);
@@ -231,7 +232,7 @@ function Header() {
                   )}
                   role="menuitem"
                 >
-                  Acerca de
+                  <FormattedMessage id="about" />
                 </Link>
                 {/* {pages.nodes.map((page) => {
                   const isActive = location.pathname.startsWith(

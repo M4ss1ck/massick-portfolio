@@ -16,7 +16,10 @@ const BlogIndex = ({ data, location }) => {
         location={location}
         title={intl.formatMessage({ id: "titulo_portada" })}
       >
-        <Seo lang={intl.locale} title="Sin Publicaciones" />
+        <Seo
+          lang={intl.locale}
+          title={intl.formatMessage({ id: "no_posts" })}
+        />
         <Bio />
         <p>
           <FormattedMessage id="nada" />

@@ -1,9 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
+//import { Link } from "gatsby"
 import DarkToggle from "../lib/darkToggle"
 import Canvas from "../lib/canvas"
 //import { StaticImage } from "gatsby-plugin-image"
-import { FormattedMessage } from "gatsby-plugin-intl"
+import { Link, FormattedMessage } from "gatsby-plugin-intl"
 import Language from "./language"
 //import hacker from "../svg/hacker.svg"
 

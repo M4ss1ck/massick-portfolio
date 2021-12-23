@@ -13,7 +13,7 @@ const About = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo lang={intl.locale} title={intl.formatMessage({ id: "about" })} />
-      <div className="flex flex-col md:flex-row items-center justify-center px-10 md:px-20 py-6 md:py-4">
+      <div className="flex flex-col md:flex-row items-center justify-center px-10 md:px-20 py-6 md:py-4 h-48">
         <StaticImage
           className="rounded-full w-40 pt-8"
           layout="fixed"
