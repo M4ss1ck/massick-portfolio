@@ -57,7 +57,7 @@ function Canvas() {
 
           // As the lifetime goes on, lifePercent goes from 0 to 1.
           const lifePercent = point.lifetime / duration
-          const spreadRate = 12 * (1 - lifePercent) // originally 7 * (1 - lifePercent)
+          const spreadRate = 4 * (1 - lifePercent) // originally 7 * (1 - lifePercent)
 
           ctx.lineJoin = "round" // "round" or "bevel"
           ctx.lineWidth = spreadRate

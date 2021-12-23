@@ -12,7 +12,7 @@ const LandingPage = ({ title }) => {
   return (
     <>
       <div
-        className="pt-6 pb-2 flex flex-col items-center justify-center max-h-screen"
+        className="pt-6 pb-2 flex flex-col items-center justify-center max-h-screen my-bg"
         //style={{ height: "50vh" }}
       >
         <Canvas />
@@ -53,9 +53,11 @@ const LandingPage = ({ title }) => {
         </aside>
         <h1
           aria-label={title}
-          className="absolute text-center text-5xl lg:text-7xl font-rammetto uppercase flex flex-wrap items-center justify-center h-[calc(100%-8rem)] z-10"
+          className="absolute text-center text-2xl md:text-5xl lg:text-7xl font-rammetto uppercase flex flex-wrap items-center justify-center h-[calc(100%-8rem)] z-10"
         >
           {letrasTitulo.map((letra, index) => {
+            console.log(letra)
+
             return (
               <span
                 key={index}

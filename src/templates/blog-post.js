@@ -25,7 +25,7 @@ const BlogPostTemplate = ({ data, location }) => {
           className="divide-y lg:divide-y-0 divide-gray-200 grid grid-flow-col lg:grid-flow-row grid-cols-1 lg:grid-cols-4 lg:gap-6 pb-16 lg:pb-20 grid-rows-[auto_1fr] px-4 lg:px-2"
           //style={{ gridTemplateRows: "auto 1fr" }}
         >
-          <aside className="lg:sticky top-14  px-4">
+          <aside className="lg:sticky top-20  px-4">
             <Bio />
             <nav className="blog-post-nav">
               <ul
@@ -42,7 +42,11 @@ const BlogPostTemplate = ({ data, location }) => {
                   {previous && (
                     <>
                       <p className="pt-4 uppercase font-light">Anterior</p>
-                      <Link to={previous.fields.slug} rel="prev">
+                      <Link
+                        to={previous.fields.slug}
+                        rel="prev"
+                        className="hover:text-secundario"
+                      >
                         ← {previous.frontmatter.title}
                       </Link>
                     </>
@@ -52,7 +56,11 @@ const BlogPostTemplate = ({ data, location }) => {
                   {next && (
                     <>
                       <p className="pt-4 uppercase font-light">Siguiente</p>
-                      <Link to={next.fields.slug} rel="next">
+                      <Link
+                        to={next.fields.slug}
+                        rel="next"
+                        className="hover:text-secundario"
+                      >
                         {next.frontmatter.title} →
                       </Link>
                     </>

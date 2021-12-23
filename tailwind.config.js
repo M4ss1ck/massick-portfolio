@@ -22,7 +22,7 @@ module.exports = {
       colors: {
         primario: "#252f3f",
         secundario: "#a72772",
-        terciario: "#02b3dd",
+        terciario: "#a72772",
       },
       typography(theme) {
         return {
