@@ -7,6 +7,7 @@ import DarkToggle from "../lib/darkToggle"
 import cx from "classnames"
 
 import Transition from "./transition"
+import Language from "./language"
 
 function Header() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
@@ -102,7 +103,7 @@ function Header() {
           <Link
             to={`/about`}
             className={cx(
-              "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out",
+              "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out font-montserrat",
               {
                 "border-secundario text-gray-900 dark:text-secundario focus:border-secundario":
                   location.pathname.startsWith(`/about`),
@@ -135,6 +136,7 @@ function Header() {
           })} */}
         </div>
         <DarkToggle />
+        <Language />
         {/* <ThemeToggler>
           {({ theme, toggleTheme }) => (
             <div className="dark-button mx-4">

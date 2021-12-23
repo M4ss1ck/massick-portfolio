@@ -13,6 +13,7 @@ specifiers:
   gatsby-plugin-gatsby-cloud: ^4.4.0
   gatsby-plugin-google-analytics: ^4.4.0
   gatsby-plugin-image: ^2.4.0
+  gatsby-plugin-intl: ^0.3.3
   gatsby-plugin-manifest: ^4.4.0
   gatsby-plugin-netlify: ^3.14.0
   gatsby-plugin-offline: ^5.4.0
@@ -51,6 +52,7 @@ dependencies:
   gatsby-plugin-gatsby-cloud: 4.4.0_gatsby@4.4.0
   gatsby-plugin-google-analytics: 4.4.0_7867058bfbbce6b80fef9b011f9e6551
   gatsby-plugin-image: 2.4.0_0caaf257570f621510fd639cd5d22f9e
+  gatsby-plugin-intl: 0.3.3_gatsby@4.4.0+react@17.0.2
   gatsby-plugin-manifest: 4.4.0_gatsby@4.4.0
   gatsby-plugin-netlify: 3.14.0_gatsby@4.4.0
   gatsby-plugin-offline: 5.4.0_7867058bfbbce6b80fef9b011f9e6551
@@ -1484,6 +1486,41 @@ packages:
     resolution: {integrity: sha512-0DZqOy/oe52Idz4ejGjJFjKZsbZqcoWeT7Qc9XOLK9vOyHSK8+Dl/uP3Ecg411wRzkz7LqBfYct/88OkNw7KSg==}
     dev: false
 
+  /@formatjs/intl-displaynames/1.2.10:
+    resolution: {integrity: sha512-GROA2RP6+7Ouu0WnHFF78O5XIU7pBfI19WM1qm93l6MFWibUk67nCfVCK3VAYJkLy8L8ZxjkYT11VIAfvSz8wg==}
+    dependencies:
+      '@formatjs/intl-utils': 2.3.0
+    dev: false
+
+  /@formatjs/intl-listformat/1.4.8:
+    resolution: {integrity: sha512-WNMQlEg0e50VZrGIkgD5n7+DAMGt3boKi1GJALfhFMymslJb5i+5WzWxyj/3a929Z6MAFsmzRIJjKuv+BxKAOQ==}
+    dependencies:
+      '@formatjs/intl-utils': 2.3.0
+    dev: false
+
+  /@formatjs/intl-pluralrules/1.5.9:
+    resolution: {integrity: sha512-37E1ZG+Oqo3qrpUfumzNcFTV+V+NCExmTkkQ9Zw4FSlvJ4WhbbeYdieVapUVz9M0cLy8XrhCkfuM/Kn03iKReg==}
+    dependencies:
+      '@formatjs/intl-utils': 2.3.0
+    dev: false
+
+  /@formatjs/intl-relativetimeformat/4.5.16:
+    resolution: {integrity: sha512-IQ0haY97oHAH5OYUdykNiepdyEWj3SAT+Fp9ZpR85ov2JNiFx+12WWlxlVS8ehdyncC2ZMt/SwFIy2huK2+6/A==}
+    dependencies:
+      '@formatjs/intl-utils': 2.3.0
+    dev: false
+
+  /@formatjs/intl-unified-numberformat/3.3.7:
+    resolution: {integrity: sha512-KnWgLRHzCAgT9eyt3OS34RHoyD7dPDYhRcuKn+/6Kv2knDF8Im43J6vlSW6Hm1w63fNq3ZIT1cFk7RuVO3Psag==}
+    deprecated: We have renamed the package to @formatjs/intl-numberformat
+    dependencies:
+      '@formatjs/intl-utils': 2.3.0
+    dev: false
+
+  /@formatjs/intl-utils/2.3.0:
+    resolution: {integrity: sha512-KWk80UPIzPmUg+P0rKh6TqspRw0G6eux1PuJr+zz47ftMaZ9QDwbGzHZbtzWkl5hgayM/qrKRutllRC7D/vVXQ==}
+    dev: false
+
   /@gatsbyjs/reach-router/1.3.6_react-dom@17.0.2+react@17.0.2:
     resolution: {integrity: sha512-RW9ZBir9kqtw4IWm+Z+DLWGOeoJxoaTvNVrnR5fV9zD8EmfAhbBN/hS6i6VnTMFZ7rdd6mnpx2/XtnMvYfsaVQ==}
     peerDependencies:
@@ -2350,6 +2387,13 @@ packages:
       '@types/unist': 2.0.6
     dev: false
 
+  /@types/hoist-non-react-statics/3.3.1:
+    resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
+    dependencies:
+      '@types/react': 17.0.37
+      hoist-non-react-statics: 3.3.2
+    dev: false
+
   /@types/http-cache-semantics/4.0.1:
     resolution: {integrity: sha512-SZs7ekbP8CN0txVG2xVRH6EgKmEm31BOxA07vkFaETzZz1xh+cbt8BcI0slpymvwhx5dlFnQG2rTlPVQn+iRPQ==}
     dev: false
@@ -2358,6 +2402,10 @@ packages:
     resolution: {integrity: sha512-5kPLG5BKpWYkw/LVOGWpiq3nEVqxiN32rTgI53Sk12/xHFQ2rG3ehI9IO+O3W2QoKeyB92dJkoka8SUm6BX1pA==}
     dependencies:
       '@types/node': 16.11.13
+    dev: false
+
+  /@types/invariant/2.2.35:
+    resolution: {integrity: sha512-DxX1V9P8zdJPYQat1gHyY0xj3efl8gnMVjiM9iCY6y27lj+PoQWkgjt8jDqmovPqULkKVpKRg8J36iQiA+EtEg==}
     dev: false
 
   /@types/istanbul-lib-coverage/2.0.3:
@@ -3434,6 +3482,10 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       fill-range: 7.0.1
+
+  /browser-lang/0.1.0:
+    resolution: {integrity: sha512-p4mdcU9fIsoDtbAVorKtxo5H86mK040MYn96yshyhfN3OF0iySuITgR8IxldI72MJAultMnwqDgwfWWwjUrSsw==}
+    dev: false
 
   /browserslist/4.14.2:
     resolution: {integrity: sha512-HI4lPveGKUR0x2StIz+2FXfDk9SfVMrxn6PLh1JeGUwcuoDkdKZebWiyLRJ68iIPDpMI4JLVDf7S7XzslgWOhw==}
@@ -5866,6 +5918,22 @@ packages:
       - supports-color
     dev: false
 
+  /gatsby-plugin-intl/0.3.3_gatsby@4.4.0+react@17.0.2:
+    resolution: {integrity: sha512-VPugNJv3GDkT6RcOBfncZPw3Eqh98RyvChsXfX7VuMQ8mBVoNB6XyNSIiEGG/atxFrpSp/r3WUKpnzpLLpY5dg==}
+    peerDependencies:
+      gatsby: ^2.0.0
+    dependencies:
+      '@babel/runtime': 7.16.5
+      '@formatjs/intl-pluralrules': 1.5.9
+      '@formatjs/intl-relativetimeformat': 4.5.16
+      browser-lang: 0.1.0
+      gatsby: 4.4.0_react-dom@17.0.2+react@17.0.2
+      intl: 1.2.5
+      react-intl: 3.12.1_react@17.0.2
+    transitivePeerDependencies:
+      - react
+    dev: false
+
   /gatsby-plugin-manifest/4.4.0_gatsby@4.4.0:
     resolution: {integrity: sha512-gEC1Boat/oaBILXOlfNsUVDkxU1e79rsZBuatCmer+FlhN6EpTB9U4mKwMd0c2lUVl9PHXzqkDrVio8sJRBsag==}
     engines: {node: '>=14.15.0'}
@@ -7045,6 +7113,12 @@ packages:
     resolution: {integrity: sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==}
     dev: false
 
+  /hoist-non-react-statics/3.3.2:
+    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
+    dependencies:
+      react-is: 16.13.1
+    dev: false
+
   /hosted-git-info/3.0.8:
     resolution: {integrity: sha512-aXpmwoOhRBrw6X3j0h5RloK4x1OzsxMPyxqIHyNfSe2pypkVTZFpEiRoSipPEPlMrh0HW/XsjkJ5WgnCirpNUw==}
     engines: {node: '>=10'}
@@ -7284,6 +7358,28 @@ packages:
       get-intrinsic: 1.1.1
       has: 1.0.3
       side-channel: 1.0.4
+    dev: false
+
+  /intl-format-cache/4.3.1:
+    resolution: {integrity: sha512-OEUYNA7D06agqPOYhbTkl0T8HA3QKSuwWh1HiClEnpd9vw7N+3XsQt5iZ0GUEchp5CW1fQk/tary+NsbF3yQ1Q==}
+    dev: false
+
+  /intl-messageformat-parser/3.6.4:
+    resolution: {integrity: sha512-RgPGwue0mJtoX2Ax8EmMzJzttxjnva7gx0Q7mKJ4oALrTZvtmCeAw5Msz2PcjW4dtCh/h7vN/8GJCxZO1uv+OA==}
+    deprecated: We've written a new parser that's 6x faster and is backwards compatible. Please use @formatjs/icu-messageformat-parser
+    dependencies:
+      '@formatjs/intl-unified-numberformat': 3.3.7
+    dev: false
+
+  /intl-messageformat/7.8.4:
+    resolution: {integrity: sha512-yS0cLESCKCYjseCOGXuV4pxJm/buTfyCJ1nzQjryHmSehlptbZbn9fnlk1I9peLopZGGbjj46yHHiTAEZ1qOTA==}
+    dependencies:
+      intl-format-cache: 4.3.1
+      intl-messageformat-parser: 3.6.4
+    dev: false
+
+  /intl/1.2.5:
+    resolution: {integrity: sha1-giRKIZDE5Bn4Nx9ao02qNCDiq94=}
     dev: false
 
   /invariant/2.2.4:
@@ -10219,6 +10315,26 @@ packages:
       react-side-effect: 2.1.1_react@17.0.2
     dev: false
 
+  /react-intl/3.12.1_react@17.0.2:
+    resolution: {integrity: sha512-cgumW29mwROIqyp8NXStYsoIm27+8FqnxykiLSawWjOxGIBeLuN/+p2srei5SRIumcJefOkOIHP+NDck05RgHg==}
+    peerDependencies:
+      react: ^16.3.0
+    dependencies:
+      '@formatjs/intl-displaynames': 1.2.10
+      '@formatjs/intl-listformat': 1.4.8
+      '@formatjs/intl-relativetimeformat': 4.5.16
+      '@formatjs/intl-unified-numberformat': 3.3.7
+      '@formatjs/intl-utils': 2.3.0
+      '@types/hoist-non-react-statics': 3.3.1
+      '@types/invariant': 2.2.35
+      hoist-non-react-statics: 3.3.2
+      intl-format-cache: 4.3.1
+      intl-messageformat: 7.8.4
+      intl-messageformat-parser: 3.6.4
+      react: 17.0.2
+      shallow-equal: 1.2.1
+    dev: false
+
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
@@ -10881,6 +10997,10 @@ packages:
 
   /shallow-compare/1.2.2:
     resolution: {integrity: sha512-LUMFi+RppPlrHzbqmFnINTrazo0lPNwhcgzuAXVVcfy/mqPDrQmHAyz5bvV0gDAuRFrk804V0HpQ6u9sZ0tBeg==}
+    dev: false
+
+  /shallow-equal/1.2.1:
+    resolution: {integrity: sha512-S4vJDjHHMBaiZuT9NPb616CSmLf618jawtv3sufLl6ivK8WocjAo58cXwbRV1cgqxH0Qbv+iUt6m05eqEa2IRA==}
     dev: false
 
   /sharp/0.29.3:

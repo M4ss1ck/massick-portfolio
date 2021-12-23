@@ -2,10 +2,13 @@ import React from "react"
 import { Link } from "gatsby"
 import DarkToggle from "../lib/darkToggle"
 import Canvas from "../lib/canvas"
-import { StaticImage } from "gatsby-plugin-image"
+//import { StaticImage } from "gatsby-plugin-image"
+import { FormattedMessage } from "gatsby-plugin-intl"
+import Language from "./language"
 //import hacker from "../svg/hacker.svg"
 
 const LandingPage = ({ title }) => {
+  //const intl = useIntl()
   //const emoji = "\u{1F4AD}"
   const letrasTitulo = [...title]
 
@@ -20,11 +23,11 @@ const LandingPage = ({ title }) => {
           to="/"
           className="absolute hidden md:block top-8 right-12 shadow-md dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario z-20 dark:z-20 rounded-md "
         >
-          <StaticImage
+          <img
             className="w-36 text-secundario fill-current"
             //layout="fixed"
-            formats={["auto", "webp", "avif"]}
-            src="../svg/massick-2x3.svg"
+            //formats={["auto", "webp", "avif"]}
+            src="massick-2x3.svg"
             width={200}
             height={300}
             quality={95}
@@ -33,11 +36,11 @@ const LandingPage = ({ title }) => {
         </Link>
         <aside className="flex flex-row py-1 px-4 md:flex-col justify-between items-center absolute w-full md:w-fit left-0 top-0 md:top-[60vh] z-20  md:border-4 border-b-4 border-secundario md:-rotate-45 hover:rotate-0  rounded-lg md:-translate-x-2 md:hover:translate-x-12 lg:transition md:hover:scale-150 shadow-md dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario bg-slate-200 dark:bg-black">
           <Link to="/" className="md:hidden">
-            <StaticImage
+            <img
               className="rounded-md w-12"
               //layout="fixed"
-              formats={["auto", "webp", "avif"]}
-              src="../svg/massick-1x1.svg"
+              //formats={["auto", "webp", "avif"]}
+              src="massick-1x1.svg"
               width={200}
               height={200}
               quality={95}
@@ -45,9 +48,10 @@ const LandingPage = ({ title }) => {
             />
           </Link>
           <DarkToggle />
+          <Language />
           <h2 className="text-center text-sm lg:text-lg py-8 px-4 font-montserrat">
             <Link to="/about" className="text-secundario">
-              ¿Quién soy?
+              <FormattedMessage id="who_am_I" />
             </Link>
           </h2>
         </aside>
@@ -75,6 +79,7 @@ const LandingPage = ({ title }) => {
           //layout="fixed"
           //formats={["auto", "webp", "avif"]}
           src="hacker.svg"
+          //src={hacker}
           //width={1500}
           //height={1125}
           //quality={95}
@@ -82,7 +87,7 @@ const LandingPage = ({ title }) => {
         />
 
         <h2 className="absolute bottom-12 text-lg lg:text-2xl font-montserrat uppercase text-secundario  animate-bounce z-20 dark:z-20">
-          Artículos
+          <FormattedMessage id="articles" />
         </h2>
 
         {/* scroll-down button */}

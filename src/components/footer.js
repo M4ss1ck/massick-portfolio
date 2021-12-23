@@ -31,6 +31,7 @@ function Footer() {
         <p className="text-secundario">
           Construido con <a href="https://www.gatsbyjs.com">Gatsby</a>
         </p>
+
         <ul className="inline-flex space-x-6">
           {socialLinks.map(({ Component, href, title }, index) => (
             <li key={index}>

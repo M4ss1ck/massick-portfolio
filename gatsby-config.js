@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Massick Blog`,
+    title: `Massick's Blog`,
     author: {
       name: `Massick`,
       summary: `Matemático y desarrollador web`,
@@ -69,6 +69,19 @@ module.exports = {
     //     trackingId: `ADD YOUR TRACKING ID HERE`,
     //   },
     // },
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        // language JSON resource path
+        path: `${__dirname}/src/intl`,
+        // supported language
+        languages: [`es`, `en`],
+        // language file path
+        defaultLanguage: `es`,
+        // option to redirect to `/es` when connecting `/`
+        redirect: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
