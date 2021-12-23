@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .bricks {
-  background-color: #000000;
+  background-color: rgb(4, 158, 42);
   background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%233f3f40' fill-opacity='0.4'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 .my-bg {
@@ -12,6 +12,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+@media (min-width: 768px) {
+  .my-bg {
+    background-size: 100% 70%;
+  }
 }
 /* https://medium.com/swlh/explainlikeim5-1-dark-mode-on-css-react-and-gatsby-and-a-beautiful-toggle-40ccbcf01f8c */
 /* estilos de https://gist.github.com/xdebbie/ebd638fb277b33b7068fadc9218e25bc*/
@@ -53,7 +59,7 @@
     transition: 0.5s ease;
   }
   .dark-button label:before {
-    background-color: rgb(167, 39, 114);
+    background-color: #049e2a;
   }
   .dark-button label:after {
     background-color: #252525;
@@ -69,7 +75,7 @@
     display: none;
   }
   .dark-button input[type="checkbox"]:checked + label:before {
-    background-color: #a72772;
+    background-color: #049e2a;
     transform: translateX(20px);
   }
   .dark-button input[type="checkbox"]:checked + label:after {

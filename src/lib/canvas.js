@@ -63,9 +63,9 @@ function Canvas() {
           ctx.lineWidth = spreadRate
 
           // As time increases decrease r and b, increase g to go from purple to green.
-          const red = Math.floor(167 - 167 * lifePercent) // originally Math.floor(190 - 190 * lifePercent)
-          const green = 39
-          const blue = Math.floor(114 + 114 * lifePercent) // originally Math.floor(210 + 210 * lifePercent)
+          const red = Math.floor(4 - 4 * lifePercent) // originally Math.floor(190 - 190 * lifePercent)
+          const green = Math.floor(158 - 158 * lifePercent)
+          const blue = Math.floor(42 + 42 * lifePercent) // originally Math.floor(210 + 210 * lifePercent)
           ctx.strokeStyle = `rgb(${red},${green},${blue}`
 
           ctx.beginPath()

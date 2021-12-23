@@ -20,8 +20,8 @@ module.exports = {
         pantalla: "100vw",
       },
       colors: {
-        primario: "#252f3f",
-        secundario: "#a72772",
+        primario: "#173955",
+        secundario: "#049e2a",
         terciario: "#a72772",
       },
       typography(theme) {

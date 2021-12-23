@@ -12,19 +12,19 @@ const LandingPage = ({ title }) => {
   return (
     <>
       <div
-        className="pt-6 pb-2 flex flex-col items-center justify-center max-h-screen my-bg"
+        className="pt-6 pb-2 flex flex-col items-center justify-center max-h-screen"
         //style={{ height: "50vh" }}
       >
         <Canvas />
         <Link
           to="/"
-          className="absolute hidden md:block top-8 right-12 shadow-md dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario"
+          className="absolute hidden md:block top-8 right-12 shadow-md dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario z-20 dark:z-20 rounded-md "
         >
           <StaticImage
-            className="rounded-md w-36"
+            className="w-36 text-secundario fill-current"
             //layout="fixed"
             formats={["auto", "webp", "avif"]}
-            src="../images/massick-2x3.png"
+            src="../svg/massick-2x3.svg"
             width={200}
             height={300}
             quality={95}
@@ -37,7 +37,7 @@ const LandingPage = ({ title }) => {
               className="rounded-md w-12"
               //layout="fixed"
               formats={["auto", "webp", "avif"]}
-              src="../images/massick-1x1.png"
+              src="../svg/massick-1x1.svg"
               width={200}
               height={200}
               quality={95}
@@ -62,7 +62,7 @@ const LandingPage = ({ title }) => {
               <span
                 key={index}
                 //className="transition hover:animate-bounce hover:text-secundario min-w-[1rem] cursor-default "
-                className="transition duration-300 hover:skew-y-12 hover:even:-skew-y-12 hover:-translate-y-16 hover:even:-translate-y-14 hover:scale-125 hover:text-secundario min-w-[1rem] cursor-default "
+                className="transition duration-300 hover:skew-y-12 hover:even:-skew-y-12 hover:-translate-y-16 hover:even:-translate-y-14 hover:scale-125 text-secundario min-w-[1rem] cursor-default "
               >
                 {letra}
               </span>
@@ -70,9 +70,21 @@ const LandingPage = ({ title }) => {
           })}
         </h1>
 
-        <h2 className="absolute bottom-12 text-lg lg:text-2xl font-montserrat uppercase text-secundario animate-bounce">
+        <StaticImage
+          className="absolute bottom-0 w-full opacity-20"
+          //layout="fixed"
+          formats={["auto", "webp", "avif"]}
+          src="../svg/hacker.svg"
+          width={1500}
+          height={1125}
+          //quality={95}
+          alt="Logo"
+        />
+
+        <h2 className="absolute bottom-12 text-lg lg:text-2xl font-montserrat uppercase text-secundario  animate-bounce z-20 dark:z-20">
           Artículos
         </h2>
+
         {/* scroll-down button */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
