@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import DarkToggle from "../lib/darkToggle"
 import Canvas from "../lib/canvas"
 import { StaticImage } from "gatsby-plugin-image"
-//import coding from "../svg/coding.svg"
+//import hacker from "../svg/hacker.svg"
 
 const LandingPage = ({ title }) => {
   //const emoji = "\u{1F4AD}"
@@ -70,13 +70,13 @@ const LandingPage = ({ title }) => {
           })}
         </h1>
 
-        <StaticImage
+        <img
           className="absolute bottom-0 w-full opacity-20"
           //layout="fixed"
-          formats={["auto", "webp", "avif"]}
-          src="../svg/hacker.svg"
-          width={1500}
-          height={1125}
+          //formats={["auto", "webp", "avif"]}
+          src="hacker.svg"
+          //width={1500}
+          //height={1125}
           //quality={95}
           alt="Logo"
         />

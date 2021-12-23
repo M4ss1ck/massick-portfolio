@@ -41,7 +41,7 @@ function Header() {
                     className="rounded-md w-12"
                     layout="fixed"
                     formats={["auto", "webp", "avif"]}
-                    src="../images/massick-1x1.png"
+                    src="../svg/massick-1x1.svg"
                     width={50}
                     height={50}
                     quality={95}
@@ -209,7 +209,7 @@ function Header() {
                     className="rounded-md w-12"
                     layout="fixed"
                     formats={["auto", "webp", "avif"]}
-                    src="../images/massick-1x1.png"
+                    src="../svg/massick-1x1.svg"
                     width={50}
                     height={50}
                     quality={95}
