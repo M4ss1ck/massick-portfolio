@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Massick Blog`,
+    title: `Massick's Blog`,
     author: {
       name: `Massick`,
       summary: `Matemático y desarrollador web`,
@@ -17,14 +17,6 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-dark-mode`,
-    {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /svg/,
-        },
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -69,6 +61,19 @@ module.exports = {
     //     trackingId: `ADD YOUR TRACKING ID HERE`,
     //   },
     // },
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        // language JSON resource path
+        path: `${__dirname}/src/intl`,
+        // supported language
+        languages: [`es`, `en`],
+        // language file path
+        defaultLanguage: `es`,
+        // option to redirect to `/es` when connecting `/`
+        redirect: false,
+      },
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -121,6 +126,14 @@ module.exports = {
             title: "Massick Blog RSS Feed",
           },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-svgr-loader",
+      options: {
+        rule: {
+          include: /svg/, // See below to configure properly
+        },
       },
     },
     {

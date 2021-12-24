@@ -1,0 +1,10 @@
+{
+    "nada": "No articles were found. Add some to content/blog (or whichever directory you set in gatsby-source-filesystem plugin at gatsby-config.js).",
+    "about_bio": "My name is Andy. I'm a math major, a programmer at heart, and a tech junkie.",
+    "about": "About",
+    "who_am_I": "Who am I?",
+    "titulo_portada": "Hi, I'm Massick",
+    "articles": "Articles",
+    "no_posts": "No posts found",
+    "home": "Home"
+}

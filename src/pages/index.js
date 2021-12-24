@@ -1,5 +1,6 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
+import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -8,24 +9,31 @@ import Seo from "../components/seo"
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Inicio`
   const posts = data.allMarkdownRemark.nodes
-
+  const intl = useIntl()
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>
-        <Seo title="Sin Publicaciones" />
+      <Layout
+        location={location}
+        title={intl.formatMessage({ id: "titulo_portada" })}
+      >
+        <Seo
+          lang={intl.locale}
+          title={intl.formatMessage({ id: "no_posts" })}
+        />
         <Bio />
         <p>
-          No se encontraron publicaciones. Añade algunas a "content/blog" (o el
-          que tengas configurado en el plugin "gatsby-source-filesystem" en
-          gatsby-config.js).
+          <FormattedMessage id="nada" />
         </p>
       </Layout>
     )
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title={siteTitle} />
+    <Layout
+      location={location}
+      title={intl.formatMessage({ id: "titulo_portada" })}
+    >
+      <Seo lang={intl.locale} title={siteTitle} />
 
       <ol style={{ listStyle: `none` }} className="">
         {posts.map(post => {

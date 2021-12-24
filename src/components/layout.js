@@ -7,7 +7,12 @@ import LandingPage from "./landingPage"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
-  const isRootPath = location.pathname === rootPath
+  const rootPathEs = `${__PATH_PREFIX__}/es/`
+  const rootPathEn = `${__PATH_PREFIX__}/en/`
+  const isRootPath =
+    location.pathname === rootPath ||
+    location.pathname === rootPathEs ||
+    location.pathname === rootPathEn
   let header
 
   if (isRootPath) {
