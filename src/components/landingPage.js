@@ -5,7 +5,7 @@ import Canvas from "../lib/canvas"
 //import { StaticImage } from "gatsby-plugin-image"
 import { Link, FormattedMessage } from "gatsby-plugin-intl"
 import Language from "./language"
-//import hacker from "../svg/hacker.svg"
+import Hacker from "../svg/hacker.svg"
 
 const LandingPage = ({ title }) => {
   //const intl = useIntl()
@@ -85,7 +85,7 @@ const LandingPage = ({ title }) => {
           //quality={95}
           alt="Logo"
         />
-
+        <Hacker />
         <h2 className="absolute bottom-12 text-lg lg:text-2xl font-montserrat uppercase text-secundario  animate-bounce z-20 dark:z-20">
           <FormattedMessage id="articles" />
         </h2>
