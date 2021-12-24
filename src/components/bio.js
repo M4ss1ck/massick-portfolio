@@ -8,6 +8,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { Trans } from "gatsby-plugin-react-i18next"
 //import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
 
 const Bio = () => {
@@ -51,7 +52,7 @@ const Bio = () => {
       )}
       {author?.summary && (
         <p className="text-center">
-          {author?.summary || null}
+          {<Trans>summary</Trans> || author?.summary || null}
           {` `}
         </p>
       )}

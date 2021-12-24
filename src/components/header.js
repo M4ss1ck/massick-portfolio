@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { FormattedMessage, Link } from "gatsby-plugin-intl"
+import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next"
 import { globalHistory, useLocation } from "@reach/router"
 import DarkToggle from "../lib/darkToggle"
 import cx from "classnames"
@@ -12,7 +12,7 @@ import Language from "./language"
 function Header() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const location = useLocation()
-
+  const { t } = useTranslation()
   useEffect(
     () =>
       globalHistory.listen(({ action }) => {
@@ -30,16 +30,6 @@ function Header() {
             <div className="h-full justify-center align-middle">
               <Link to="/" aria-label="Wasting Time Blog">
                 <div className="h-10 logoh hidden sm:inline-flex items-center">
-                  {/* <StaticImage
-                    className="rounded-md w-12"
-                    layout="fixed"
-                    formats={["auto", "webp", "avif"]}
-                    src="../svg/massick-1x1.svg"
-                    width={50}
-                    height={50}
-                    quality={95}
-                    alt="Logo"
-                  /> */}
                   <Massick1x1 className="rounded-md w-12 h-12" />
                   <span
                     className={cx(
@@ -52,15 +42,10 @@ function Header() {
                       }
                     )}
                   >
-                    <FormattedMessage id="home" />
+                    {t("home")}
                   </span>
                 </div>
                 <div className="max-h-full inline-flex sm:hidden items-center">
-                  {/* <GatsbyImage
-                    image={image1}
-                    alt="logo"
-                    className="h-10 w-10"
-                  /> */}
                   <Massick1x1 className="h-10 w-10" />
                 </div>
                 {/* <span className="text-lg">Wasting Time Blog</span> */}
@@ -106,7 +91,7 @@ function Header() {
               }
             )}
           >
-            <FormattedMessage id="about" />
+            <Trans>about</Trans>
           </Link>
         </div>
         <DarkToggle />
@@ -172,7 +157,7 @@ function Header() {
                   )}
                   role="menuitem"
                 >
-                  <FormattedMessage id="about" />
+                  <Trans>about</Trans>
                 </Link>
               </div>
             </div>

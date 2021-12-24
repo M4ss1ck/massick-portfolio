@@ -1,7 +1,8 @@
 import React from "react"
 import DarkToggle from "../lib/darkToggle"
 import Canvas from "../lib/canvas"
-import { Link, FormattedMessage } from "gatsby-plugin-intl"
+import { Link, Trans } from "gatsby-plugin-react-i18next"
+
 import Language from "./language"
 import Hacker from "../svg/hacker.svg"
 import Massick2x3 from "../svg/massick-2x3.svg"
@@ -9,7 +10,6 @@ import Massick1x1 from "../svg/massick-1x1.svg"
 
 const LandingPage = ({ title }) => {
   const letrasTitulo = [...title]
-
   return (
     <>
       <div className="pt-6 pb-2 flex flex-col items-center justify-center max-h-screen">
@@ -28,7 +28,7 @@ const LandingPage = ({ title }) => {
           <Language />
           <h2 className="text-center text-sm lg:text-lg py-8 px-4 font-montserrat">
             <Link to="/about" className="text-secundario">
-              <FormattedMessage id="who_am_I" />
+              <Trans>who_am_I</Trans>
             </Link>
           </h2>
         </aside>
@@ -53,7 +53,7 @@ const LandingPage = ({ title }) => {
 
         <Hacker className="bottom-0 w-full opacity-20 absolute" />
         <h2 className="absolute bottom-12 text-lg lg:text-2xl font-montserrat uppercase text-secundario  animate-bounce z-20 dark:z-20">
-          <FormattedMessage id="articles" />
+          <Trans>articles</Trans>
         </h2>
 
         {/* scroll-down button */}

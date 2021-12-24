@@ -28,16 +28,7 @@ const BlogPostTemplate = ({ data, location }) => {
           <aside className="lg:sticky top-20  px-4">
             <Bio />
             <nav className="blog-post-nav">
-              <ul
-                // style={{
-                //   display: `flex`,
-                //   flexWrap: `wrap`,
-                //   justifyContent: `space-between`,
-                //   listStyle: `none`,
-                //   padding: 0,
-                // }}
-                className="flex flex-row lg:flex-col flex-wrap justify-between list-none p-2 last:pb-4"
-              >
+              <ul className="flex flex-row lg:flex-col flex-wrap justify-between list-none p-2 last:pb-4">
                 <li>
                   {previous && (
                     <>
