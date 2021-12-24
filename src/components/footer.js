@@ -1,5 +1,5 @@
 import React from "react"
-
+import { Trans } from "gatsby-plugin-react-i18next"
 import GitHubSVG from "../svg/github.svg"
 //import WhatsAppSVG from "../svg/whatsapp.svg";
 import TelegramSVG from "../svg/telegram.svg"
@@ -29,7 +29,7 @@ function Footer() {
     <footer className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 dark:from-black dark:via-gray-800 dark:to-black dark:text-white">
       <div className="flex flex-col md:flex-row items-center md:justify-between py-6 max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-5xl space-y-6 md:space-y-0">
         <p className="text-secundario">
-          Construido con{" "}
+          <Trans>Construido con</Trans>{" "}
           <a href="https://www.gatsbyjs.com" className="hover:text-white">
             Gatsby
           </a>

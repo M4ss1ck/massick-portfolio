@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { FormattedMessage, Link } from "gatsby-plugin-intl"
+import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next"
 import { globalHistory, useLocation } from "@reach/router"
 import DarkToggle from "../lib/darkToggle"
 import cx from "classnames"
@@ -12,7 +12,7 @@ import Language from "./language"
 function Header() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const location = useLocation()
-
+  const { t } = useTranslation()
   useEffect(
     () =>
       globalHistory.listen(({ action }) => {
@@ -30,37 +30,12 @@ function Header() {
             <div className="h-full justify-center align-middle">
               <Link to="/" aria-label="Wasting Time Blog">
                 <div className="h-10 logoh hidden sm:inline-flex items-center">
-                  {/* <StaticImage
-                    className="rounded-md w-12"
-                    layout="fixed"
-                    formats={["auto", "webp", "avif"]}
-                    src="../svg/massick-1x1.svg"
-                    width={50}
-                    height={50}
-                    quality={95}
-                    alt="Logo"
-                  /> */}
                   <Massick1x1 className="rounded-md w-12 h-12" />
-                  <span
-                    className={cx(
-                      "inline-flex items-center ml-2 px-3 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out",
-                      {
-                        "border-secundario text-gray-900 dark:text-secundario focus:border-secundario":
-                          location.pathname.startsWith(`/blog`),
-                        "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
-                          !location.pathname.startsWith(`/blog`),
-                      }
-                    )}
-                  >
-                    <FormattedMessage id="home" />
+                  <span className="inline-flex items-center ml-2 px-3 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600">
+                    {t("home")}
                   </span>
                 </div>
                 <div className="max-h-full inline-flex sm:hidden items-center">
-                  {/* <GatsbyImage
-                    image={image1}
-                    alt="logo"
-                    className="h-10 w-10"
-                  /> */}
                   <Massick1x1 className="h-10 w-10" />
                 </div>
                 {/* <span className="text-lg">Wasting Time Blog</span> */}
@@ -100,13 +75,15 @@ function Header() {
               "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out font-montserrat",
               {
                 "border-secundario text-gray-900 dark:text-secundario focus:border-secundario":
-                  location.pathname.startsWith(`/about`),
+                  location.pathname.startsWith(`/about`) ||
+                  location.pathname.startsWith(`/en/about`),
                 "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
-                  !location.pathname.startsWith(`/about`),
+                  !location.pathname.startsWith(`/about`) ||
+                  !location.pathname.startsWith(`/en/about`),
               }
             )}
           >
-            <FormattedMessage id="about" />
+            <Trans>about</Trans>
           </Link>
         </div>
         <DarkToggle />
@@ -165,14 +142,16 @@ function Header() {
                     "block pl-3 pr-4 py-2 border-l-4 font-medium focus:outline-none transition duration-150 ease-in-out",
                     {
                       "border-secundario text-gray-900 dark:text-secundario focus:border-secundario":
-                        location.pathname.startsWith(`/about`),
+                        location.pathname.startsWith(`/about`) ||
+                        location.pathname.startsWith(`/en/about`),
                       "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
-                        !location.pathname.startsWith(`/about`),
+                        !location.pathname.startsWith(`/about`) ||
+                        !location.pathname.startsWith(`/en/about`),
                     }
                   )}
                   role="menuitem"
                 >
-                  <FormattedMessage id="about" />
+                  <Trans>about</Trans>
                 </Link>
               </div>
             </div>

@@ -1,6 +1,8 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+// TODO: prepend /blog/ to all blog posts
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
@@ -20,6 +22,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             id
             fields {
               slug
+            }
+            frontmatter {
+              locale
             }
           }
         }
@@ -45,14 +50,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+      const language = post.frontmatter.locale
+      // const newSlug = post.fields.slug.replace(/\/es\//, `/`)
+      const newSlug = post.fields.slug
 
+      console.log(newSlug, "\n esto es en createPages")
       createPage({
-        path: post.fields.slug,
+        path: newSlug,
         component: blogPost,
         context: {
           id: post.id,
           previousPostId,
           nextPostId,
+          language,
         },
       })
     })
@@ -64,11 +74,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
-
+    //const newValue = value.replace(/\/(.+)\/(.+)\//, `\/$2\/$1\/`)
+    const regex = new RegExp(`\/(.+)\/(.+)\/`)
+    // redirecting /es to /
+    const newValue = regex.test(value)
+      ? value
+          .replace(/\/(.+)\/(.+)\//, `\/$2\/blog\/$1\/`)
+          .replace(/\/es\//, `/`)
+      : value.replace(/\/(.+)\//, `\/blog\/$1\/`).replace(/\/es\//, `/`)
+    console.log(newValue, "\n esto es en onCreateNode")
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: newValue,
     })
   }
 }
@@ -121,6 +139,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       description: String
       date: Date @dateformat
       draft: Boolean @defaultFalse
+      locale: String
     }
 
     type Fields {
