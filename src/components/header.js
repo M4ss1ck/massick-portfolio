@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react"
-//import { Link } from "gatsby"
 import { FormattedMessage, Link } from "gatsby-plugin-intl"
 import { globalHistory, useLocation } from "@reach/router"
-import { StaticImage } from "gatsby-plugin-image"
 import DarkToggle from "../lib/darkToggle"
-//import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import cx from "classnames"
+
+import Massick1x1 from "../svg/massick-1x1.svg"
 
 import Transition from "./transition"
 import Language from "./language"
@@ -23,23 +22,15 @@ function Header() {
   )
 
   const toggleMobileNavOpen = () => setMobileNavOpen(open => !open)
-
-  // const image3 = getImage(logo3);
-  // const image2 = getImage(logo2);
-  // const image1 = getImage(logo1);
-
   return (
     <header className="w-full py-0 px-4 sticky top-0 z-30 bg-gradient-to-r from-white via-transparent to-white dark:from-black dark:via-gray-800 dark:to-black dark:text-white">
       <nav className="relative flex items-center flex-wrap justify-between md:h-20 lg:justify-center">
         <div className="flex items-center flex-grow flex-shrink-0 h-full">
           <div className="flex items-center justify-between w-full">
-            <div
-              className="h-full justify-center align-middle"
-              //style={{ height: "10vh" }}
-            >
+            <div className="h-full justify-center align-middle">
               <Link to="/" aria-label="Wasting Time Blog">
                 <div className="h-10 logoh hidden sm:inline-flex items-center">
-                  <StaticImage
+                  {/* <StaticImage
                     className="rounded-md w-12"
                     layout="fixed"
                     formats={["auto", "webp", "avif"]}
@@ -48,7 +39,8 @@ function Header() {
                     height={50}
                     quality={95}
                     alt="Logo"
-                  />
+                  /> */}
+                  <Massick1x1 className="rounded-md w-12 h-12" />
                   <span
                     className={cx(
                       "inline-flex items-center ml-2 px-3 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out",
@@ -69,6 +61,7 @@ function Header() {
                     alt="logo"
                     className="h-10 w-10"
                   /> */}
+                  <Massick1x1 className="h-10 w-10" />
                 </div>
                 {/* <span className="text-lg">Wasting Time Blog</span> */}
               </Link>
@@ -115,42 +108,9 @@ function Header() {
           >
             <FormattedMessage id="about" />
           </Link>
-          {/* {pages.nodes.map((page) => {
-            const isActive = location.pathname.startsWith(`/${page.slug}`);
-            return (
-              <Link
-                key={page.id}
-                to={`/${page.slug}`}
-                className={cx(
-                  "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-150 ease-in-out",
-                  {
-                    "border-purple-500 text-gray-900 dark:text-purple-500 focus:border-purple-600":
-                      isActive,
-                    "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
-                      !isActive,
-                  }
-                )}
-              >
-                {page.title}
-              </Link>
-            );
-          })} */}
         </div>
         <DarkToggle />
         <Language />
-        {/* <ThemeToggler>
-          {({ theme, toggleTheme }) => (
-            <div className="dark-button mx-4">
-              <input
-                type="checkbox"
-                id="toggle"
-                onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
-                checked={theme === "dark"}
-              />
-              <label for="toggle" htmlFor="toggle"></label>
-            </div>
-          )}
-        </ThemeToggler> */}
       </nav>
       <Transition
         show={mobileNavOpen}
@@ -172,11 +132,7 @@ function Header() {
               <div className="px-2 pt-8 flex items-center justify-between">
                 <div className="w-custom">
                   <Link to="/">
-                    {/* <GatsbyImage
-                      image={image2}
-                      alt="logo"
-                      className="h-10 w-28"
-                    /> */}
+                    <Massick1x1 className="h-10 w-10" />
                   </Link>
                 </div>
                 <div className="-mr-2">
@@ -204,22 +160,6 @@ function Header() {
               </div>
               <div className="mt-1 px-2 pt-2 pb-3 space-y-1">
                 <Link
-                  to={`/`}
-                  className="block pl-3 pr-4 py-2 border-l-4 font-medium focus:outline-none transition duration-150 ease-in-out border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600"
-                  role="menuitem"
-                >
-                  <StaticImage
-                    className="rounded-md w-12"
-                    layout="fixed"
-                    formats={["auto", "webp", "avif"]}
-                    src="../svg/massick-1x1.svg"
-                    width={50}
-                    height={50}
-                    quality={95}
-                    alt="Logo"
-                  />
-                </Link>
-                <Link
                   to={`/about`}
                   className={cx(
                     "block pl-3 pr-4 py-2 border-l-4 font-medium focus:outline-none transition duration-150 ease-in-out",
@@ -234,34 +174,6 @@ function Header() {
                 >
                   <FormattedMessage id="about" />
                 </Link>
-                {/* {pages.nodes.map((page) => {
-                  const isActive = location.pathname.startsWith(
-                    `/${page.slug}`
-                  );
-
-                  return (
-                    <Link
-                      key={page.id}
-                      to={`/${page.slug}`}
-                      className={cx(
-                        "block pl-3 pr-4 py-2 border-l-4 font-medium focus:outline-none transition duration-150 ease-in-out",
-                        {
-                          "border-purple-500 text-purple-500 bg-purple-50 dark:text-purple-500 focus:text-purple-600 focus:bg-purple-100 focus:border-purple-600":
-                            isActive,
-                          "border-transparent text-gray-500 hover:text-gray-600 hover:bg-gray-50 hover:border-gray-300 focus:text-gray-600 focus:bg-gray-50 dark:hover:text-gray-300 focus:border-gray-300":
-                            !isActive,
-                        }
-                      )}
-                      role="menuitem"
-                    >
-                      {page.title}
-                    </Link>
-                  );
-                })} */}
-                {/* <BotonModoOscuro
-                  enabled={theme === "dark"}
-                  setEnabled={() => setTheme(theme === "dark" ? "light" : "dark")}
-                /> */}
               </div>
             </div>
           </div>

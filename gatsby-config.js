@@ -18,14 +18,6 @@ module.exports = {
     `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-dark-mode`,
     {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /svg/,
-        },
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
@@ -134,6 +126,14 @@ module.exports = {
             title: "Massick Blog RSS Feed",
           },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-svgr-loader",
+      options: {
+        rule: {
+          include: /svg/, // See below to configure properly
+        },
       },
     },
     {
