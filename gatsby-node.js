@@ -15,7 +15,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       {
         allMarkdownRemark(
           filter: { frontmatter: { draft: { eq: false } } }
-          sort: { fields: [frontmatter___date], order: ASC }
+          sort: {
+            fields: [frontmatter___date, frontmatter___locale]
+            order: ASC
+          }
           limit: 1000
         ) {
           nodes {
@@ -48,10 +51,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (posts.length > 0) {
     posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id
-      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
       const language = post.frontmatter.locale
-      // const newSlug = post.fields.slug.replace(/\/es\//, `/`)
+
+      const previousPostId =
+        index === 0
+          ? null
+          : posts[index - 1].frontmatter.locale === language
+          ? posts[index - 1].id
+          : null
+      const nextPostId =
+        index === posts.length - 1
+          ? null
+          : posts[index + 1].frontmatter.locale === language
+          ? posts[index + 1].id
+          : null
+
       const newSlug = post.fields.slug
 
       console.log(newSlug, "\n esto es en createPages")
