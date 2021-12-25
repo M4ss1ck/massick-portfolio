@@ -23,6 +23,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fields {
               slug
             }
+            frontmatter {
+              locale
+            }
           }
         }
       }
@@ -47,7 +50,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
-      const newSlug = post.fields.slug.replace(/\/(.+)\/(.+)\//, `\/$2\/$1\/`)
+      const language = post.frontmatter.locale
+      // const newSlug = post.fields.slug.replace(/\/es\//, `/`)
+      const newSlug = post.fields.slug
+
+      console.log(newSlug, "\n esto es en createPages")
       createPage({
         path: newSlug,
         component: blogPost,
@@ -55,6 +62,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           id: post.id,
           previousPostId,
           nextPostId,
+          language,
         },
       })
     })
@@ -66,8 +74,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
-    const newValue = value.replace(/\/(.+)\/(.+)\//, `\/$2\/$1\/`)
-
+    //const newValue = value.replace(/\/(.+)\/(.+)\//, `\/$2\/$1\/`)
+    const regex = new RegExp(`\/(.+)\/(.+)\/`)
+    // redirecting /es to /
+    const newValue = regex.test(value)
+      ? value
+          .replace(/\/(.+)\/(.+)\//, `\/$2\/blog\/$1\/`)
+          .replace(/\/es\//, `/`)
+      : value.replace(/\/(.+)\//, `\/blog\/$1\/`).replace(/\/es\//, `/`)
+    console.log(newValue, "\n esto es en onCreateNode")
     createNodeField({
       name: `slug`,
       node,

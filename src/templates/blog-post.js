@@ -88,10 +88,20 @@ export const pageQuery = graphql`
     $id: String!
     $previousPostId: String
     $nextPostId: String
+    $language: String!
   ) {
     site {
       siteMetadata {
         title
+      }
+    }
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
       }
     }
     markdownRemark(id: { eq: $id }) {
@@ -102,6 +112,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "DD.MM.YYYY")
         description
+        locale
       }
       timeToRead
     }

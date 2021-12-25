@@ -25,6 +25,15 @@ const Bio = () => {
           }
         }
       }
+      locales: allLocale {
+        edges {
+          node {
+            ns
+            data
+            language
+          }
+        }
+      }
     }
   `)
 

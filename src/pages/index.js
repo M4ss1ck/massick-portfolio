@@ -1,11 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import {
-  Link,
-  Trans,
-  useTranslation,
-  useI18next,
-} from "gatsby-plugin-react-i18next"
+import { Trans, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -35,9 +30,9 @@ const BlogIndex = ({ data, location }) => {
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
-
+          const slug = post.fields.slug
           return (
-            <li key={post.fields.slug}>
+            <li key={slug}>
               <article
                 className="post-list-item"
                 itemScope
@@ -45,9 +40,9 @@ const BlogIndex = ({ data, location }) => {
               >
                 <header>
                   <h2 className="text-lg font-bold text-secundario">
-                    <Link to={post.fields.slug} itemProp="url">
+                    <a href={slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
-                    </Link>
+                    </a>
                   </h2>
                   <small>{post.frontmatter.date}</small>
                 </header>
@@ -89,7 +84,9 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { eq: false } } }
+      filter: {
+        frontmatter: { locale: { eq: $language }, draft: { eq: false } }
+      }
     ) {
       nodes {
         excerpt
