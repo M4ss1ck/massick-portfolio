@@ -94,57 +94,54 @@ module.exports = {
     //   },
     // },
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: "gatsby-plugin-sitemap",
       options: {
+        excludes: ["/**/404", "/**/404.html"],
         query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
+            {
+              site {
+                siteMetadata {
+                  siteUrl
+                }
               }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.nodes.map(node => {
-                return Object.assign({}, node.frontmatter, {
-                  description: node.excerpt,
-                  date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
-                })
-              })
-            },
-            query: `
-              {
-                allMarkdownRemark(
-                  filter: { frontmatter: { draft: { eq: false } } }
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                ) {
-                  nodes {
-                    excerpt
-                    html
-                    fields {
-                      slug
+              allSitePage(filter: {context: {i18n: {routed: {eq: false}}}}) {
+                edges {
+                  node {
+                    context {
+                      i18n {
+                        defaultLanguage
+                        languages
+                        originalPath
+                      }
                     }
-                    frontmatter {
-                      title
-                      date
-                    }
+                    path
                   }
                 }
               }
-            `,
-            output: "/rss.xml",
-            title: "Massick Blog RSS Feed",
-          },
-        ],
+            }
+          `,
+        serialize: ({ site, allSitePage }) => {
+          return allSitePage.edges.map(edge => {
+            const { languages, originalPath, defaultLanguage } =
+              edge.node.context.i18n
+            const { siteUrl } = site.siteMetadata
+            const url = siteUrl + originalPath
+            const links = [
+              { lang: defaultLanguage, url },
+              { lang: "x-default", url },
+            ]
+            languages.forEach(lang => {
+              if (lang === defaultLanguage) return
+              links.push({ lang, url: `${siteUrl}/${lang}${originalPath}` })
+            })
+            return {
+              url,
+              changefreq: "daily",
+              priority: originalPath === "/" ? 1.0 : 0.7,
+              links,
+            }
+          })
+        },
       },
     },
     {

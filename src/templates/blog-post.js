@@ -1,6 +1,6 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
-
+import { graphql } from "gatsby"
+import { Link, Trans } from "gatsby-plugin-react-i18next"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -32,7 +32,9 @@ const BlogPostTemplate = ({ data, location }) => {
                 <li>
                   {previous && (
                     <>
-                      <p className="pt-4 uppercase font-light">Anterior</p>
+                      <p className="pt-4 uppercase font-light">
+                        <Trans>Anterior</Trans>
+                      </p>
                       <Link
                         to={previous.fields.slug}
                         rel="prev"
@@ -46,7 +48,9 @@ const BlogPostTemplate = ({ data, location }) => {
                 <li>
                   {next && (
                     <>
-                      <p className="pt-4 uppercase font-light">Siguiente</p>
+                      <p className="pt-4 uppercase font-light">
+                        <Trans>Siguiente</Trans>
+                      </p>
                       <Link
                         to={next.fields.slug}
                         rel="next"
