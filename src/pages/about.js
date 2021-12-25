@@ -13,7 +13,7 @@ const About = ({ data, location }) => {
   return (
     <Layout location={location} title={t("about")}>
       <Seo lang={language} title={t("about")} />
-      <div className="flex flex-col md:flex-row items-center justify-center px-10 md:px-20 py-6 md:py-4 h-48">
+      <section className="flex flex-col md:flex-row items-center justify-center px-10 md:px-20 py-6 md:py-4 h-auto md:h-56">
         <StaticImage
           className="rounded-full w-40 pt-8"
           layout="fixed"
@@ -27,7 +27,7 @@ const About = ({ data, location }) => {
         <p className="text-xl font-montserrat font-semibold px-4 md:w-1/2 pt-8 md:pt-4">
           <Trans>about_bio</Trans>
         </p>
-      </div>
+      </section>
     </Layout>
   )
 }

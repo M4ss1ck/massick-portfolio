@@ -1,11 +1,10 @@
 import * as React from "react"
-//import { Link } from "gatsby"
 import Footer from "./footer"
 import Header from "./header"
-//import DarkToggle from "../lib/darkToggle"
 import LandingPage from "./landingPage"
+import ReadingProgress from "./readingProgress"
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ location, title, children, barra }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const rootPathEs = `${__PATH_PREFIX__}/es/`
   const rootPathEn = `${__PATH_PREFIX__}/en/`
@@ -14,7 +13,7 @@ const Layout = ({ location, title, children }) => {
     location.pathname === rootPathEs ||
     location.pathname === rootPathEn
   let header
-
+  const target = React.createRef()
   if (isRootPath) {
     header = <LandingPage title={title} />
   } else {
@@ -23,7 +22,7 @@ const Layout = ({ location, title, children }) => {
 
   return (
     <div
-      className="global-wrapper w-full text-primario dark:text-gray-500 dark:bg-black"
+      className="global-wrapper w-full text-primario dark:text-gray-400 dark:bg-black"
       data-is-root-path={isRootPath}
     >
       <header
@@ -33,7 +32,11 @@ const Layout = ({ location, title, children }) => {
       >
         {header}
       </header>
-      <main className="text-justify flex flex-col items-center px-2 container max-w-pantalla min-h-[90vh] z-20">
+      {barra ? <ReadingProgress target={target} /> : null}
+      <main
+        ref={target}
+        className="text-justify flex flex-col items-center px-2 container max-w-pantalla min-h-[90vh] z-20"
+      >
         {children}
       </main>
       <Footer />

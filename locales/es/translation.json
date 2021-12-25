@@ -1,12 +1,14 @@
 {
-    "nada": "No se encontraron publicaciones. Añade algunas a content/blog (o el que tengas configurado en el plugin gatsby-source-filesystem en gatsby-config.js).",
-    "about_bio": "Mi nombre es Andy. Soy Licenciado en Matemática, programador de corazón y adicto a la tecnología",
-    "about": "Acerca de",
-    "who_am_I": "¿Quién soy?",
-    "titulo_portada": "Hola, soy Massick",
-    "articles": "Artículos",
-    "no_posts": "Sin Publicaciones",
-    "home": "Inicio",
-    "summary": "Matemático y desarrollador web",
-    "Construido con": "Construido con"
+  "nada": "No se encontraron publicaciones. Añade algunas a content/blog (o el que tengas configurado en el plugin gatsby-source-filesystem en gatsby-config.js).",
+  "about_bio": "Mi nombre es Andy. Soy Licenciado en Matemática, programador de corazón y adicto a la tecnología",
+  "about": "Acerca de",
+  "who_am_I": "¿Quién soy?",
+  "titulo_portada": "Hola, soy Massick",
+  "articles": "Artículos",
+  "no_posts": "Sin Publicaciones",
+  "home": "Inicio",
+  "summary": "Matemático y desarrollador web",
+  "Construido con": "Construido con",
+  "Anterior": "Anterior",
+  "Siguiente": "Siguiente"
 }

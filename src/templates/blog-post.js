@@ -11,7 +11,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const { previous, next } = data
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={siteTitle} barra>
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -67,7 +67,10 @@ const BlogPostTemplate = ({ data, location }) => {
           {/* Main article */}
           <div className="divide-y divide-gray-200 col-span-full lg:col-span-3 lg:row-span-2">
             <header className="text-center py-4">
-              <h1 itemProp="headline" className="text-4xl font-semibold ">
+              <h1
+                itemProp="headline"
+                className="text-4xl font-semibold text-secundario"
+              >
                 {post.frontmatter.title}
               </h1>
               <p className="pt-4">{post.frontmatter.date}</p>
