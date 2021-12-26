@@ -153,24 +153,45 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Massick Blog`,
+        name: `Blog de Massick`,
         short_name: `Massick`,
+        description: `Portafolio y blog creado usando Gatsby, TailwindCSS y Markdown con soporte para varios idiomas entre otras características.`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/massick-1x1.png`, // This path is relative to the root of the site.
+        theme_color: `#049e2a`,
+        display: `standalone`,
+        icon: `src/svg/massick-1x1.svg`, // This path is relative to the root of the site.
+        cache_busting_mode: "none", // https://www.gatsbyjs.com/plugins/gatsby-plugin-offline/#using-with-gatsby-plugin-manifest
+        lang: `es`,
+        localize: [
+          {
+            start_url: `/en/`,
+            lang: `en`,
+            name: `Massick's Blog`,
+            short_name: `Massick`,
+            description: `Portfolio and blog created using GatsbyJS, TailwindCSS and Markdown with i18n support among other things.`,
+          },
+        ],
+        //theme_color_in_head: false, // This will avoid adding theme-color meta tag.
       },
     },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-netlify`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    // {
+    //   resolve: "gatsby-plugin-offline",
+    //   options: {
+    //     workboxConfig: {
+    //       globPatterns: ["**/svg*"],
+    //     },
+    //   },
+    // },
+    `gatsby-plugin-offline`,
   ],
 }

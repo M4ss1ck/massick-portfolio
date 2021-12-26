@@ -68,7 +68,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
       const newSlug = post.fields.slug
 
-      console.log(newSlug, "\n esto es en createPages")
+      //console.log(newSlug, "\n esto es en createPages")
       createPage({
         path: newSlug,
         component: blogPost,
@@ -96,7 +96,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           .replace(/\/(.+)\/(.+)\//, `\/$2\/blog\/$1\/`)
           .replace(/\/es\//, `/`)
       : value.replace(/\/(.+)\//, `\/blog\/$1\/`).replace(/\/es\//, `/`)
-    console.log(newValue, "\n esto es en onCreateNode")
+    //console.log(newValue, "\n esto es en onCreateNode")
     createNodeField({
       name: `slug`,
       node,
