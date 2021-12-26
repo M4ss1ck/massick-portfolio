@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { Link, Trans } from "gatsby-plugin-react-i18next"
+import { Trans } from "gatsby-plugin-react-i18next"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -35,13 +35,13 @@ const BlogPostTemplate = ({ data, location }) => {
                       <p className="pt-4 uppercase font-light">
                         <Trans>Anterior</Trans>
                       </p>
-                      <Link
-                        to={previous.fields.slug}
+                      <a
+                        href={previous.fields.slug}
                         rel="prev"
                         className="hover:text-secundario"
                       >
                         ← {previous.frontmatter.title}
-                      </Link>
+                      </a>
                     </>
                   )}
                 </li>
@@ -51,13 +51,13 @@ const BlogPostTemplate = ({ data, location }) => {
                       <p className="pt-4 uppercase font-light">
                         <Trans>Siguiente</Trans>
                       </p>
-                      <Link
-                        to={next.fields.slug}
+                      <a
+                        href={next.fields.slug}
                         rel="next"
                         className="hover:text-secundario"
                       >
                         {next.frontmatter.title} →
-                      </Link>
+                      </a>
                     </>
                   )}
                 </li>
