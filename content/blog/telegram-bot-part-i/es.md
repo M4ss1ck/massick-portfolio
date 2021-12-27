@@ -82,7 +82,7 @@ bot.on(/^\/say (.+)$/, (msg, props) => {
 
 En el código anterior inicializamos la librería que usaremos para comunicarnos con la API de telegram además de escribir un comando muy sencillo para que al usar `/say cualquiercosa` el bot responda `cualquiercosa`.
 
-Para no escribir directamente el token del bot en nuestro código, anteriormente usamos la variable `TG_TOKEN`, así que ahora debemos crear un archivo `.env` e instalar [dotenv](https://github.com/motdotla/dotenv) en nuestro proyecto. Este módulo nos permite cargar variables de entorno desde un archivo `.env` a `process.env`, de ahí que en lugar de escribir nuestro token `1778008574:AAFbuYsrLW3Q77HsElI7oTFFqJXItozZ2jQ` en el archivo `bot.js`, escribimos `process.env.TG_TOKEN`.
+Para no escribir directamente el token del bot en nuestro código, anteriormente usamos la variable `TG_TOKEN`, así que ahora debemos crear un archivo `.env` e instalar [dotenv](https://github.com/motdotla/dotenv) en nuestro proyecto. Este módulo nos permite cargar variables de entorno desde un archivo `.env` a `process.env`, de ahí que en lugar de escribir nuestro token `1778008574:AAFbuYsrLW3Q77...` en el archivo `bot.js`, escribimos `process.env.TG_TOKEN`.
 
 Instalamos dotenv
 

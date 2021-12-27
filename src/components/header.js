@@ -51,6 +51,8 @@ function Header() {
                 </div>
               </Link>
             </div>
+            <DarkToggle />
+            <Language />
             <div className="-mr-2 flex items-center md:hidden">
               <button
                 onClick={() => toggleMobileNavOpen()}
@@ -100,8 +102,6 @@ function Header() {
             )
           })}
         </div>
-        <DarkToggle />
-        <Language />
       </nav>
       <Transition
         show={mobileNavOpen}

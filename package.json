@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Massick <4ndyraul@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/M4ss1ck/massick-portfolio/issues"
   },
   "dependencies": {
     "@fontsource/merriweather": "^4.5.3",
@@ -54,7 +54,7 @@
     "prettier": "^2.4.1",
     "tailwindcss": "^3.0.5"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/M4ss1ck/massick-portfolio#readme",
   "keywords": [
     "gatsby"
   ],
@@ -62,7 +62,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/M4ss1ck/massick-portfolio.git"
   },
   "scripts": {
     "build": "gatsby build",
