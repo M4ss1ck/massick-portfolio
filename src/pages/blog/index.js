@@ -2,9 +2,9 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { Trans, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Bio from "../../components/bio"
+import Layout from "../../components/layout"
+import Seo from "../../components/seo"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Inicio`
@@ -27,7 +27,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={t("titulo_portada")}>
       <Seo lang={language} title={siteTitle} />
 
-      <ol style={{ listStyle: `none` }}>
+      <ol style={{ listStyle: `none` }} className="py-4">
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
           const slug = post.fields.slug

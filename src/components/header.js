@@ -9,6 +9,17 @@ import Massick1x1 from "../svg/massick-1x1.svg"
 import Transition from "./transition"
 import Language from "./language"
 
+const navLinks = [
+  {
+    url: "/blog",
+    i18n_id: "articles",
+  },
+  {
+    url: "/about",
+    i18n_id: "about",
+  },
+]
+
 function Header() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const location = useLocation()
@@ -38,7 +49,6 @@ function Header() {
                 <div className="max-h-full inline-flex sm:hidden items-center">
                   <Massick1x1 className="h-10 w-10" />
                 </div>
-                {/* <span className="text-lg">Wasting Time Blog</span> */}
               </Link>
             </div>
             <div className="-mr-2 flex items-center md:hidden">
@@ -69,22 +79,26 @@ function Header() {
         </div>
 
         <div className="hidden md:flex md:ml-10 md:pr-4 space-x-8">
-          <Link
-            to={`/about`}
-            className={cx(
-              "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out font-montserrat",
-              {
-                "border-secundario text-gray-900 dark:text-secundario focus:border-secundario":
-                  location.pathname.startsWith(`/about`) ||
-                  location.pathname.startsWith(`/en/about`),
-                "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
-                  !location.pathname.startsWith(`/about`) ||
-                  !location.pathname.startsWith(`/en/about`),
-              }
-            )}
-          >
-            <Trans>about</Trans>
-          </Link>
+          {navLinks.map(link => {
+            return (
+              <Link
+                to={`${link.url}`}
+                className={cx(
+                  "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out font-montserrat",
+                  {
+                    "border-secundario text-gray-900 dark:text-secundario focus:border-secundario":
+                      location.pathname.startsWith(`${link.url}`) ||
+                      location.pathname.startsWith(`/en${link.url}`),
+                    "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
+                      !location.pathname.startsWith(`${link.url}`) ||
+                      !location.pathname.startsWith(`/en${link.url}`),
+                  }
+                )}
+              >
+                <Trans>{link.i18n_id}</Trans>
+              </Link>
+            )
+          })}
         </div>
         <DarkToggle />
         <Language />
@@ -136,29 +150,58 @@ function Header() {
                 </div>
               </div>
               <div className="mt-1 px-2 pt-2 pb-3 space-y-1">
-                <Link
-                  to={`/about`}
-                  className={cx(
-                    "block pl-3 pr-4 py-2 border-l-4 font-medium focus:outline-none transition duration-150 ease-in-out",
-                    {
-                      "border-secundario text-gray-900 dark:text-secundario focus:border-secundario":
-                        location.pathname.startsWith(`/about`) ||
-                        location.pathname.startsWith(`/en/about`),
-                      "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
-                        !location.pathname.startsWith(`/about`) ||
-                        !location.pathname.startsWith(`/en/about`),
-                    }
-                  )}
-                  role="menuitem"
-                >
-                  <Trans>about</Trans>
-                </Link>
+                {navLinks.map(link => {
+                  return (
+                    <Link
+                      to={`${link.url}`}
+                      className={cx(
+                        "block pl-3 pr-4 py-2 border-l-4 font-medium focus:outline-none transition duration-150 ease-in-out",
+                        {
+                          "border-secundario text-gray-900 dark:text-secundario focus:border-secundario":
+                            location.pathname.startsWith(`${link.url}`) ||
+                            location.pathname.startsWith(`/en${link.url}`),
+                          "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
+                            !location.pathname.startsWith(`${link.url}`) ||
+                            !location.pathname.startsWith(`/en${link.url}`),
+                        }
+                      )}
+                      role="menuitem"
+                    >
+                      <Trans>{link.i18n_id}</Trans>
+                    </Link>
+                  )
+                })}
               </div>
             </div>
           </div>
         </div>
       </Transition>
     </header>
+  )
+}
+
+export const NavLink = (url, name) => {
+  const location = useLocation()
+  return (
+    <>
+      <Link
+        to={url}
+        className={cx(
+          "block pl-3 pr-4 py-2 border-l-4 font-medium focus:outline-none transition duration-150 ease-in-out",
+          {
+            "border-secundario text-gray-900 dark:text-secundario focus:border-secundario":
+              location.pathname.startsWith(`${url}`) ||
+              location.pathname.startsWith(`/en${url}`),
+            "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
+              !location.pathname.startsWith(`${url}`) ||
+              !location.pathname.startsWith(`/en${url}`),
+          }
+        )}
+        role="menuitem"
+      >
+        <Trans>{name}</Trans>
+      </Link>
+    </>
   )
 }
 
