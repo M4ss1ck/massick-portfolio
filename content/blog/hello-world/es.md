@@ -3,6 +3,7 @@ title: Hola Mundo
 date: "2015-05-01T22:12:03.284Z"
 description: "Tengo que traducir esto"
 locale: es
+draft: true
 ---
 
 This is my first post on my new fake blog! How exciting!
