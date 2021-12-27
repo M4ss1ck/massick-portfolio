@@ -67,8 +67,19 @@ const Bio = () => {
       )}
       <span>
         <a
+          href={`https://github.com/${social?.twitter || ``}`}
+          className="text-gray-500 hover:text-secundario"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Github
+        </a>{" "}
+        /{" "}
+        <a
           href={`https://twitter.com/${social?.twitter || ``}`}
           className="text-gray-500 hover:text-secundario"
+          target="_blank"
+          rel="noreferrer"
         >
           Twitter
         </a>{" "}
@@ -76,6 +87,8 @@ const Bio = () => {
         <a
           href={`https://t.me/m4ss1ck`}
           className="text-gray-500 hover:text-secundario"
+          target="_blank"
+          rel="noreferrer"
         >
           Telegram
         </a>
