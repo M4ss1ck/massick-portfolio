@@ -18,7 +18,7 @@ const LandingPage = ({ title }) => {
           to="/"
           className="absolute hidden md:block top-8 right-12 shadow-md dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario z-20 dark:z-20 rounded-md "
         >
-          <Massick2x3 className="w-36 h-48 text-secundario fill-current" />
+          <Massick2x3 className="w-32 h-48 text-secundario fill-current" />
         </Link>
         <aside className="flex flex-row py-1 px-4 md:flex-col justify-between items-center absolute w-full md:w-fit left-0 top-0 md:top-[60vh] z-20  md:border-4 border-b-4 border-secundario md:-rotate-45 hover:rotate-0  rounded-lg md:-translate-x-2 md:hover:translate-x-12 lg:transition md:hover:scale-150 shadow-md dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario bg-slate-200 dark:bg-black">
           <Link to="/" className="md:hidden">

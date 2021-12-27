@@ -1,6 +1,6 @@
 {
   "nada": "No se encontraron publicaciones. Añade algunas a content/blog (o el que tengas configurado en el plugin gatsby-source-filesystem en gatsby-config.js).",
-  "about_bio": "Mi nombre es Andy. Soy Licenciado en Matemática, programador de corazón y adicto a la tecnología",
+  "about_bio": "Mi nombre es Andy (@M4ss1ck en casi todas mis redes sociales). Soy Licenciado en Matemática, programador de corazón y adicto a la tecnología",
   "about": "Acerca de",
   "who_am_I": "¿Quién soy?",
   "titulo_portada": "Hola, soy Massick",
@@ -10,5 +10,8 @@
   "summary": "Matemático y desarrollador web",
   "Construido con": "Construido con",
   "Anterior": "Anterior",
-  "Siguiente": "Siguiente"
+  "Siguiente": "Siguiente",
+  "404: Not Found": "404: Página no encontrada",
+  "You just hit a wrong route.": "La ruta solicitada no existe... Lo sentimos.",
+  "Go to": "Ir al"
 }
