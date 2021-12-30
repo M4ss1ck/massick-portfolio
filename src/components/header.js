@@ -84,6 +84,7 @@ function Header() {
           {navLinks.map(link => {
             return (
               <Link
+                key={link.i18n_id}
                 to={`${link.url}`}
                 className={cx(
                   "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out font-montserrat",

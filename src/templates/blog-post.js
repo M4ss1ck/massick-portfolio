@@ -1,9 +1,11 @@
-import * as React from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import { Trans } from "gatsby-plugin-react-i18next"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+
+import Comment from "../components/comment"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -65,7 +67,7 @@ const BlogPostTemplate = ({ data, location }) => {
             </nav>
           </aside>
           {/* Main article */}
-          <div className="divide-y divide-gray-200 col-span-full lg:col-span-3 lg:row-span-2">
+          <div className="col-span-full lg:col-span-3 lg:row-span-2">
             <header className="text-center py-4">
               <h1
                 itemProp="headline"
@@ -81,6 +83,7 @@ const BlogPostTemplate = ({ data, location }) => {
               itemProp="articleBody"
               className="prose lg:prose-xl dark:prose-dark"
             />
+            <Comment />
           </div>
         </div>
       </article>
