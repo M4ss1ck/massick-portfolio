@@ -26,8 +26,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={t("titulo_portada")}>
       <Seo lang={language} title={siteTitle} />
-
-      <ol style={{ listStyle: `none` }} className="py-4">
+      <ol style={{ listStyle: `none` }} className="py-4 z-10">
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
           const slug = post.fields.slug
@@ -60,6 +59,7 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
+
       <Bio />
     </Layout>
   )

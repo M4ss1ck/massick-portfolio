@@ -66,8 +66,9 @@ const BlogPostTemplate = ({ data, location }) => {
               </ul>
             </nav>
           </aside>
+
           {/* Main article */}
-          <div className="col-span-full lg:col-span-3 lg:row-span-2">
+          <div className="col-span-full lg:col-span-3 lg:row-span-4 prose dark:prose-dark">
             <header className="text-center py-4">
               <h1
                 itemProp="headline"
@@ -81,7 +82,7 @@ const BlogPostTemplate = ({ data, location }) => {
             <section
               dangerouslySetInnerHTML={{ __html: post.html }}
               itemProp="articleBody"
-              className="prose lg:prose-xl dark:prose-dark"
+              className=""
             />
             <Comment />
           </div>

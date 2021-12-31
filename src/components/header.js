@@ -33,27 +33,32 @@ function Header() {
   )
 
   const toggleMobileNavOpen = () => setMobileNavOpen(open => !open)
+
   return (
     <div className="w-full pb-0 pt-4 md:pt-2 px-4 z-30 bg-gradient-to-r from-white via-transparent to-white dark:from-black dark:via-gray-900 dark:to-black dark:text-white">
-      <nav className="relative flex items-center flex-wrap justify-between md:h-20 lg:justify-center">
+      <nav className="relative flex items-center flex-wrap justify-center md:h-20 lg:justify-center">
         <div className="flex items-center flex-grow flex-shrink-0 h-full">
           <div className="flex items-center justify-between w-full">
             <div className="h-full justify-center align-middle">
               <Link to="/" aria-label="Wasting Time Blog">
-                <div className="h-10 logoh hidden sm:inline-flex items-center">
+                <div
+                  className="h-10 logoh hidden sm:inline-flex items-center"
+                  title={t("home")}
+                >
                   <Massick1x1 className="rounded-md w-12 h-12" />
-                  <span className="inline-flex items-center ml-2 px-3 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600">
+                  {/* <span className="inline-flex items-center ml-2 px-3 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600">
                     {t("home")}
-                  </span>
+                  </span> */}
                 </div>
                 <div className="max-h-full inline-flex sm:hidden items-center">
                   <Massick1x1 className="h-10 w-10" />
                 </div>
               </Link>
             </div>
-            <DarkToggle />
-            <Language />
+
             <div className="-mr-2 flex items-center md:hidden">
+              <DarkToggle />
+              <Language />
               <button
                 onClick={() => toggleMobileNavOpen()}
                 type="button"
@@ -104,6 +109,8 @@ function Header() {
               </Link>
             )
           })}
+          <DarkToggle />
+          <Language />
         </div>
       </nav>
       <Transition
@@ -185,29 +192,29 @@ function Header() {
   )
 }
 
-export const NavLink = (url, name) => {
-  const location = useLocation()
-  return (
-    <>
-      <Link
-        to={url}
-        className={cx(
-          "block pl-3 pr-4 py-2 border-l-4 font-medium focus:outline-none transition duration-150 ease-in-out",
-          {
-            "border-secundario text-gray-900 dark:text-secundario focus:border-secundario":
-              location.pathname.startsWith(`${url}`) ||
-              location.pathname.startsWith(`/en${url}`),
-            "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
-              !location.pathname.startsWith(`${url}`) ||
-              !location.pathname.startsWith(`/en${url}`),
-          }
-        )}
-        role="menuitem"
-      >
-        <Trans>{name}</Trans>
-      </Link>
-    </>
-  )
-}
+// export const NavLink = (url, name) => {
+//   const location = useLocation()
+//   return (
+//     <>
+//       <Link
+//         to={url}
+//         className={cx(
+//           "block pl-3 pr-4 py-2 border-l-4 font-medium focus:outline-none transition duration-150 ease-in-out",
+//           {
+//             "border-secundario text-gray-900 dark:text-secundario focus:border-secundario":
+//               location.pathname.startsWith(`${url}`) ||
+//               location.pathname.startsWith(`/en${url}`),
+//             "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
+//               !location.pathname.startsWith(`${url}`) ||
+//               !location.pathname.startsWith(`/en${url}`),
+//           }
+//         )}
+//         role="menuitem"
+//       >
+//         <Trans>{name}</Trans>
+//       </Link>
+//     </>
+//   )
+// }
 
 export default Header

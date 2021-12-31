@@ -5,7 +5,7 @@ const darkToggle = () => {
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => (
-        <div className="relative">
+        <div className="relative m-auto">
           <input
             type="checkbox"
             id="toggle"
