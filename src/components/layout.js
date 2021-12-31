@@ -26,9 +26,7 @@ const Layout = ({ location, title, children, barra }) => {
       data-is-root-path={isRootPath}
     >
       <header
-        className={
-          isRootPath ? "w-full h-[100vh]" : "w-full sticky lg:top-0 z-30"
-        }
+        className={isRootPath ? "w-full h-[100vh]" : "w-full sticky top-0 z-30"}
       >
         {header}
       </header>

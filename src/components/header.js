@@ -34,7 +34,7 @@ function Header() {
 
   const toggleMobileNavOpen = () => setMobileNavOpen(open => !open)
   return (
-    <header className="w-full py-0 px-4 sticky top-0 z-30 bg-gradient-to-r from-white via-transparent to-white dark:from-black dark:via-gray-800 dark:to-black dark:text-white">
+    <div className="w-full pb-0 pt-4 md:pt-2 px-4 z-30 bg-gradient-to-r from-white via-transparent to-white dark:from-black dark:via-gray-900 dark:to-black dark:text-white">
       <nav className="relative flex items-center flex-wrap justify-between md:h-20 lg:justify-center">
         <div className="flex items-center flex-grow flex-shrink-0 h-full">
           <div className="flex items-center justify-between w-full">
@@ -181,7 +181,7 @@ function Header() {
           </div>
         </div>
       </Transition>
-    </header>
+    </div>
   )
 }
 
