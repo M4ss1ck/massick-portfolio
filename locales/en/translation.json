@@ -14,5 +14,11 @@
   "404: Not Found": "404: Not Found",
   "You just hit a wrong route.": "You just hit a route that doesn't exist... the sadness.",
   "Go to": "Go to",
-  "Comments": "Comments"
+  "Comments": "Comments",
+  "Projects": "Projects",
+  "Mi portafolio (esta página)": "My portfolio (this website)",
+  "Página web creada con GatsbyJS usando Markdown para las publicaciones y TailwindCSS para los estilos. Soporte para modo oscuro y múltiples idiomas.": "Markdown powered Gatsby website with dark mode and multiple languages support. Styled with TailwindCSS.",
+  "Telegram bot using nodejs and telebot": "Telegram bot using nodejs and telebot",
+  "Next.js Blog Template": "Next.js Blog Template",
+  "Blog template using Next.js and TailwindCSS": "Blog template using Next.js and TailwindCSS"
 }

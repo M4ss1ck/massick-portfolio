@@ -12,7 +12,7 @@ const LandingPage = ({ title }) => {
   const letrasTitulo = [...title]
   return (
     <>
-      <div className="pt-6 pb-2 flex flex-col items-center justify-center max-h-screen">
+      <div className="pt-6 pb-2 flex flex-col items-center justify-center h-screen">
         <Canvas />
         <Link
           to="/"
@@ -66,7 +66,7 @@ const LandingPage = ({ title }) => {
               <span
                 key={index}
                 //className="transition hover:animate-bounce hover:text-secundario min-w-[1rem] cursor-default "
-                className="transition duration-300 hover:skew-y-12 hover:even:-skew-y-12 hover:-translate-y-16 hover:even:-translate-y-14 hover:scale-125 text-secundario min-w-[1rem] cursor-default "
+                className="transition duration-300 hover:skew-y-12 hover:even:-skew-y-12 hover:-translate-y-16 hover:even:-translate-y-14 hover:scale-150 text-secundario min-w-[1rem] cursor-default "
               >
                 {letra}
               </span>
@@ -76,7 +76,7 @@ const LandingPage = ({ title }) => {
 
         <Hacker className="bottom-0 w-full opacity-20 absolute" />
         <h2 className="absolute bottom-12 text-lg lg:text-2xl font-montserrat uppercase text-secundario  animate-bounce z-20 dark:z-20">
-          <Trans>articles</Trans>
+          <Trans>Projects</Trans>
         </h2>
 
         {/* scroll-down button */}

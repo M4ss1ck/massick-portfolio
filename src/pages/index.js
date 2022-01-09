@@ -5,6 +5,7 @@ import { Trans, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Projects from "../components/projects"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Inicio`
@@ -17,7 +18,7 @@ const BlogIndex = ({ data, location }) => {
         <Seo lang={language} title={t("no_posts")} />
         <Bio />
         <p>
-          <Trans>nada"</Trans>
+          <Trans>nada</Trans>
         </p>
       </Layout>
     )
@@ -26,6 +27,8 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={t("titulo_portada")}>
       <Seo lang={language} title={siteTitle} />
+
+      <Projects />
 
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
