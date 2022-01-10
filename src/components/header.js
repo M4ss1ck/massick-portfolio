@@ -11,6 +11,10 @@ import Language from "./language"
 
 const navLinks = [
   {
+    url: "/portfolio",
+    i18n_id: "Projects",
+  },
+  {
     url: "/blog",
     i18n_id: "articles",
   },

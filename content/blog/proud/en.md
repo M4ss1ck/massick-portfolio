@@ -3,6 +3,7 @@ title: New track "Proud"
 date: "2021-12-25"
 description: "My last DnB track"
 locale: en
+featuredImage: proud.webp
 ---
 
 > This article was originally published in [this other blog](https://wastingblog.gatsbyjs.io/posts/nuevo-tema-proud)

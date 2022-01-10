@@ -3,6 +3,7 @@ title: Crear un bot de Telegram usando node.js (parte I)
 date: "2021-12-26"
 description: "Cómo crear un bot de telegram de forma rápida y sencilla usando javascript."
 locale: es
+featuredImage: mybot.webp
 ---
 
 > Este artículo se publicó originalmente [aquí](https://wastingblog.gatsbyjs.io/posts/telegram-bot-usando-node-telebot-y-railway)
@@ -86,7 +87,7 @@ Para no escribir directamente el token del bot en nuestro código, anteriormente
 
 Instalamos dotenv
 
-```node
+```
 npm install dotenv
 ```
 

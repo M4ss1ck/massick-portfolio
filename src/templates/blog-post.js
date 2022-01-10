@@ -9,7 +9,7 @@ import Comment from "../components/comment"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.site.siteMetadata?.title || `Blog`
   const { previous, next } = data
 
   return (

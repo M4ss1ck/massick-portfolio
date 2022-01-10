@@ -13,6 +13,9 @@ const About = ({ data, location }) => {
   return (
     <Layout location={location} title={t("about")}>
       <Seo lang={language} title={t("about")} />
+      <h1 className="text-lg lg:text-2xl font-rammetto uppercase text-secundario mt-4">
+        <Trans>who_am_I</Trans>
+      </h1>
       <section className="flex flex-col md:flex-row items-center justify-center px-10 md:px-20 py-6 md:py-4 h-auto md:h-56">
         <StaticImage
           className="rounded-full w-40 pt-8"

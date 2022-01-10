@@ -6,38 +6,54 @@ import Bio from "../../components/bio"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 
+import { GatsbyImage } from "gatsby-plugin-image"
+
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Inicio`
   const posts = data.allMarkdownRemark.nodes
   const { t } = useTranslation()
   const { language } = useI18next()
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={t("titulo_portada")}>
+      <Layout location={location} title={t("articles")}>
         <Seo lang={language} title={t("no_posts")} />
         <Bio />
         <p>
-          <Trans>nada"</Trans>
+          <Trans>nada</Trans>
         </p>
       </Layout>
     )
   }
 
   return (
-    <Layout location={location} title={t("titulo_portada")}>
-      <Seo lang={language} title={siteTitle} />
-      <ol style={{ listStyle: `none` }} className="py-4 z-10">
+    <Layout location={location} title={t("articles")}>
+      <Seo lang={language} title={t("articles")} />
+      <h1 className="text-lg lg:text-2xl font-rammetto uppercase text-secundario mt-4">
+        <Trans>articles</Trans>
+      </h1>
+      <ol style={{ listStyle: `none` }} className="py-4 z-10 max-w-prose">
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
           const slug = post.fields.slug
           return (
             <li key={slug}>
               <article
-                className="post-list-item my-2"
+                className="grid grid-cols-3 grid-rows-2 gap-4 my-2"
                 itemScope
                 itemType="http://schema.org/Article"
               >
-                <header>
+                {post.frontmatter.featuredImage && (
+                  <div className="my-4 row-span-2">
+                    <GatsbyImage
+                      image={
+                        post.frontmatter.featuredImage.childImageSharp
+                          .gatsbyImageData
+                      }
+                      layout="fullWidth"
+                      placeholder="tracedSVG"
+                    />
+                  </div>
+                )}
+                <header className="col-span-2 row-span-1 my-auto">
                   <h2 className="text-lg font-bold text-secundario mt-2">
                     <a href={slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
@@ -45,7 +61,7 @@ const BlogIndex = ({ data, location }) => {
                   </h2>
                   <small className="text-sm">{post.frontmatter.date}</small>
                 </header>
-                <section>
+                <section className="col-span-2 row-span-1">
                   <p
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
@@ -59,7 +75,7 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
-
+      <hr className="mt-auto" />
       <Bio />
     </Layout>
   )
@@ -78,11 +94,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
@@ -98,6 +109,11 @@ export const pageQuery = graphql`
           date(formatString: "DD.MM.YY")
           title
           description
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
       }
     }

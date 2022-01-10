@@ -3,6 +3,7 @@ title: Nuevo tema "Proud"
 date: "2021-12-25"
 description: "Mi último tema de DnB"
 locale: es
+featuredImage: proud.webp
 ---
 
 > Este artículo se publicó originalmente en [este otro blog](https://wastingblog.gatsbyjs.io/posts/nuevo-tema-proud)
