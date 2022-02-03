@@ -20,5 +20,7 @@
   "Página web creada con GatsbyJS usando Markdown para las publicaciones y TailwindCSS para los estilos. Soporte para modo oscuro y múltiples idiomas.": "Markdown powered Gatsby website with dark mode and multiple languages support. Styled with TailwindCSS.",
   "Telegram bot using nodejs and telebot": "Telegram bot using nodejs and telebot",
   "Next.js Blog Template": "Next.js Blog Template",
-  "Blog template using Next.js and TailwindCSS": "Blog template using Next.js and TailwindCSS"
+  "Blog template using Next.js and TailwindCSS": "Blog template using Next.js and TailwindCSS",
+  "CIEC website": "CIEC website",
+  "Página web del Centro de Investigaciones de Ecosistemas Costeros (CIEC).": "Coastal Ecosystems Research Center (CIEC) website."
 }

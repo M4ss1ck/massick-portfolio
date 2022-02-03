@@ -12,6 +12,13 @@ const proyectos = [
     imageName: "portfolio",
   },
   {
+    url: "https://github.com/M4ss1ck/ciec-frontend-gatsby",
+    title: "CIEC website",
+    description:
+      "Página web del Centro de Investigaciones de Ecosistemas Costeros (CIEC).",
+    imageName: "ciec",
+  },
+  {
     url: "https://github.com/M4ss1ck/wastingBot",
     title: "WastingBot",
     description: "Telegram bot using nodejs and telebot",

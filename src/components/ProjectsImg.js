@@ -22,6 +22,11 @@ const ProImg = props => {
           gatsbyImageData
         }
       }
+      ciec: file(relativePath: { eq: "projects/ciec.jpg" }) {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
     }
   `)
   switch (props.name) {
@@ -48,6 +53,15 @@ const ProImg = props => {
         <GatsbyImage
           //className="w-12"
           image={data.nextBlog.childImageSharp.gatsbyImageData}
+          layout="fullWidth"
+          placeholder="tracedSVG"
+        />
+      )
+    case "ciec":
+      return (
+        <GatsbyImage
+          //className="w-12"
+          image={data.ciec.childImageSharp.gatsbyImageData}
           layout="fullWidth"
           placeholder="tracedSVG"
         />
