@@ -31,6 +31,21 @@ const About = ({ data, location }) => {
           <Trans>about_bio</Trans>
         </p>
       </section>
+      <section className="text-xl font-montserrat font-semibold px-4 pt-8 md:pt-4 max-w-prose">
+        <p>
+          <Trans>extended_bio</Trans>
+        </p>
+        <p>
+          <Trans>cv_link_text</Trans>{" "}
+          <a
+            href="/cv"
+            className="text-secundario rounded-lg px-2 hover:bg-secundario hover:text-white"
+            target="_blank"
+          >
+            <Trans>here</Trans>
+          </a>
+        </p>
+      </section>
     </Layout>
   )
 }
