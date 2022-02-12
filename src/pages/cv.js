@@ -1,9 +1,14 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import { useTranslation, useI18next } from "gatsby-plugin-react-i18next"
+import Seo from "../components/seo"
 
 const CV = ({ data }) => {
+  const { t } = useTranslation()
+  const { language } = useI18next()
   return (
     <>
+      <Seo lang={language} title={t("CV title")} />
       <article className="mx-auto container grid grid-cols-1 sm:grid-cols-4 font-montserrat">
         <section className="bg-blue-800 text-white text-center md:text-left">
           <h1 className="font-extrabold text-2xl md:text-4xl p-2">

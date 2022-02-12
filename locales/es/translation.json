@@ -26,5 +26,6 @@
   "Telegram bot using nodejs and Telegraf.js": "Bot de Telegram usando nodejs y Telegraf.js",
   "extended_bio": "Estoy deseando contribuir al éxito del equipo mediante el trabajo duro, la atención al detalle y una excelente capacidad de organización. Conocimiento claro de la programación y una sólida formación en matemáticas. Motivado para aprender, crecer y sobresalir en esta industria.",
   "cv_link_text": "Puedes encontrar mi CV",
-  "here": "aquí"
+  "here": "aquí",
+  "CV title": "Mi CV"
 }
