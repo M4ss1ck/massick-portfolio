@@ -16,9 +16,9 @@ const About = ({ data, location }) => {
       <h1 className="text-lg lg:text-2xl font-rammetto uppercase text-secundario mt-4">
         <Trans>who_am_I</Trans>
       </h1>
-      <section className="flex flex-col md:flex-row items-center justify-center px-10 md:px-20 py-6 md:py-4 h-auto md:h-56">
+      <section className="flex flex-col md:flex-row  items-center justify-center px-10 md:px-20 py-6 md:py-4 h-auto ">
         <StaticImage
-          className="rounded-full w-40 pt-8"
+          className="rounded-lg w-40 pt-8"
           layout="fixed"
           formats={["auto", "webp", "avif"]}
           src="../images/profile.jpg"
@@ -27,11 +27,11 @@ const About = ({ data, location }) => {
           quality={95}
           alt="Foto de perfil"
         />
-        <p className="text-xl font-montserrat font-semibold px-4 md:w-1/2 pt-8 md:pt-4">
+        <p className="text-xl font-montserrat font-semibold px-4 md:w-2/3 pt-8 md:pt-4">
           <Trans>about_bio</Trans>
         </p>
       </section>
-      <section className="text-xl font-montserrat font-semibold px-4 pt-8 md:pt-4 max-w-prose">
+      <section className="flex flex-col items-center justify-center px-14 md:px-28 py-6 md:py-4 text-xl font-montserrat font-semibold md:pt-4 max-w-prose">
         <p>
           <Trans>extended_bio</Trans>
         </p>

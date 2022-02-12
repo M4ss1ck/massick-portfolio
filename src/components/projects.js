@@ -40,23 +40,22 @@ const proyectos = [
 
 const Projects = () => {
   return (
-    <div className="pt-6 pb-2 flex flex-col items-center justify-center min-h-full z-20">
+    <div className="flex flex-col items-center justify-center min-h-full z-20">
       <ol style={{ listStyle: `none` }} className="max-w-prose">
         {proyectos.map((project, index) => {
           return (
-            <li key={project.title} className="">
+            <li key={project.title} className="m-4">
               <article
                 className="grid grid-cols-3 grid-rows-2 gap-4 my-2"
                 itemScope
                 itemType="http://schema.org/Article"
               >
-                {project.imageName && (
-                  <div className="my-auto row-span-2">
-                    <ProImg name={project.imageName} />
-                  </div>
-                )}
-                <header className="col-span-2 row-span-1 my-auto">
-                  <h2 className="text-xl font-bold text-secundario mt-4">
+                <div className="col-span-1 row-span-2 row-start-2 lg:row-start-1 my-auto">
+                  {project.imageName && <ProImg name={project.imageName} />}
+                </div>
+
+                <header className="col-span-3 lg:col-span-2 row-span-1 my-auto">
+                  <h2 className="text-xl font-bold text-secundario">
                     <a
                       href={project.url}
                       itemProp="url"
