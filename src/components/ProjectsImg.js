@@ -17,6 +17,13 @@ const ProImg = props => {
           gatsbyImageData
         }
       }
+      wastingbotremix: file(
+        relativePath: { eq: "projects/wastingbotremix.png" }
+      ) {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
       nextBlog: file(relativePath: { eq: "projects/next-blog.png" }) {
         childImageSharp {
           gatsbyImageData
@@ -44,6 +51,15 @@ const ProImg = props => {
         <GatsbyImage
           //className="w-12"
           image={data.wastingbot.childImageSharp.gatsbyImageData}
+          layout="fullWidth"
+          placeholder="tracedSVG"
+        />
+      )
+    case "wastingbotremix":
+      return (
+        <GatsbyImage
+          //className="w-12"
+          image={data.wastingbotremix.childImageSharp.gatsbyImageData}
           layout="fullWidth"
           placeholder="tracedSVG"
         />

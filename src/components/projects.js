@@ -12,6 +12,12 @@ const proyectos = [
     imageName: "portfolio",
   },
   {
+    url: "https://github.com/M4ss1ck/tg-telegraf-bot",
+    title: "WastingBot (remix)",
+    description: "Telegram bot using nodejs and Telegraf.js",
+    imageName: "wastingbotremix",
+  },
+  {
     url: "https://github.com/M4ss1ck/ciec-frontend-gatsby",
     title: "CIEC website",
     description:
