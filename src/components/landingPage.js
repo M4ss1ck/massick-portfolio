@@ -60,7 +60,7 @@ const LandingPage = ({ title }) => {
           className="absolute text-center text-2xl md:text-5xl lg:text-7xl font-rammetto uppercase flex flex-wrap items-center justify-center  z-10"
         >
           {letrasTitulo.map((letra, index) => {
-            console.log("printing ", letra, letra === " ")
+            //console.log("printing ", letra, letra === " ")
 
             return (
               <span
