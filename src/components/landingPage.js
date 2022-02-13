@@ -57,16 +57,20 @@ const LandingPage = ({ title }) => {
         </aside>
         <h1
           aria-label={title}
-          className="absolute text-center text-2xl md:text-5xl lg:text-7xl font-rammetto uppercase flex flex-wrap items-center justify-center h-[calc(100%-8rem)] z-10"
+          className="absolute text-center text-2xl md:text-5xl lg:text-7xl font-rammetto uppercase flex flex-wrap items-center justify-center  z-10"
         >
           {letrasTitulo.map((letra, index) => {
-            //console.log(letra)
+            console.log("printing ", letra, letra === " ")
 
             return (
               <span
                 key={index}
                 //className="transition hover:animate-bounce hover:text-secundario min-w-[1rem] cursor-default "
-                className="transition duration-300 hover:skew-y-12 hover:even:-skew-y-12 hover:-translate-y-16 hover:even:-translate-y-14 hover:scale-150 text-secundario min-w-[1rem] cursor-default "
+                className={
+                  letra === " "
+                    ? "min-w-[1rem] mr-auto w-full"
+                    : "transition duration-300 hover:skew-y-12 hover:even:-skew-y-12 hover:-translate-y-16 hover:even:-translate-y-14 hover:scale-150 text-secundario min-w-[1rem] cursor-default "
+                }
               >
                 {letra}
               </span>

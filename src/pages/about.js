@@ -27,7 +27,7 @@ const About = ({ data, location }) => {
           quality={95}
           alt="Foto de perfil"
         />
-        <p className="text-xl font-montserrat font-semibold px-4 md:w-2/3 pt-8 md:pt-4">
+        <p className="text-xl font-montserrat font-semibold px-4 md:w-2/3 pt-8 md:pt-4 max-w-prose">
           <Trans>about_bio</Trans>
         </p>
       </section>
