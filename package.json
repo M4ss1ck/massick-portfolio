@@ -42,7 +42,8 @@
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.15.3",
     "react-to-pdf": "^0.0.14",
-    "react-transition-group": "^4.4.2"
+    "react-transition-group": "^4.4.2",
+    "usehooks-ts": "^2.4.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.8",
