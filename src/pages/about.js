@@ -3,7 +3,12 @@ import { graphql } from "gatsby"
 
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
-import { Trans, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
+import {
+  Link,
+  Trans,
+  useTranslation,
+  useI18next,
+} from "gatsby-plugin-react-i18next"
 import Seo from "../components/seo"
 
 const About = ({ data, location }) => {
@@ -37,13 +42,13 @@ const About = ({ data, location }) => {
         </p>
         <p>
           <Trans>cv_link_text</Trans>{" "}
-          <a
-            href="/cv"
+          <Link
+            to="/cv"
+            language="en"
             className="text-secundario rounded-lg px-2 hover:bg-secundario hover:text-white"
-            target="_blank"
           >
             <Trans>here</Trans>
-          </a>
+          </Link>
         </p>
       </section>
     </Layout>
