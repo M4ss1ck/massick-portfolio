@@ -2,14 +2,29 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import Seo from "../components/seo"
+import Pdf from "react-to-pdf"
+
+// I'm using https://github.com/ivmarcos/react-to-pdf because https://www.npmjs.com/package/@react-pdf/renderer
+// throws a 403 error about puppeteer. I need to fix page size though.
 
 const CV = ({ data }) => {
+  const ref = React.createRef()
+  //console.log("ref: ", ref)
+  const options = {
+    orientation: "landscape",
+    unit: "mm",
+    format: [297, 210],
+    title: "CV",
+  }
   const { t } = useTranslation()
   const { language } = useI18next()
   return (
     <>
       <Seo lang={language} title={t("CV title")} />
-      <article className="mx-auto container grid grid-cols-1 sm:grid-cols-4 font-montserrat">
+      <article
+        className="mx-auto container grid grid-cols-1 sm:grid-cols-4 font-montserrat max-w-screen-lg"
+        ref={ref}
+      >
         <section className="bg-blue-800 text-white text-center md:text-left">
           <h1 className="font-extrabold text-2xl md:text-4xl p-2">
             Andy Raúl Palmero López
@@ -99,6 +114,18 @@ const CV = ({ data }) => {
           </div>
         </section>
       </article>
+      <footer className="w-full text-center my-8">
+        <Pdf targetRef={ref} filename="massick-cv.pdf" options={options}>
+          {({ toPdf }) => (
+            <button
+              onClick={toPdf}
+              className="border-2 border-blue-700 text-blue-700 font-bold rounded-lg p-4 hover:text-white hover:bg-blue-700"
+            >
+              Generate Pdf version
+            </button>
+          )}
+        </Pdf>
+      </footer>
     </>
   )
 }
