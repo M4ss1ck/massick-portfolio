@@ -44,7 +44,6 @@ const About = ({ data, location }) => {
           <Trans>cv_link_text</Trans>{" "}
           <Link
             to="/cv"
-            language="en"
             className="text-secundario rounded-lg px-2 hover:bg-secundario hover:text-white"
           >
             <Trans>here</Trans>
