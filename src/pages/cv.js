@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { useTranslation, useI18next } from "gatsby-plugin-react-i18next"
+import { Link, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import Seo from "../components/seo"
 import Pdf from "react-to-pdf"
 
@@ -21,6 +21,24 @@ const CV = ({ data }) => {
   return (
     <>
       <Seo lang={language} title={t("CV title")} />
+      <header className="w-full flex items-center justify-center my-2 mx-auto container max-w-screen-lg">
+        <Link
+          className="border-2 border-blue-700 text-blue-700 font-bold rounded-lg p-4 hover:text-white hover:bg-blue-700 mr-auto"
+          to="/"
+        >
+          {t("home")}
+        </Link>
+        <Pdf targetRef={ref} filename="massick-cv.pdf" options={options}>
+          {({ toPdf }) => (
+            <button
+              onClick={toPdf}
+              className="border-2 border-blue-700 text-blue-700 font-bold rounded-lg p-4 hover:text-white hover:bg-blue-700"
+            >
+              Generate Pdf version
+            </button>
+          )}
+        </Pdf>
+      </header>
       <article
         className="mx-auto container grid grid-cols-1 sm:grid-cols-4 font-montserrat max-w-screen-lg"
         ref={ref}
@@ -114,18 +132,6 @@ const CV = ({ data }) => {
           </div>
         </section>
       </article>
-      <footer className="w-full text-center my-8">
-        <Pdf targetRef={ref} filename="massick-cv.pdf" options={options}>
-          {({ toPdf }) => (
-            <button
-              onClick={toPdf}
-              className="border-2 border-blue-700 text-blue-700 font-bold rounded-lg p-4 hover:text-white hover:bg-blue-700"
-            >
-              Generate Pdf version
-            </button>
-          )}
-        </Pdf>
-      </footer>
     </>
   )
 }
