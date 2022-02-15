@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { useTranslation, useI18next } from "gatsby-plugin-react-i18next"
+import { Link, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import Seo from "../components/seo"
 import Pdf from "react-to-pdf"
 import { useElementSize, useWindowSize } from "usehooks-ts"
@@ -18,12 +18,15 @@ const CV = ({ data }) => {
   return (
     <>
       <Seo lang={language} title={t("CV title")} />
-      <div className="w-full text-center my-8">
+      <div className="container max-w-screen-lg mx-auto flex flex-row items-center justify-center my-4">
+        <button className="border-2 border-blue-700 text-blue-700 font-bold rounded-lg p-4 hover:text-white hover:bg-blue-700 mr-auto">
+          <Link to="/">{t("home")}</Link>
+        </button>
         <Pdf
           targetRef={ref}
           filename="massick-cv.pdf"
           options={{
-            orientation: "landscape",
+            orientation: width > height ? "landscape" : "portrait",
             unit: "in",
             format: [width / 96, height / 96],
           }}
@@ -34,11 +37,12 @@ const CV = ({ data }) => {
               onClick={toPdf}
               className="border-2 border-blue-700 text-blue-700 font-bold rounded-lg p-4 hover:text-white hover:bg-blue-700"
             >
-              Generate Pdf ({width} x {height} px)
+              Generate Pdf
             </button>
           )}
         </Pdf>
       </div>
+
       <div ref={ref}>
         <article
           className="mx-auto container grid grid-cols-1 sm:grid-cols-4 font-montserrat max-w-screen-lg"
@@ -91,6 +95,67 @@ const CV = ({ data }) => {
               in this industry.
             </p>
             <hr />
+            <h1 className="py-4 text-blue-800 font-bold text-lg">Projects</h1>
+            <hr />
+            <div className="flex flex-col md:grid md:grid-cols-6 py-2">
+              <p className="md:w-24">Present</p>
+              <div className="col-span-5">
+                <h2 className="font-bold text-lg">My portfolio</h2>
+                <small>
+                  <a
+                    href="https://github.com/M4ss1ck/massick-portfolio"
+                    className="font-thin text-blue-700"
+                  >
+                    https://github.com/M4ss1ck/massick-portfolio
+                  </a>
+                </small>
+                <p>
+                  Markdown powered Gatsby website with dark mode and multiple
+                  languages support. Styled with Tailwind CSS. Optimized for
+                  Netlify.
+                </p>
+                <p>
+                  Avaible at{" "}
+                  <a href="https://massick.is-a.dev" className="text-blue-700">
+                    massick.is-a.dev
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col md:grid md:grid-cols-6 py-2">
+              <p className="md:w-24">Present</p>
+              <div className="col-span-5">
+                <h2 className="font-bold text-lg">CIEC website</h2>
+                <small>
+                  <a
+                    href="https://github.com/M4ss1ck/ciec-frontend-gatsby"
+                    className="font-thin text-blue-700"
+                  >
+                    https://github.com/M4ss1ck/ciec-frontend-gatsby
+                  </a>
+                </small>
+                <p>
+                  Coastal Ecosystems Research Center (CIEC) website. Strapi
+                  backend, dark mode. Styled with Tailwind CSS.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col md:grid md:grid-cols-6 py-2">
+              <p className="md:w-24">Present</p>
+              <div className="col-span-5">
+                <h2 className="font-bold text-lg">Next.js Blog Template</h2>
+                <small>
+                  <a
+                    href="https://github.com/M4ss1ck/nextjs-blog-template"
+                    className="font-thin text-blue-700"
+                  >
+                    https://github.com/M4ss1ck/nextjs-blog-template
+                  </a>
+                </small>
+                <p>Blog template using Next.js and Tailwind CSS</p>
+              </div>
+            </div>
+
             <h1 className="py-4 text-blue-800 font-bold text-lg">
               Work History
             </h1>
@@ -135,6 +200,11 @@ const CV = ({ data }) => {
             </div>
           </section>
         </article>
+      </div>
+      <div className="flex items-center justify-end">
+        <p className="mr-4">
+          Dimensions: {width} x {height} px
+        </p>
       </div>
     </>
   )
