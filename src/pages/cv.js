@@ -123,7 +123,7 @@ const CV = ({ data }) => {
               </div>
             </div>
             <div className="flex flex-col md:grid md:grid-cols-6 py-2">
-              <p className="md:w-24">Present</p>
+              <p className="md:w-24">2022-01</p>
               <div className="col-span-5">
                 <h2 className="font-bold text-lg">CIEC website</h2>
                 <small>
@@ -141,7 +141,7 @@ const CV = ({ data }) => {
               </div>
             </div>
             <div className="flex flex-col md:grid md:grid-cols-6 py-2">
-              <p className="md:w-24">Present</p>
+              <p className="md:w-24">2021-11</p>
               <div className="col-span-5">
                 <h2 className="font-bold text-lg">Next.js Blog Template</h2>
                 <small>
