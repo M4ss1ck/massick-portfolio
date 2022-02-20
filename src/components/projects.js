@@ -7,10 +7,7 @@ import proyectos from "./projectList"
 const Projects = () => {
   const { allFile } = useStaticQuery(graphql`
     {
-      allFile(
-        filter: { sourceInstanceName: { eq: "projects" } }
-        sort: { fields: birthTime, order: DESC }
-      ) {
+      allFile(filter: { sourceInstanceName: { eq: "projects" } }) {
         edges {
           node {
             id
@@ -23,18 +20,19 @@ const Projects = () => {
       }
     }
   `)
+  console.log(allFile.edges)
 
   const compareFunction = (img, value, index, array) => {
-    return value.imageName === img
+    return value.node.base === img
   }
   return (
     <div className="flex flex-col min-h-full z-20">
       <ol style={{ listStyle: `none` }} className="max-w-prose">
-        {allFile.edges.map((p, index) => {
-          const i = proyectos.findIndex(value =>
-            compareFunction(p.node.base, value, index)
+        {proyectos.map((project, index) => {
+          const i = allFile.edges.findIndex(value =>
+            compareFunction(project.imageName, value, index)
           )
-          const project = proyectos[i]
+          const p = allFile.edges[i]
           return i !== -1 ? (
             <li key={p.node.id + project.title} className="">
               <article
@@ -43,10 +41,7 @@ const Projects = () => {
                 itemType="http://schema.org/Article"
               >
                 <div className="my-4 row-span-3">
-                  <GatsbyImage
-                    //className="w-12"
-                    image={p.node.childImageSharp.gatsbyImageData}
-                  />
+                  <GatsbyImage image={p.node.childImageSharp.gatsbyImageData} />
                 </div>
 
                 <header className="col-span-2 mt-0 h-12">
