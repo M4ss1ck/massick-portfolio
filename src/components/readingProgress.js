@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useCallback } from "react"
 
 const ReadingProgress = ({ target }) => {
   const [readingProgress, setReadingProgress] = useState(0)
-  const scrollListener = () => {
+  const scrollListener = useCallback(() => {
     if (!target.current) {
       return
     }
@@ -25,7 +25,7 @@ const ReadingProgress = ({ target }) => {
     }
 
     setReadingProgress((windowScrollTop / totalHeight) * 100)
-  }
+  }, [target])
 
   useEffect(() => {
     window.addEventListener("scroll", scrollListener)
