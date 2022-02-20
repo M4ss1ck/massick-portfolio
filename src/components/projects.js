@@ -1,22 +1,52 @@
 import React from "react"
 import { Trans } from "gatsby-plugin-react-i18next"
+import { graphql, useStaticQuery } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import proyectos from "./projectList"
-import ProImg from "./ProjectsImg"
 
 const Projects = () => {
+  const { allFile } = useStaticQuery(graphql`
+    {
+      allFile(
+        filter: { sourceInstanceName: { eq: "projects" } }
+        sort: { fields: birthTime, order: DESC }
+      ) {
+        edges {
+          node {
+            id
+            base
+            childImageSharp {
+              gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const compareFunction = (img, value, index, array) => {
+    return value.imageName === img
+  }
   return (
     <div className="flex flex-col min-h-full z-20">
       <ol style={{ listStyle: `none` }} className="max-w-prose">
-        {proyectos.map((project, index) => {
-          return (
-            <li key={project.title} className="">
+        {allFile.edges.map((p, index) => {
+          const i = proyectos.findIndex(value =>
+            compareFunction(p.node.base, value, index)
+          )
+          const project = proyectos[i]
+          return i !== -1 ? (
+            <li key={p.node.id + project.title} className="">
               <article
                 className="grid grid-cols-3 grid-rows-3 gap-x-4 my-2"
                 itemScope
                 itemType="http://schema.org/Article"
               >
                 <div className="my-4 row-span-3">
-                  {project.imageName && <ProImg name={project.imageName} />}
+                  <GatsbyImage
+                    //className="w-12"
+                    image={p.node.childImageSharp.gatsbyImageData}
+                  />
                 </div>
 
                 <header className="col-span-2 mt-0 h-12">
@@ -40,7 +70,7 @@ const Projects = () => {
                 </section>
               </article>
             </li>
-          )
+          ) : null
         })}
       </ol>
       {/* <hr className="mt-auto" /> */}
