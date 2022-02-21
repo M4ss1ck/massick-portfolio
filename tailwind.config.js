@@ -20,7 +20,7 @@ module.exports = {
         pantalla: "100vw",
       },
       colors: {
-        primario: "#173955",
+        primario: "#058ED9",
         secundario: "#049e2a",
         terciario: "#a72772",
       },

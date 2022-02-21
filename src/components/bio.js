@@ -54,7 +54,7 @@ const Bio = () => {
         alt="Foto de perfil"
       />
       {author?.name && (
-        <p className="text-center text-secundario">
+        <p className="text-center text-primario dark:text-secundario">
           <strong>{author.name}</strong>
           {` `}
         </p>
@@ -68,7 +68,7 @@ const Bio = () => {
       <span>
         <a
           href={`https://github.com/${social?.twitter || ``}`}
-          className="text-gray-500 hover:text-secundario"
+          className="text-gray-500 hover:text-primario dark:hover:text-secundario"
           target="_blank"
           rel="noreferrer"
         >
@@ -77,7 +77,7 @@ const Bio = () => {
         /{" "}
         <a
           href={`https://twitter.com/${social?.twitter || ``}`}
-          className="text-gray-500 hover:text-secundario"
+          className="text-gray-500 hover:text-primario dark:hover:text-secundario"
           target="_blank"
           rel="noreferrer"
         >
@@ -86,7 +86,7 @@ const Bio = () => {
         /{" "}
         <a
           href={`https://t.me/m4ss1ck`}
-          className="text-gray-500 hover:text-secundario"
+          className="text-gray-500 hover:text-primario dark:hover:text-secundario"
           target="_blank"
           rel="noreferrer"
         >

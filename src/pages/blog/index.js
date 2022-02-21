@@ -27,7 +27,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={t("articles")}>
       <Seo lang={language} title={t("articles")} />
-      <h1 className="text-lg lg:text-2xl font-rammetto uppercase text-secundario mt-4">
+      <h1 className="text-lg lg:text-2xl font-rammetto uppercase text-primario dark:text-secundario mt-4">
         <Trans>articles</Trans>
       </h1>
       <ol style={{ listStyle: `none` }} className="py-4 z-10 max-w-prose">
@@ -50,11 +50,12 @@ const BlogIndex = ({ data, location }) => {
                       }
                       layout="fullWidth"
                       placeholder="tracedSVG"
+                      alt={post.frontmatter.description || ""}
                     />
                   </div>
                 )}
                 <header className="col-span-2 row-span-1 my-auto">
-                  <h2 className="text-lg font-bold text-secundario mt-2">
+                  <h2 className="text-lg font-bold text-primario dark:text-secundario mt-2">
                     <a href={slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </a>

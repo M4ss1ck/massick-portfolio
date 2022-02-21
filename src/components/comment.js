@@ -26,7 +26,7 @@ export default class Comments extends Component {
   render() {
     return (
       <div className="comment-box-wrapper pt-7 prose dark:prose-dark">
-        <h1 className="mb-0 text-secundario text-lg font-merriweather">
+        <h1 className="mb-0 text-primario dark:text-secundario text-lg font-merriweather">
           <Trans>Comments</Trans>
         </h1>
         <hr className="my-0" />

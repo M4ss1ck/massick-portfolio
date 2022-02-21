@@ -18,7 +18,7 @@ const About = ({ data, location }) => {
   return (
     <Layout location={location} title={t("about")}>
       <Seo lang={language} title={t("about")} />
-      <h1 className="text-lg lg:text-2xl font-rammetto uppercase text-secundario mt-4">
+      <h1 className="text-lg lg:text-2xl font-rammetto uppercase text-primario dark:text-secundario mt-4">
         <Trans>who_am_I</Trans>
       </h1>
       <section className="flex flex-col md:flex-row  items-center justify-center px-10 md:px-20 py-6 md:py-4 h-auto ">
@@ -44,7 +44,7 @@ const About = ({ data, location }) => {
           <Trans>cv_link_text</Trans>{" "}
           <Link
             to="/cv"
-            className="text-secundario rounded-lg px-2 hover:bg-secundario hover:text-white"
+            className="text-primario dark:text-secundario rounded-lg px-2 hover:bg-primario dark:hover:bg-secundario hover:text-white dark:hover:text-white"
           >
             <Trans>here</Trans>
           </Link>

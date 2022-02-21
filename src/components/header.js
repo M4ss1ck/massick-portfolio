@@ -49,13 +49,13 @@ function Header() {
                   className="h-10 logoh hidden sm:inline-flex items-center"
                   title={t("home")}
                 >
-                  <Massick1x1 className="rounded-md w-12 h-12" />
+                  <Massick1x1 className="rounded-md w-12 h-12 text-primario dark:text-secundario" />
                   {/* <span className="inline-flex items-center ml-2 px-3 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600">
                     {t("home")}
                   </span> */}
                 </div>
                 <div className="max-h-full inline-flex sm:hidden items-center">
-                  <Massick1x1 className="h-10 w-10" />
+                  <Massick1x1 className="h-10 w-10 text-primario dark:text-secundario" />
                 </div>
               </Link>
             </div>
@@ -66,7 +66,7 @@ function Header() {
               <button
                 onClick={() => toggleMobileNavOpen()}
                 type="button"
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+                className="inline-flex items-center justify-center p-2 rounded-md text-primario dark:text-secundario  focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
                 id="main-menu"
                 aria-label="Main menu"
                 aria-haspopup="true"
@@ -98,7 +98,7 @@ function Header() {
                 className={cx(
                   "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out font-montserrat",
                   {
-                    "border-secundario text-gray-900 dark:text-secundario focus:border-secundario":
+                    "border-primario dark:border-secundario text-primario dark:text-secundario focus:border-secundario":
                       (location.pathname.startsWith(`${link.url}`) &&
                         location.pathname.endsWith(`${link.url}`)) ||
                       (location.pathname.startsWith(`/en${link.url}`) &&
@@ -137,7 +137,7 @@ function Header() {
               <div className="px-2 pt-8 flex items-center justify-between">
                 <div className="w-custom">
                   <Link to="/">
-                    <Massick1x1 className="h-10 w-10" />
+                    <Massick1x1 className="h-10 w-10 text-primario dark:text-secundario" />
                   </Link>
                 </div>
                 <div className="-mr-2">
@@ -167,11 +167,12 @@ function Header() {
                 {navLinks.map(link => {
                   return (
                     <Link
+                      key={link.i18n_id}
                       to={`${link.url}`}
                       className={cx(
                         "block pl-3 pr-4 py-2 border-l-4 font-medium focus:outline-none transition duration-150 ease-in-out",
                         {
-                          "border-secundario text-gray-900 dark:text-secundario focus:border-secundario":
+                          "border-primario dark:border-secundario text-primario dark:text-secundario focus:border-secundario":
                             (location.pathname.startsWith(`${link.url}`) &&
                               location.pathname.endsWith(`${link.url}`)) ||
                             (location.pathname.startsWith(`/en${link.url}`) &&

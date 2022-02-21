@@ -20,8 +20,6 @@ const Projects = () => {
       }
     }
   `)
-  console.log(allFile.edges)
-
   const compareFunction = (img, value, index, array) => {
     return value.node.base === img
   }
@@ -41,11 +39,14 @@ const Projects = () => {
                 itemType="http://schema.org/Article"
               >
                 <div className="my-4 row-span-3">
-                  <GatsbyImage image={p.node.childImageSharp.gatsbyImageData} />
+                  <GatsbyImage
+                    image={p.node.childImageSharp.gatsbyImageData}
+                    alt={project.title}
+                  />
                 </div>
 
                 <header className="col-span-2 mt-0 h-12">
-                  <h2 className="text-lg md:text-xl md:font-bold text-secundario mt-2">
+                  <h2 className="text-lg md:text-xl font-bold text-primario dark:text-secundario mt-2">
                     <a
                       href={project.url}
                       itemProp="url"

@@ -13,7 +13,7 @@ const NotFoundPage = ({ data, location }) => {
       <Seo title="Error 404" />
       <article className="flex flex-col h-full items-center justify-evenly min-h-[50vh]">
         <Canvas />
-        <h1 className="text-4xl font-semibold text-secundario">
+        <h1 className="text-4xl font-semibold text-primario dark:text-secundario">
           <Trans>404: Not Found</Trans>
         </h1>
         <p>

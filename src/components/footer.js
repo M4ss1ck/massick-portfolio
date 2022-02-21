@@ -26,9 +26,9 @@ const socialLinks = [
 
 function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 dark:from-black dark:via-gray-900 dark:to-black dark:text-white">
+    <footer className="bg-primario dark:bg-gradient-to-r dark:from-black dark:via-gray-900 dark:to-black dark:text-white">
       <div className="flex flex-col md:flex-row items-center md:justify-between py-6 max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-5xl space-y-6 md:space-y-0">
-        <p className="text-secundario">
+        <p className="text-gray-600 dark:text-secundario">
           <Trans>Construido con</Trans>{" "}
           <a href="https://www.gatsbyjs.com" className="hover:text-white">
             Gatsby
@@ -41,7 +41,7 @@ function Footer() {
               <a
                 href={href}
                 target="_blank"
-                className="block transition duration-150 text-secundario hover:text-white p-1 text-sm "
+                className="block transition duration-150 text-gray-600 dark:text-secundario hover:text-white dark:hover:text-white p-1 text-sm "
                 rel="noopener noreferrer"
                 title={title}
               >
@@ -53,7 +53,7 @@ function Footer() {
             <a
               href="/rss.xml"
               target="_blank"
-              className="block transition duration-150 text-secundario hover:text-white p-1 text-sm "
+              className="block transition duration-150 text-gray-600 dark:text-secundario hover:text-white dark:hover:text-white p-1 text-sm "
               rel="noopener noreferrer"
               title="RSS feed"
             >

@@ -31,14 +31,14 @@ const BlogIndex = ({ data, location }) => {
       <Seo lang={language} title={siteTitle} />
 
       <Projects />
-      <h2 className="mt-2 text-lg lg:text-2xl font-montserrat uppercase text-secundario  animate-bounce z-20 dark:z-20">
+      <h2 className="mt-2 text-lg lg:text-2xl font-montserrat uppercase text-primario dark:text-secundario  animate-bounce z-20 dark:z-20">
         <Trans>articles</Trans>
       </h2>
 
       {/* scroll-down button */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6 my-4 animate-bounce text-secundario"
+        className="h-6 w-6 my-4 animate-bounce text-primario dark:text-secundario"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -70,11 +70,12 @@ const BlogIndex = ({ data, location }) => {
                       }
                       layout="fullWidth"
                       placeholder="tracedSVG"
+                      alt={post.frontmatter.description || ""}
                     />
                   </div>
                 )}
                 <header className="col-span-2 row-span-1 my-auto">
-                  <h2 className="text-lg font-bold text-secundario mt-2">
+                  <h2 className="text-lg font-bold text-primario dark:text-secundario mt-2">
                     <a href={slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </a>
