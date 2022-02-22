@@ -10,8 +10,8 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Seo = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
+const Seo = ({ description, lang, meta, title, featuredImage }) => {
+  const { site, defaultFeaturedImage } = useStaticQuery(
     graphql`
       query {
         site {
@@ -23,12 +23,21 @@ const Seo = ({ description, lang, meta, title }) => {
             }
           }
         }
+        defaultFeaturedImage: file(
+          absolutePath: { glob: "**/src/images/og/featured-image.png" }
+        ) {
+          childImageSharp {
+            gatsbyImageData(layout: FIXED, width: 1200)
+          }
+        }
       }
     `
   )
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  const ogImage =
+    featuredImage ?? defaultFeaturedImage?.childImageSharp?.gatsbyImageData
 
   return (
     <Helmet
@@ -58,12 +67,28 @@ const Seo = ({ description, lang, meta, title }) => {
           content: metaDescription,
         },
         {
+          name: "og:image",
+          content: ogImage.images.fallback.src,
+        },
+        {
+          name: "og:image:width",
+          content: `${ogImage.width}`,
+        },
+        {
+          name: "og:image:height",
+          content: `${ogImage.height}`,
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+        {
+          name: "twitter:image",
+          content: ogImage.images.fallback.src,
         },
         {
           name: `twitter:creator`,
