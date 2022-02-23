@@ -10,14 +10,19 @@ import Projects from "../components/projects"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Inicio`
+  const siteTitle = data.site.siteMetadata?.title || `home`
+  const description = data.site.siteMetadata?.description || `home`
   const posts = data.allMarkdownRemark.nodes
   const { t } = useTranslation()
   const { language } = useI18next()
   if (posts.length === 0) {
     return (
       <Layout location={location} title={t("titulo_portada")}>
-        <Seo lang={language} title={t("no_posts")} />
+        <Seo
+          lang={language}
+          title={t("no_posts")}
+          description={t(description)}
+        />
         <Bio />
         <p>
           <Trans>nada</Trans>
@@ -28,7 +33,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={t("titulo_portada")}>
-      <Seo lang={language} title={siteTitle} />
+      <Seo lang={language} title={t(siteTitle)} />
 
       <Projects />
       <h2 className="mt-2 text-lg lg:text-2xl font-montserrat uppercase text-primario dark:text-secundario  animate-bounce z-20 dark:z-20">
@@ -117,6 +122,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
     allMarkdownRemark(

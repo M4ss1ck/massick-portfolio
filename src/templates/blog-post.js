@@ -11,12 +11,14 @@ const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Blog`
   const { previous, next } = data
-
   return (
     <Layout location={location} title={siteTitle} barra>
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        featuredImage={
+          post.frontmatter.featuredImage.childImageSharp.gatsbyImageData
+        }
       />
       <article
         className="blog-post"
@@ -124,6 +126,11 @@ export const pageQuery = graphql`
         date(formatString: "DD.MM.YYYY")
         description
         locale
+        featuredImage {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
       timeToRead
     }

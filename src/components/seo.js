@@ -9,6 +9,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 
 const Seo = ({ description, lang, meta, title, featuredImage }) => {
   const { site, defaultFeaturedImage } = useStaticQuery(
@@ -33,11 +34,11 @@ const Seo = ({ description, lang, meta, title, featuredImage }) => {
       }
     `
   )
-
+  const { t } = useTranslation()
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
   const ogImage =
-    featuredImage ?? defaultFeaturedImage?.childImageSharp?.gatsbyImageData
+    featuredImage || defaultFeaturedImage?.childImageSharp?.gatsbyImageData
 
   return (
     <Helmet
@@ -47,16 +48,16 @@ const Seo = ({ description, lang, meta, title, featuredImage }) => {
       title={title}
       titleTemplate={
         defaultTitle
-          ? defaultTitle === title
-            ? `${defaultTitle}`
-            : `%s | ${defaultTitle}`
+          ? t(defaultTitle) === title
+            ? `${t(defaultTitle)}`
+            : `%s | ${t(defaultTitle)}`
           : null
       }
       //titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: t(metaDescription),
         },
         {
           property: `og:title`,
@@ -64,7 +65,7 @@ const Seo = ({ description, lang, meta, title, featuredImage }) => {
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: t(metaDescription),
         },
         {
           name: "og:image",
@@ -96,11 +97,11 @@ const Seo = ({ description, lang, meta, title, featuredImage }) => {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: t(title),
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: t(metaDescription),
         },
       ].concat(meta)}
     />
