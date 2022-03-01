@@ -11,6 +11,9 @@ module.exports = {
       twitter: `M4ss1ck`,
     },
   },
+  flags: {
+    LMDB_STORE: true,
+  },
   plugins: [
     `gatsby-plugin-pnpm`,
     `gatsby-plugin-image`,
