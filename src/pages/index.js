@@ -1,6 +1,11 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { Trans, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
+import {
+  Trans,
+  useTranslation,
+  useI18next,
+  Link,
+} from "gatsby-plugin-react-i18next"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -35,7 +40,12 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={t("titulo_portada")}>
       <Seo lang={language} title={t(siteTitle)} />
 
-      <Projects />
+      <Projects limit={5} />
+      <span className="font-montserrat text-primario dark:text-secundario mb-8 px-4 rounded-lg outline-1 outline outline-transparent hover:outline-primario dark:hover:outline-secundario">
+        <Link to="/portfolio">
+          <Trans>Ver más</Trans>
+        </Link>
+      </span>
       <h2 className="mt-2 text-lg lg:text-2xl font-montserrat uppercase text-primario dark:text-secundario  animate-bounce z-20 dark:z-20">
         <Trans>articles</Trans>
       </h2>

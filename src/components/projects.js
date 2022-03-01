@@ -2,9 +2,11 @@ import React from "react"
 import { Trans } from "gatsby-plugin-react-i18next"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import proyectos from "./projectList"
+import project_list from "./projectList"
 
-const Projects = () => {
+const Projects = ({ limit }) => {
+  const proyectos =
+    limit > project_list.length ? project_list : project_list.slice(0, limit)
   const { allFile } = useStaticQuery(graphql`
     {
       allFile(filter: { sourceInstanceName: { eq: "projects" } }) {
