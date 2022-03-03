@@ -1,4 +1,4 @@
-/**
+/*
  * SEO component that queries for data with
  *  Gatsby's useStaticQuery React hook
  *
@@ -18,6 +18,7 @@ const Seo = ({ description, lang, meta, title, featuredImage }) => {
         site {
           siteMetadata {
             title
+            siteUrl
             description
             social {
               twitter
@@ -39,7 +40,7 @@ const Seo = ({ description, lang, meta, title, featuredImage }) => {
   const defaultTitle = site.siteMetadata?.title
   const ogImage =
     featuredImage || defaultFeaturedImage?.childImageSharp?.gatsbyImageData
-
+  const url = site.siteMetadata.siteUrl.replace(/\/$/, "")
   return (
     <Helmet
       htmlAttributes={{
@@ -69,7 +70,7 @@ const Seo = ({ description, lang, meta, title, featuredImage }) => {
         },
         {
           name: "og:image",
-          content: ogImage.images.fallback.src,
+          content: url + ogImage.images.fallback.src,
         },
         {
           name: "og:image:width",
@@ -89,7 +90,7 @@ const Seo = ({ description, lang, meta, title, featuredImage }) => {
         },
         {
           name: "twitter:image",
-          content: ogImage.images.fallback.src,
+          content: url + ogImage.images.fallback.src,
         },
         {
           name: `twitter:creator`,
