@@ -4,6 +4,8 @@ import GitHubSVG from "../svg/github.svg"
 //import WhatsAppSVG from "../svg/whatsapp.svg";
 import TelegramSVG from "../svg/telegram.svg"
 import SoundcloudSVG from "../svg/soundcloud.svg"
+import TwitterSVG from "../svg/twitter.svg"
+import ShowwcaseSVG from "../svg/showwcase.svg"
 
 const socialLinks = [
   {
@@ -12,15 +14,24 @@ const socialLinks = [
     title: "Telegram",
   },
   {
-    Component: SoundcloudSVG,
-    href: "http://soundcloud.com/m4ss1ck",
-    title: "SoundCloud",
-  },
-
-  {
     Component: GitHubSVG,
     href: "https://github.com/M4ss1ck",
     title: "GitHub",
+  },
+  {
+    Component: ShowwcaseSVG,
+    href: "https://www.showwcase.com/m4ss1ck",
+    title: "Showwcase",
+  },
+  {
+    Component: TwitterSVG,
+    href: "https://twitter.com/m4ss1ck",
+    title: "Twitter",
+  },
+  {
+    Component: SoundcloudSVG,
+    href: "http://soundcloud.com/m4ss1ck",
+    title: "SoundCloud",
   },
 ]
 
