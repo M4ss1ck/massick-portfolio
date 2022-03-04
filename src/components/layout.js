@@ -22,7 +22,7 @@ const Layout = ({ location, title, children, barra }) => {
 
   return (
     <div
-      className="global-wrapper w-full text-primario dark:text-gray-400 dark:bg-black"
+      className="global-wrapper w-full text-primario dark:text-gray-400 dark:bg-black "
       data-is-root-path={isRootPath}
     >
       <header
