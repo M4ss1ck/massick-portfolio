@@ -13,6 +13,13 @@ const proyectos = [
     imageName: "cv.png",
   },
   {
+    url: "https://github.com/M4ss1ck/longPollRobot",
+    title: "Long Poll Robot",
+    description:
+      "Envía encuestas con más de 10 opciones y serán divididas equitativamente usando el comando /poll.",
+    imageName: "pollbot.png",
+  },
+  {
     url: "https://github.com/M4ss1ck/tg-telegraf-bot",
     title: "WastingBot (remix)",
     description: "Telegram bot using nodejs and Telegraf.js",
