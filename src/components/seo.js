@@ -43,9 +43,9 @@ const Seo = ({ description, lang, meta, title, featuredImage }) => {
   const url = site.siteMetadata.siteUrl.replace(/\/$/, "")
   return (
     <Helmet
-      bodyAttributes={{
-        class: "scrollbar-thin scrollbar-thumb-slate-800",
-      }}
+      // bodyAttributes={{
+      //   class: "scrollbar-thin scrollbar-thumb-slate-800",
+      // }}
       htmlAttributes={{
         lang,
       }}
