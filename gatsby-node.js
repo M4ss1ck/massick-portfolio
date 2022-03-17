@@ -37,7 +37,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (result.errors) {
     reporter.panicOnBuild(
-      `Hubo un error cargando los posts de blog.`,
+      `Hubo un error cargando las publicaciones del blog.`,
       result.errors
     )
     return
@@ -68,7 +68,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
       const newSlug = post.fields.slug
 
-      //console.log(newSlug, "\n esto es en createPages")
       createPage({
         path: newSlug,
         component: blogPost,

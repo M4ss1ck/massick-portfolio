@@ -15,7 +15,7 @@ const BlogIndex = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={t("articles")}>
-        <Seo lang={language} title={t("no_posts")} />
+        <Seo lang={language} title={t("no_posts")} description={t("nada")} />
         <Bio />
         <p>
           <Trans>nada</Trans>
