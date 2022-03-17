@@ -74,7 +74,7 @@ const BlogPostTemplate = ({ data, location }) => {
             <header className="text-center py-4">
               <h1
                 itemProp="headline"
-                className="text-4xl font-semibold text-primario dark:text-secundario"
+                className="text-4xl font-extrabold text-primario dark:text-secundario"
               >
                 {post.frontmatter.title}
               </h1>
