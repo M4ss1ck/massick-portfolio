@@ -85,7 +85,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
-    //const newValue = value.replace(/\/(.+)\/(.+)\//, `\/$2\/$1\/`)
     const regex = new RegExp(`\/(.+)\/(.+)\/`)
     // redirecting /es to /
     const newValue = regex.test(value)
@@ -93,7 +92,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           .replace(/\/(.+)\/(.+)\//, `\/$2\/blog\/$1\/`)
           .replace(/\/es\//, `/`)
       : value.replace(/\/(.+)\//, `\/blog\/$1\/`).replace(/\/es\//, `/`)
-    //console.log(newValue, "\n esto es en onCreateNode")
     createNodeField({
       name: `slug`,
       node,
