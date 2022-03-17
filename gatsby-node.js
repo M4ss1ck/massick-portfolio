@@ -1,8 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-// TODO: prepend /blog/ to all blog posts
-
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
