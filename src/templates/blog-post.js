@@ -32,17 +32,17 @@ const BlogPostTemplate = ({ data, location }) => {
           <aside className="lg:sticky top-20  px-4">
             <Bio />
             <nav className="blog-post-nav">
-              <ul className="flex flex-row lg:flex-col flex-wrap justify-between list-none p-2 last:pb-4">
+              <ul className="flex flex-row lg:flex-col flex-wrap justify-between list-none p-2 last:pb-4 text-gray-600 dark:text-gray-400">
                 <li>
                   {previous && (
                     <>
-                      <p className="pt-4 uppercase font-light">
+                      <p className="pt-4 uppercase font-light text-primario dark:text-secundario">
                         <Trans>Anterior</Trans>
                       </p>
                       <a
                         href={previous.fields.slug}
                         rel="prev"
-                        className="hover:text-secundario"
+                        className="hover:text-primario dark:hover:text-secundario"
                       >
                         ← {previous.frontmatter.title}
                       </a>
@@ -52,13 +52,13 @@ const BlogPostTemplate = ({ data, location }) => {
                 <li>
                   {next && (
                     <>
-                      <p className="pt-4 uppercase font-light">
+                      <p className="pt-4 uppercase font-light text-primario dark:text-secundario">
                         <Trans>Siguiente</Trans>
                       </p>
                       <a
                         href={next.fields.slug}
                         rel="next"
-                        className="hover:text-secundario"
+                        className="hover:text-primario dark:hover:text-secundario"
                       >
                         {next.frontmatter.title} →
                       </a>
@@ -70,7 +70,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </aside>
 
           {/* Main article */}
-          <div className="col-span-full lg:col-span-3 lg:row-span-4 prose dark:prose-dark">
+          <div className="col-span-full lg:col-span-3 lg:row-span-4 prose prose-headings:text-primario dark:prose-dark">
             <header className="text-center py-4">
               <h1
                 itemProp="headline"
@@ -78,7 +78,7 @@ const BlogPostTemplate = ({ data, location }) => {
               >
                 {post.frontmatter.title}
               </h1>
-              <p className="pt-4">{post.frontmatter.date}</p>
+              <p className="pt-2">{post.frontmatter.date}</p>
               <p>{post.timeToRead} min</p>
             </header>
             <section

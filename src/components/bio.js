@@ -60,7 +60,7 @@ const Bio = () => {
         </p>
       )}
       {author?.summary && (
-        <p className="text-center">
+        <p className="text-center text-primario dark:text-secundario">
           {<Trans>summary</Trans> || author?.summary || null}
           {` `}
         </p>
@@ -68,7 +68,7 @@ const Bio = () => {
       <span>
         <a
           href={`https://github.com/${social?.twitter || ``}`}
-          className="text-gray-500 hover:text-primario dark:hover:text-secundario"
+          className="text-gray-600 dark:text-gray-400 hover:text-primario dark:hover:text-secundario"
           target="_blank"
           rel="noreferrer"
         >
@@ -77,7 +77,7 @@ const Bio = () => {
         /{" "}
         <a
           href={`https://twitter.com/${social?.twitter || ``}`}
-          className="text-gray-500 hover:text-primario dark:hover:text-secundario"
+          className="text-gray-600 dark:text-gray-400 hover:text-primario dark:hover:text-secundario"
           target="_blank"
           rel="noreferrer"
         >
@@ -86,7 +86,7 @@ const Bio = () => {
         /{" "}
         <a
           href={`https://t.me/m4ss1ck`}
-          className="text-gray-500 hover:text-primario dark:hover:text-secundario"
+          className="text-gray-600 dark:text-gray-400 hover:text-primario dark:hover:text-secundario"
           target="_blank"
           rel="noreferrer"
         >
