@@ -115,9 +115,36 @@ const CV = ({ data }) => {
                   Netlify.
                 </p>
                 <p>
-                  Avaible at{" "}
+                  Available at{" "}
                   <a href="https://massick.is-a.dev" className="text-blue-700">
                     massick.is-a.dev
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col md:grid md:grid-cols-6 py-2">
+              <p className="md:w-24">2022-02</p>
+              <div className="col-span-5">
+                <h2 className="font-bold text-lg">CV maker</h2>
+                <small>
+                  <a
+                    href="https://github.com/M4ss1ck/gatsby-cv-maker"
+                    className="font-thin text-blue-700"
+                  >
+                    https://github.com/M4ss1ck/gatsby-cv-maker
+                  </a>
+                </small>
+                <p>
+                  Typescript + GatsbyJS + TailwindCSS web app for creating
+                  professional CVs.
+                </p>
+                <p>
+                  Demo at{" "}
+                  <a
+                    href="https://cool-cv-maker.netlify.app/"
+                    className="text-blue-700"
+                  >
+                    cool-cv-maker.netlify.app
                   </a>
                 </p>
               </div>
