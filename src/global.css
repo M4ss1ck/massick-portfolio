@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.autolinks {
+    @apply hidden hover:inline-flex px-2 text-primario dark:text-secundario
+}
