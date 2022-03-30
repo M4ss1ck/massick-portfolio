@@ -18,6 +18,7 @@ const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `home`
   const description = data.site.siteMetadata?.description || `home`
   const posts = data.allMarkdownRemark.nodes
+
   const { t } = useTranslation()
   const { language } = useI18next()
   if (posts.length === 0) {
@@ -110,6 +111,11 @@ const BlogIndex = ({ data, location }) => {
             </li>
           )
         })}
+        <span className="font-montserrat text-primario dark:text-secundario text-center flex justify-center mb-8 px-4 rounded-lg outline-1 outline outline-transparent hover:outline-primario dark:hover:outline-secundario">
+          <Link to="/blog">
+            <Trans>Ver más</Trans>
+          </Link>
+        </span>
       </ol>
       <Bio />
     </Layout>
@@ -140,6 +146,7 @@ export const pageQuery = graphql`
       filter: {
         frontmatter: { locale: { eq: $language }, draft: { eq: false } }
       }
+      limit: 5
     ) {
       nodes {
         excerpt
