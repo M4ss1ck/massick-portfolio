@@ -2,6 +2,7 @@
 title: Creating a Telegram bot using node.js (part II). Deploying in Railway
 date: "2022-01-10"
 description: "Deploy a telegram bot quickly and easily using railway.app"
+categories: "telegram, github, bot, telebot, railway"
 locale: en
 featuredImage: login.png
 ---

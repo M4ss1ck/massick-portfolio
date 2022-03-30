@@ -2,6 +2,7 @@
 title: Crear LongPollRobot paso a paso
 date: "2022-03-18"
 description: "Cómo crear un sencillo bot de Telegram (@longPollRobot) desde 0 usando telegraf.js"
+categories: "telegram, node.js, javascript, bot, telegraf"
 locale: es
 featuredImage: pollbot.png
 ---

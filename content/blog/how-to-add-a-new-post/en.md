@@ -2,6 +2,7 @@
 title: How to add a new post in my portfolio
 date: "2022-03-17"
 description: "How do I add new posts in my portfolio using markdown and configure GatsbyJS properly"
+categories: "portfolio, markdown, GatsbyJS"
 locale: en
 featuredImage: newPost.png
 ---

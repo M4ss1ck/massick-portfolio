@@ -2,6 +2,7 @@
 title: Cómo añadir una nueva publicación en mi portafolio
 date: "2022-03-17"
 description: "Cómo añado nuevas publicaciones en mi portafolio usando markdown y la configuración necesaria en GatsbyJS"
+categories: "portfolio, markdown, GatsbyJS"
 locale: es
 featuredImage: newPost.png
 ---

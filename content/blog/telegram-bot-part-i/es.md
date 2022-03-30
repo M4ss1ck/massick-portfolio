@@ -2,6 +2,7 @@
 title: Crear un bot de Telegram usando node.js (parte I)
 date: "2021-12-26"
 description: "Cómo crear un bot de telegram de forma rápida y sencilla usando javascript."
+categories: "telegram, node.js, javascript, bot, telebot"
 locale: es
 featuredImage: mybot.webp
 ---

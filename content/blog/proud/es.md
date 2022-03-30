@@ -2,6 +2,7 @@
 title: Nuevo tema "Proud"
 date: "2021-12-25"
 description: "Mi último tema de DnB"
+categories: "music, DnB, SoundCloud, Ableton"
 locale: es
 featuredImage: proud.webp
 ---

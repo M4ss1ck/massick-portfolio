@@ -2,6 +2,7 @@
 title: New track "Proud"
 date: "2021-12-25"
 description: "My last DnB track"
+categories: "music, DnB, SoundCloud, Ableton"
 locale: en
 featuredImage: proud.webp
 ---
