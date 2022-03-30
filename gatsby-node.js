@@ -2,6 +2,8 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
+  //createBlogPosts({ graphql, actions, reporter })
+  //createCategoryPages({ graphql, actions })
   const { createPage } = actions
 
   // Define a template for blog post
@@ -26,6 +28,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
             frontmatter {
               locale
+              categories
             }
           }
         }
@@ -76,6 +79,25 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           language,
         },
       })
+    })
+  }
+
+  const allCategories = new Set(
+    posts
+      .filter(node => !!node.frontmatter.categories)
+      .map(node => node.frontmatter.categories)
+      .map(categories => categories.split(","))
+      .flat()
+      .map(category => category.trim().toLowerCase())
+  )
+
+  allCategories.add("uncategorized")
+
+  for (const category of allCategories) {
+    await actions.createPage({
+      path: `/categories/${category}`,
+      component: require.resolve("./src/templates/category.js"),
+      context: { category, categoryRegex: `/${category}/gi` },
     })
   }
 }
