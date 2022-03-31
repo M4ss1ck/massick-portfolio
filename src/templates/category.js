@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Trans, Link } from "gatsby-plugin-react-i18next"
+import { Trans, Link, useTranslation } from "gatsby-plugin-react-i18next"
 import Bio from "../components/bio"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
@@ -10,9 +10,9 @@ import Comment from "../components/comment"
 
 const CategoryTemplate = ({ data, location, pageContext: { category } }) => {
   const posts = data.allMarkdownRemark
-  const siteTitle = `Category`
-  const description = `Blogposts with category ${category}`
-
+  const { t } = useTranslation()
+  const siteTitle = `${t("Category")}: "${category}"`
+  const description = `${t("Blogposts with category")} "${category}"`
   return (
     <Layout location={location} title={siteTitle} barra>
       <Seo title={siteTitle} description={description} />
