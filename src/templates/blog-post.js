@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Trans } from "gatsby-plugin-react-i18next"
+import { Trans, Link } from "gatsby-plugin-react-i18next"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -9,6 +9,7 @@ import Comment from "../components/comment"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
+  const categories = post.frontmatter.categories.split(",")
   const siteTitle = data.site.siteMetadata?.title || `Blog`
   const { previous, next } = data
   return (
@@ -78,6 +79,25 @@ const BlogPostTemplate = ({ data, location }) => {
               >
                 {post.frontmatter.title}
               </h1>
+              <ul className="flex flex-row flex-wrap items-center justify-center list-none text-sm">
+                <Link
+                  className="text-primario dark:text-secundario hover:text-black dark:hover:text-white no-underline"
+                  to="/categories"
+                  title="See all"
+                >
+                  <Trans>Categories</Trans>:{" "}
+                </Link>
+                {categories.map(category => (
+                  <li key={category}>
+                    <Link
+                      to={`/categories/${category.trim().toLowerCase()}`}
+                      className="no-underline rounded-lg outline outline-2 outline-primario dark:outline-secundario px-2 mx-2 text-primario dark:text-secundario hover:text-black dark:hover:text-white hover:outline-black dark:hover:outline-white"
+                    >
+                      {category.trim()}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
               <p className="pt-2">{post.frontmatter.date}</p>
               <p>{post.timeToRead} min</p>
             </header>
@@ -126,6 +146,7 @@ export const pageQuery = graphql`
         date(formatString: "DD.MM.YYYY")
         description
         locale
+        categories
         featuredImage {
           childImageSharp {
             gatsbyImageData
