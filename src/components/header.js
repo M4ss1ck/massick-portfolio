@@ -44,7 +44,7 @@ function Header() {
         <div className="flex items-center flex-grow flex-shrink-0 h-full">
           <div className="flex items-center justify-between w-full">
             <div className="h-full justify-center align-middle">
-              <Link to="/" aria-label="Wasting Time Blog">
+              <Link to="/" aria-label={t("home")}>
                 <div
                   className="h-10 logoh hidden sm:inline-flex items-center"
                   title={t("home")}

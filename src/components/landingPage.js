@@ -1,7 +1,7 @@
 import React from "react"
 import DarkToggle from "../lib/darkToggle"
 import Canvas from "../lib/canvas"
-import { Link, Trans } from "gatsby-plugin-react-i18next"
+import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next"
 
 import Language from "./language"
 import Hacker from "../svg/hacker.svg"
@@ -9,6 +9,7 @@ import Massick2x3 from "../svg/massick-2x3.svg"
 import Massick1x1 from "../svg/massick-1x1.svg"
 
 const LandingPage = ({ title }) => {
+  const { t } = useTranslation()
   const letrasTitulo = [...title]
   return (
     <>
@@ -16,6 +17,7 @@ const LandingPage = ({ title }) => {
         <Canvas />
         <Link
           to="/"
+          aria-label={t("home")}
           className="absolute hidden md:block top-8 right-12 shadow-md dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario z-20 dark:z-20 rounded-md "
         >
           <Massick2x3 className="w-32 h-48 text-primario dark:text-secundario fill-current" />
@@ -44,7 +46,7 @@ const LandingPage = ({ title }) => {
           />
         </svg> */}
         <aside className="flex flex-row py-1 px-4 md:flex-col justify-between items-center absolute w-full md:w-fit left-0 top-0 md:top-[60vh] z-20  md:border-4 border-b-4 border-primario dark:border-secundario md:-rotate-45 hover:rotate-0  rounded-lg md:-translate-x-2 md:hover:translate-x-12 lg:transition md:hover:scale-150 shadow-md dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario bg-slate-200 dark:bg-black">
-          <Link to="/" className="md:hidden">
+          <Link to="/" className="md:hidden" aria-label={t("home")}>
             <Massick1x1 className="rounded-md w-12 h-12 text-primario dark:text-secundario" />
           </Link>
           <DarkToggle />
