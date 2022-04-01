@@ -27,10 +27,10 @@ const BlogPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <div
-          className="grid grid-flow-col lg:grid-flow-row grid-cols-1 lg:grid-cols-4 lg:gap-6 pb-16 lg:pb-20 grid-rows-[auto_1fr] px-4 lg:px-2"
+          className="grid grid-flow-col lg:grid-flow-row grid-cols-1 lg:grid-cols-3 lg:gap-6 pb-16 lg:pb-20 grid-rows-[auto_1fr] px-4 lg:px-2"
           //style={{ gridTemplateRows: "auto 1fr" }}
         >
-          <aside className="lg:sticky top-20  px-4">
+          <aside className="lg:sticky top-20  px-4 col-span-full lg:col-span-1">
             <Bio />
             <nav className="blog-post-nav">
               <ul className="flex flex-row lg:flex-col flex-wrap justify-between list-none p-2 last:pb-4 text-gray-600 dark:text-gray-400">
@@ -71,7 +71,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </aside>
 
           {/* Main article */}
-          <div className="col-span-full lg:col-span-3 lg:row-span-4 prose prose-headings:text-primario dark:prose-dark">
+          <div className="col-span-full lg:col-span-2 lg:row-span-4 prose prose-headings:text-primario dark:prose-dark">
             <header className="text-center py-4">
               <h1
                 itemProp="headline"
