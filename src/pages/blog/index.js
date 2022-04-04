@@ -27,10 +27,10 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={t("articles")}>
       <Seo lang={language} title={t("articles")} />
-      <h1 className="text-lg lg:text-2xl font-rammetto uppercase text-primario dark:text-secundario mt-4">
+      <h1 className="mt-4 text-lg uppercase lg:text-2xl font-rammetto text-primario dark:text-secundario">
         <Trans>articles</Trans>
       </h1>
-      <ol style={{ listStyle: `none` }} className="py-4 z-10 max-w-prose">
+      <ol style={{ listStyle: `none` }} className="z-10 py-4 max-w-prose">
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
           const slug = post.fields.slug
@@ -42,7 +42,7 @@ const BlogIndex = ({ data, location }) => {
                 itemType="http://schema.org/Article"
               >
                 {post.frontmatter.featuredImage && (
-                  <div className="my-4 row-span-2">
+                  <div className="row-span-2 my-4">
                     <GatsbyImage
                       image={
                         post.frontmatter.featuredImage.childImageSharp
@@ -55,7 +55,7 @@ const BlogIndex = ({ data, location }) => {
                   </div>
                 )}
                 <header className="col-span-2 row-span-1 my-auto">
-                  <h2 className="text-lg font-bold text-primario dark:text-secundario mt-2">
+                  <h2 className="mt-2 text-lg font-bold text-primario dark:text-secundario">
                     <a href={slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </a>

@@ -42,9 +42,9 @@ const Bio = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="flex flex-col py-4 items-center justify-center">
+    <div className="flex flex-col items-center justify-center py-4">
       <StaticImage
-        className="rounded-full w-12"
+        className="w-12 rounded-full"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
         src="../images/profile.jpg"
@@ -68,7 +68,7 @@ const Bio = () => {
       <span>
         <a
           href={`https://github.com/${social?.twitter || ``}`}
-          className="text-gray-600 dark:text-gray-400 hover:text-primario dark:hover:text-secundario"
+          className="text-gray-600  dark:text-gray-400 hover:text-primario dark:hover:text-secundario"
           target="_blank"
           rel="noreferrer"
         >

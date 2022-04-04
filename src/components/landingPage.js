@@ -13,19 +13,19 @@ const LandingPage = ({ title }) => {
   const letrasTitulo = [...title]
   return (
     <>
-      <div className="pt-6 pb-2 flex flex-col items-center justify-center h-screen">
+      <div className="flex flex-col items-center justify-center h-screen pt-6 pb-2">
         <Canvas />
         <Link
           to="/"
           aria-label={t("home")}
-          className="absolute hidden md:block top-8 right-12 shadow-md dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario z-20 dark:z-20 rounded-md "
+          className="absolute z-20 hidden rounded-md shadow-md md:block top-8 right-12 dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario dark:z-20 "
         >
-          <Massick2x3 className="w-32 h-48 text-primario dark:text-secundario fill-current" />
+          <Massick2x3 className="w-32 h-48 fill-current text-primario dark:text-secundario" />
         </Link>
         {/*         
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-48 w-48 absolute top-12 left-12 text-primario"
+          className="absolute w-48 h-48 top-12 left-12 text-primario"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -33,7 +33,7 @@ const LandingPage = ({ title }) => {
         </svg> */}
         {/* <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-48 w-48 absolute top-12 left-12 text-secundario"
+          className="absolute w-48 h-48 top-12 left-12 text-secundario"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -47,11 +47,11 @@ const LandingPage = ({ title }) => {
         </svg> */}
         <aside className="flex flex-row py-1 px-4 md:flex-col justify-between items-center absolute w-full md:w-fit left-0 top-0 md:top-[60vh] z-20  md:border-4 border-b-4 border-primario dark:border-secundario md:-rotate-45 hover:rotate-0  rounded-lg md:-translate-x-2 md:hover:translate-x-12 lg:transition md:hover:scale-150 shadow-md dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario bg-slate-200 dark:bg-black">
           <Link to="/" className="md:hidden" aria-label={t("home")}>
-            <Massick1x1 className="rounded-md w-12 h-12 text-primario dark:text-secundario" />
+            <Massick1x1 className="w-12 h-12 rounded-md text-primario dark:text-secundario" />
           </Link>
           <DarkToggle />
           <Language />
-          <h2 className="text-center text-sm lg:text-lg py-8 px-4 font-montserrat">
+          <h2 className="px-4 py-8 text-sm text-center lg:text-lg font-montserrat">
             <Link to="/about" className="text-primario dark:text-secundario">
               <Trans>who_am_I</Trans>
             </Link>
@@ -59,7 +59,7 @@ const LandingPage = ({ title }) => {
         </aside>
         <h1
           aria-label={title}
-          className="absolute text-center text-2xl md:text-5xl lg:text-7xl font-rammetto uppercase flex flex-wrap items-center justify-center  z-10"
+          className="absolute z-10 flex flex-wrap items-center justify-center text-2xl text-center uppercase md:text-5xl lg:text-7xl font-rammetto"
         >
           {letrasTitulo.map((letra, index) => {
             //console.log("printing ", letra, letra === " ")
@@ -80,15 +80,15 @@ const LandingPage = ({ title }) => {
           })}
         </h1>
 
-        <Hacker className="bottom-0 w-full opacity-90 dark:opacity-20 absolute" />
-        <h2 className="absolute bottom-12 text-lg lg:text-2xl font-montserrat uppercase text-primario dark:text-secundario  animate-bounce z-20 dark:z-20">
+        <Hacker className="absolute bottom-0 w-full opacity-90 dark:opacity-20" />
+        <h2 className="absolute z-20 text-lg uppercase bottom-12 lg:text-2xl font-montserrat text-primario dark:text-secundario animate-bounce dark:z-20">
           <Trans>Projects</Trans>
         </h2>
 
         {/* scroll-down button */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute bottom-2 h-6 w-6 my-4 animate-bounce text-primario dark:text-secundario"
+          className="absolute w-6 h-6 my-4 bottom-2 animate-bounce text-primario dark:text-secundario"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

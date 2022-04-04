@@ -44,7 +44,7 @@ const socialLinks = [
 function Footer() {
   return (
     <footer className="bg-primario dark:bg-gradient-to-r dark:from-black dark:via-gray-900 dark:to-black dark:text-white">
-      <div className="flex flex-col md:flex-row items-center md:justify-between py-6 max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-5xl space-y-6 md:space-y-0">
+      <div className="flex flex-col items-center max-w-3xl px-4 py-6 mx-auto space-y-6 md:flex-row md:justify-between sm:px-6 lg:max-w-5xl md:space-y-0">
         <p className="text-white dark:text-secundario">
           <Trans>Construido con</Trans>{" "}
           <a
@@ -61,11 +61,11 @@ function Footer() {
               <a
                 href={href}
                 target="_blank"
-                className="block transition duration-150 text-white dark:text-secundario hover:text-gray-600 dark:hover:text-white p-1 text-sm "
+                className="block p-1 text-sm text-white transition duration-150 dark:text-secundario hover:text-gray-600 dark:hover:text-white "
                 rel="noopener noreferrer"
                 title={title}
               >
-                <Component className="h-6 w-6" />
+                <Component className="w-6 h-6" />
               </a>
             </li>
           ))}
@@ -73,13 +73,13 @@ function Footer() {
             <a
               href="/rss.xml"
               target="_blank"
-              className="block transition duration-150 text-white dark:text-secundario hover:text-gray-600 dark:hover:text-white p-1 text-sm "
+              className="block p-1 text-sm text-white transition duration-150 dark:text-secundario hover:text-gray-600 dark:hover:text-white "
               rel="noopener noreferrer"
               title="RSS feed"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="w-6 h-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

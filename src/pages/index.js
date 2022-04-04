@@ -42,19 +42,19 @@ const BlogIndex = ({ data, location }) => {
       <Seo lang={language} title={t(siteTitle)} />
 
       <Projects limit={5} />
-      <span className="font-montserrat text-primario dark:text-secundario mb-8 px-4 rounded-lg outline-1 outline outline-transparent hover:outline-primario dark:hover:outline-secundario">
+      <span className="px-4 mb-8 rounded-lg font-montserrat text-primario dark:text-secundario outline-1 outline outline-transparent hover:outline-primario dark:hover:outline-secundario">
         <Link to="/portfolio">
           <Trans>Ver más</Trans>
         </Link>
       </span>
-      <h2 className="mt-2 text-lg lg:text-2xl font-montserrat uppercase text-primario dark:text-secundario  animate-bounce z-20 dark:z-20">
+      <h2 className="z-20 mt-2 text-lg uppercase lg:text-2xl font-montserrat text-primario dark:text-secundario animate-bounce dark:z-20">
         <Trans>articles</Trans>
       </h2>
 
       {/* scroll-down button */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6 my-4 animate-bounce text-primario dark:text-secundario"
+        className="w-6 h-6 my-4 animate-bounce text-primario dark:text-secundario"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -78,7 +78,7 @@ const BlogIndex = ({ data, location }) => {
                 itemType="http://schema.org/Article"
               >
                 {post.frontmatter.featuredImage && (
-                  <div className="my-4 row-span-2">
+                  <div className="row-span-2 my-4">
                     <GatsbyImage
                       image={
                         post.frontmatter.featuredImage.childImageSharp
@@ -91,7 +91,7 @@ const BlogIndex = ({ data, location }) => {
                   </div>
                 )}
                 <header className="col-span-2 row-span-1 my-auto">
-                  <h2 className="text-lg font-bold text-primario dark:text-secundario mt-2">
+                  <h2 className="mt-2 text-lg font-bold text-primario dark:text-secundario">
                     <a href={slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </a>
@@ -112,7 +112,7 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
         <li>
-          <span className="font-montserrat text-primario dark:text-secundario text-center flex justify-center mb-8 px-4 rounded-lg outline-1 outline outline-transparent hover:outline-primario dark:hover:outline-secundario">
+          <span className="flex justify-center px-4 mb-8 text-center rounded-lg  font-montserrat text-primario dark:text-secundario outline-1 outline outline-transparent hover:outline-primario dark:hover:outline-secundario">
             <Link to="/blog">
               <Trans>Ver más</Trans>
             </Link>

@@ -20,7 +20,7 @@ const NotFoundPage = ({ data, location }) => {
           <Trans>You just hit a wrong route.</Trans>
         </p>
         <p>
-          <Link to="/" className="uppercase hover:text-secundario py-8">
+          <Link to="/" className="py-8 uppercase hover:text-secundario">
             <Trans>Go to</Trans> <Trans>home</Trans>
           </Link>
         </p>

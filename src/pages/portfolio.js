@@ -14,7 +14,7 @@ const Portfolio = ({ data, location }) => {
   return (
     <Layout location={location} title={t("Projects")}>
       <Seo lang={language} title={t("Projects")} />
-      <h1 className="text-lg lg:text-2xl font-rammetto uppercase text-primario dark:text-secundario mt-4">
+      <h1 className="mt-4 text-lg uppercase lg:text-2xl font-rammetto text-primario dark:text-secundario">
         <Trans>Projects</Trans>
       </h1>
       <Projects />

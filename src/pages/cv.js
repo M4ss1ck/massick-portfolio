@@ -18,8 +18,8 @@ const CV = ({ data }) => {
   return (
     <>
       <Seo lang={language} title={t("CV title")} />
-      <div className="container max-w-screen-lg mx-auto flex flex-row items-center justify-center my-4">
-        <button className="border-2 border-blue-700 text-blue-700 font-bold rounded-lg p-4 hover:text-white hover:bg-blue-700 mr-auto">
+      <div className="container flex flex-row items-center justify-center max-w-screen-lg mx-auto my-4 ">
+        <button className="p-4 mr-auto font-bold text-blue-700 border-2 border-blue-700 rounded-lg hover:text-white hover:bg-blue-700">
           <Link to="/">{t("home")}</Link>
         </button>
         <Pdf
@@ -35,7 +35,7 @@ const CV = ({ data }) => {
           {({ toPdf }) => (
             <button
               onClick={toPdf}
-              className="border-2 border-blue-700 text-blue-700 font-bold rounded-lg p-4 hover:text-white hover:bg-blue-700"
+              className="p-4 font-bold text-blue-700 border-2 border-blue-700 rounded-lg hover:text-white hover:bg-blue-700"
             >
               Generate Pdf
             </button>
@@ -45,16 +45,16 @@ const CV = ({ data }) => {
 
       <div ref={ref}>
         <article
-          className="mx-auto container grid grid-cols-1 sm:grid-cols-4 font-montserrat max-w-screen-lg"
+          className="container grid max-w-screen-lg grid-cols-1 mx-auto sm:grid-cols-4 font-montserrat"
           ref={articleRef}
         >
-          <section className="bg-blue-800 text-white text-center md:text-left">
-            <h1 className="font-extrabold text-2xl md:text-4xl p-2">
+          <section className="text-center text-white bg-blue-800 md:text-left">
+            <h1 className="p-2 text-2xl font-extrabold md:text-4xl">
               Andy Raúl Palmero López
             </h1>
             <p className="px-4">Web developer</p>
-            <h1 className="bg-blue-900 font-bold mt-4 px-2 text-lg">Contact</h1>
-            <h2 className="px-4 font-bold mt-2">Address</h2>
+            <h1 className="px-2 mt-4 text-lg font-bold bg-blue-900">Contact</h1>
+            <h2 className="px-4 mt-2 font-bold">Address</h2>
             <p className="px-4">Ciego de Ávila, Cuba, 65100</p>
             <h2 className="px-4 font-bold">E-mail</h2>
             <p className="px-4">4ndyraul@gmail.com</p>
@@ -70,7 +70,7 @@ const CV = ({ data }) => {
             <a className="px-4" href="https://github.com/M4ss1ck">
               github.com/M4ss1ck
             </a>
-            <h1 className="bg-blue-900 font-bold text-lg px-2 mt-4">Skills</h1>
+            <h1 className="px-2 mt-4 text-lg font-bold bg-blue-900">Skills</h1>
             <ul className="p-4 mt-2">
               <li>HTML</li>
               <li>CSS</li>
@@ -80,7 +80,7 @@ const CV = ({ data }) => {
               <li>GatsbyJS</li>
               <li>NextJS</li>
             </ul>
-            <h1 className="bg-blue-900 font-bold px-2 text-lg">Languages</h1>
+            <h1 className="px-2 text-lg font-bold bg-blue-900">Languages</h1>
             <ul className="p-4">
               <li>Spanish</li>
               <li>English</li>
@@ -95,12 +95,12 @@ const CV = ({ data }) => {
               in this industry.
             </p>
             <hr />
-            <h1 className="py-4 text-blue-800 font-bold text-lg">Projects</h1>
+            <h1 className="py-4 text-lg font-bold text-blue-800">Projects</h1>
             <hr />
-            <div className="flex flex-col md:grid md:grid-cols-6 py-2">
+            <div className="flex flex-col py-2 md:grid md:grid-cols-6">
               <p className="md:w-24">Present</p>
               <div className="col-span-5">
-                <h2 className="font-bold text-lg">My portfolio</h2>
+                <h2 className="text-lg font-bold">My portfolio</h2>
                 <small>
                   <a
                     href="https://github.com/M4ss1ck/massick-portfolio"
@@ -122,10 +122,10 @@ const CV = ({ data }) => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col md:grid md:grid-cols-6 py-2">
+            <div className="flex flex-col py-2 md:grid md:grid-cols-6">
               <p className="md:w-24">2022-02</p>
               <div className="col-span-5">
-                <h2 className="font-bold text-lg">CV maker</h2>
+                <h2 className="text-lg font-bold">CV maker</h2>
                 <small>
                   <a
                     href="https://github.com/M4ss1ck/gatsby-cv-maker"
@@ -149,10 +149,10 @@ const CV = ({ data }) => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col md:grid md:grid-cols-6 py-2">
+            <div className="flex flex-col py-2 md:grid md:grid-cols-6">
               <p className="md:w-24">2022-01</p>
               <div className="col-span-5">
-                <h2 className="font-bold text-lg">CIEC website</h2>
+                <h2 className="text-lg font-bold">CIEC website</h2>
                 <small>
                   <a
                     href="https://github.com/M4ss1ck/ciec-frontend-gatsby"
@@ -167,10 +167,10 @@ const CV = ({ data }) => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col md:grid md:grid-cols-6 py-2">
+            <div className="flex flex-col py-2 md:grid md:grid-cols-6">
               <p className="md:w-24">2021-11</p>
               <div className="col-span-5">
-                <h2 className="font-bold text-lg">Next.js Blog Template</h2>
+                <h2 className="text-lg font-bold">Next.js Blog Template</h2>
                 <small>
                   <a
                     href="https://github.com/M4ss1ck/nextjs-blog-template"
@@ -183,18 +183,18 @@ const CV = ({ data }) => {
               </div>
             </div>
 
-            <h1 className="py-4 text-blue-800 font-bold text-lg">
+            <h1 className="py-4 text-lg font-bold text-blue-800">
               Work History
             </h1>
             <hr />
-            <div className="flex flex-col md:grid md:grid-cols-6 py-2">
+            <div className="flex flex-col py-2 md:grid md:grid-cols-6">
               <p className="md:w-24">2017-9 - Present</p>
               <div className="col-span-5">
-                <h2 className="font-bold text-lg">Science Specialist</h2>
+                <h2 className="text-lg font-bold">Science Specialist</h2>
                 <small className="font-thin">
                   Coastal Ecosystems Research Center (CIEC), Morón, Cuba
                 </small>
-                <ul className="list-disc list-inside text-justify">
+                <ul className="text-justify list-disc list-inside">
                   <li>
                     Conducted document review, organization, and quality control
                     of data acquisition to draw relevant conclusions and direct
@@ -212,12 +212,12 @@ const CV = ({ data }) => {
               </div>
             </div>
             <hr />
-            <h1 className="py-4 text-blue-800 font-bold text-lg">Education</h1>
+            <h1 className="py-4 text-lg font-bold text-blue-800">Education</h1>
             <hr />
             <div className="flex flex-col md:grid md:grid-cols-6">
               <p className="md:w-24">2012-9 - 2017-7</p>
               <div className="col-span-5">
-                <h2 className="font-bold text-lg">
+                <h2 className="text-lg font-bold">
                   Bachelor of Science: Mathematics
                 </h2>
                 <small className="font-thin">

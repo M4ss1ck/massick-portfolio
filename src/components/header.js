@@ -39,40 +39,40 @@ function Header() {
   const toggleMobileNavOpen = () => setMobileNavOpen(open => !open)
 
   return (
-    <div className="w-full pb-0 pt-4 md:pt-2 px-4 z-30 bg-gradient-to-r from-white via-transparent to-white dark:from-black dark:via-gray-900 dark:to-black dark:text-white">
-      <nav className="relative flex items-center flex-wrap justify-center md:h-20 lg:justify-center">
+    <div className="z-30 w-full px-4 pt-4 pb-0 md:pt-2 bg-gradient-to-r from-white via-transparent to-white dark:from-black dark:via-gray-900 dark:to-black dark:text-white">
+      <nav className="relative flex flex-wrap items-center justify-center md:h-20 lg:justify-center">
         <div className="flex items-center flex-grow flex-shrink-0 h-full">
           <div className="flex items-center justify-between w-full">
-            <div className="h-full justify-center align-middle">
+            <div className="justify-center h-full align-middle">
               <Link to="/" aria-label={t("home")}>
                 <div
-                  className="h-10 logoh hidden sm:inline-flex items-center"
+                  className="items-center hidden h-10 logoh sm:inline-flex"
                   title={t("home")}
                 >
-                  <Massick1x1 className="rounded-md w-12 h-12 text-primario dark:text-secundario" />
-                  {/* <span className="inline-flex items-center ml-2 px-3 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600">
+                  <Massick1x1 className="w-12 h-12 rounded-md text-primario dark:text-secundario" />
+                  {/* <span className="inline-flex items-center px-3 pt-1 pb-2 ml-2 text-lg font-medium leading-5 text-gray-500 transition ease-in-out border-b-4 border-transparent focus:outline-none duration-250 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600">
                     {t("home")}
                   </span> */}
                 </div>
-                <div className="max-h-full inline-flex sm:hidden items-center">
-                  <Massick1x1 className="h-10 w-10 text-primario dark:text-secundario" />
+                <div className="inline-flex items-center max-h-full sm:hidden">
+                  <Massick1x1 className="w-10 h-10 text-primario dark:text-secundario" />
                 </div>
               </Link>
             </div>
 
-            <div className="-mr-2 flex items-center md:hidden">
+            <div className="flex items-center -mr-2 md:hidden">
               <DarkToggle />
               <Language />
               <button
                 onClick={() => toggleMobileNavOpen()}
                 type="button"
-                className="inline-flex items-center justify-center p-2 rounded-md text-primario dark:text-secundario  focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+                className="inline-flex items-center justify-center p-2 transition duration-150 ease-in-out rounded-md text-primario dark:text-secundario focus:outline-none focus:bg-gray-100 focus:text-gray-500"
                 id="main-menu"
                 aria-label="Main menu"
                 aria-haspopup="true"
               >
                 <svg
-                  className="h-6 w-6"
+                  className="w-6 h-6"
                   stroke="currentColor"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -89,7 +89,7 @@ function Header() {
           </div>
         </div>
 
-        <div className="hidden md:flex md:ml-10 md:pr-4 space-x-8">
+        <div className="hidden space-x-8 md:flex md:ml-10 md:pr-4">
           {navLinks.map(link => {
             return (
               <Link
@@ -126,29 +126,29 @@ function Header() {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        <div className="absolute top-0 inset-x-0 py-2 -mx-2 transition transform origin-top-right md:hidden z-50 md:z-10 px-4">
+        <div className="absolute inset-x-0 top-0 z-50 px-4 py-2 -mx-2 transition origin-top-right transform md:hidden md:z-10">
           <div className="rounded-lg shadow-md">
             <div
-              className="rounded-lg bg-white dark:bg-black shadow-xs overflow-hidden"
+              className="overflow-hidden bg-white rounded-lg shadow-xs dark:bg-black"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="main-menu"
             >
-              <div className="px-2 pt-8 flex items-center justify-between">
+              <div className="flex items-center justify-between px-2 pt-8">
                 <div className="w-custom">
                   <Link to="/">
-                    <Massick1x1 className="h-10 w-10 text-primario dark:text-secundario" />
+                    <Massick1x1 className="w-10 h-10 text-primario dark:text-secundario" />
                   </Link>
                 </div>
                 <div className="-mr-2">
                   <button
                     onClick={() => toggleMobileNavOpen()}
                     type="button"
-                    className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+                    className="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500"
                     aria-label="Close menu"
                   >
                     <svg
-                      className="h-6 w-6"
+                      className="w-6 h-6"
                       stroke="currentColor"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -163,7 +163,7 @@ function Header() {
                   </button>
                 </div>
               </div>
-              <div className="mt-1 px-2 pt-2 pb-3 space-y-1">
+              <div className="px-2 pt-2 pb-3 mt-1 space-y-1">
                 {navLinks.map(link => {
                   return (
                     <Link

@@ -6,6 +6,7 @@
 <h1 align="center">
   Massick portfolio
 </h1>
+
 <p align="center">
 Based on gatsby Blog starter with many improvements
 </p>

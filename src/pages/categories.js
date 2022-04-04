@@ -26,17 +26,17 @@ const Categories = ({ data, location }) => {
   return (
     <Layout location={location} title={t("Categories")}>
       <Seo lang={language} title={t("Categories")} />
-      <h1 className="text-lg lg:text-2xl font-rammetto uppercase text-primario dark:text-secundario mt-4">
+      <h1 className="mt-4 text-lg uppercase lg:text-2xl font-rammetto text-primario dark:text-secundario">
         <Trans>Categories</Trans>
       </h1>
-      <ul className="flex flex-row flex-wrap my-4 max-w-prose items-center justify-center">
+      <ul className="flex flex-row flex-wrap items-center justify-center my-4 max-w-prose">
         {Array.from(allCategories)
           .sort()
           .map((cat, index) => {
             return (
               <li
                 key={index}
-                className="px-2 m-2 outline outline-1 rounded-lg text-primario dark:text-secundario hover:text-black dark:hover:text-white"
+                className="px-2 m-2 rounded-lg outline outline-1 text-primario dark:text-secundario hover:text-black dark:hover:text-white"
               >
                 <Link to={`/categories/${cat}`}>{cat}</Link>
               </li>

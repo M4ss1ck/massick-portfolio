@@ -26,7 +26,7 @@ const Projects = ({ limit }) => {
     return value.node.base === img
   }
   return (
-    <div className="flex flex-col min-h-full z-20">
+    <div className="z-20 flex flex-col min-h-full">
       <ol style={{ listStyle: `none` }} className="max-w-prose">
         {proyectos.map((project, index) => {
           const i = allFile.edges.findIndex(value =>
@@ -36,19 +36,19 @@ const Projects = ({ limit }) => {
           return i !== -1 ? (
             <li key={p.node.id + project.title} className="">
               <article
-                className="grid grid-cols-3 grid-rows-3 gap-x-4 my-2"
+                className="grid grid-cols-3 grid-rows-3 my-2 gap-x-4"
                 itemScope
                 itemType="http://schema.org/Article"
               >
-                <div className="my-4 row-span-3">
+                <div className="row-span-3 my-4">
                   <GatsbyImage
                     image={p.node.childImageSharp.gatsbyImageData}
                     alt={project.title}
                   />
                 </div>
 
-                <header className="col-span-2 mt-0 h-12">
-                  <h2 className="text-lg md:text-xl font-bold text-primario dark:text-secundario mt-2">
+                <header className="h-12 col-span-2 mt-0">
+                  <h2 className="mt-2 text-lg font-bold md:text-xl text-primario dark:text-secundario">
                     <a
                       href={project.url}
                       itemProp="url"
