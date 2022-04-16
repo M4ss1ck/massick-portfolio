@@ -39,5 +39,7 @@
   "Todas las categorías": "All categories",
   "Blogposts with category": "Blogposts with category",
   "React \"hello world!\" app for Delta Chat": "React \"hello world!\" app for Delta Chat",
-  "A template for creating webxdc apps using react and Tailwind CSS.": "A template for creating webxdc apps using react and Tailwind CSS."
+  "A template for creating webxdc apps using react and Tailwind CSS.": "A template for creating webxdc apps using react and Tailwind CSS.",
+  "Search": "Search",
+  "No matches found": "No matches found"
 }

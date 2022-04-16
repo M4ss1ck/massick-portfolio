@@ -13,6 +13,7 @@
     "@fontsource/rammetto-one": "^4.5.2",
     "@tailwindcss/typography": "^0.5.1",
     "classnames": "^2.3.1",
+    "fuse.js": "^6.5.3",
     "gatsby": "^4.11.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-gatsby-cloud": "^4.11.0",
