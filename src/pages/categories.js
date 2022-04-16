@@ -22,7 +22,6 @@ const Categories = ({ data, location }) => {
       .flat()
       .map(category => category.trim().toLowerCase())
   )
-  console.log(allCategories)
   return (
     <Layout location={location} title={t("Categories")}>
       <Seo lang={language} title={t("Categories")} />
