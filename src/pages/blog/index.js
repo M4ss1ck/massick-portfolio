@@ -35,7 +35,11 @@ const BlogIndex = ({ data, location }) => {
       </h1>
       <Search
         posts={posts}
-        keys={["frontmatter.title", "frontmatter.description"]}
+        keys={[
+          "frontmatter.title",
+          "frontmatter.description",
+          "frontmatter.categories",
+        ]}
       />
 
       <hr className="mt-auto" />
@@ -72,6 +76,7 @@ export const pageQuery = graphql`
           date(formatString: "DD.MM.YY")
           title
           description
+          categories
           featuredImage {
             childImageSharp {
               gatsbyImageData
