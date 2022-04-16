@@ -7,6 +7,13 @@ const proyectos = [
     imageName: "portfolio.png",
   },
   {
+    url: "https://github.com/M4ss1ck/webxdc-react-hello-world",
+    title: 'React "hello world!" app for Delta Chat',
+    description:
+      "A template for creating webxdc apps using react and Tailwind CSS.",
+    imageName: "webxdc-react-template.png",
+  },
+  {
     url: "https://github.com/M4ss1ck/gatsby-cv-maker",
     title: "CV maker",
     description: "Crear un hermoso CV a partir de un formulario.",
