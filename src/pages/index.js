@@ -78,14 +78,14 @@ const BlogIndex = ({ data, location }) => {
                 itemType="http://schema.org/Article"
               >
                 {post.frontmatter.featuredImage && (
-                  <div className="relative flex row-span-2 my-4">
+                  <div className="relative row-span-2 my-4">
                     <GatsbyImage
                       image={
                         post.frontmatter.featuredImage.childImageSharp
                           .gatsbyImageData
                       }
                       alt=""
-                      className="absolute top-0 w-full h-full blur-sm"
+                      className="relative top-0 w-full h-full blur-sm"
                       objectFit="cover"
                     />
                     <GatsbyImage
@@ -94,9 +94,15 @@ const BlogIndex = ({ data, location }) => {
                           .gatsbyImageData
                       }
                       layout="fullWidth"
-                      placeholder="tracedSVG"
                       alt={post.frontmatter.description || ""}
-                      className="w-full my-auto"
+                      // className="absolute left-0 w-full -translate-y-1/2 top-1/2"
+                      style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "0",
+                        transform: "translate(0,-50%)",
+                        width: "100%",
+                      }}
                     />
                   </div>
                 )}

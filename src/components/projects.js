@@ -36,15 +36,15 @@ const Projects = ({ limit }) => {
           return i !== -1 ? (
             <li key={p.node.id + project.title} className="">
               <article
-                className="grid grid-cols-3 grid-rows-3 my-2 gap-x-4"
+                className="grid grid-cols-3 grid-rows-3 my-4 gap-x-4"
                 itemScope
                 itemType="http://schema.org/Article"
               >
-                <div className="relative flex row-span-3 my-4">
+                <div className="relative row-span-3 my-4">
                   <GatsbyImage
                     image={p.node.childImageSharp.gatsbyImageData}
                     alt=""
-                    className="absolute top-0 w-full h-full blur-sm"
+                    className="relative top-0 w-full h-full blur-sm"
                     objectFit="cover"
                   />
 
@@ -52,7 +52,14 @@ const Projects = ({ limit }) => {
                     image={p.node.childImageSharp.gatsbyImageData}
                     alt={project.title}
                     layout="fullWidth"
-                    className="w-full my-auto"
+                    // className="absolute left-0 w-full -translate-y-1/2 top-1/2"
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "0",
+                      transform: "translate(0,-50%)",
+                      width: "100%",
+                    }}
                   />
                 </div>
 
