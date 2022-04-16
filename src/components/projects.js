@@ -36,16 +36,16 @@ const Projects = ({ limit }) => {
           return i !== -1 ? (
             <li key={p.node.id + project.title} className="">
               <article
-                className="grid grid-cols-3 grid-rows-3 my-4 gap-x-4"
+                className="grid grid-cols-3 grid-rows-2 my-4 gap-x-4"
                 itemScope
                 itemType="http://schema.org/Article"
               >
-                <div className="relative row-span-3 my-4">
+                <div className="relative row-span-2 my-4">
                   <GatsbyImage
                     image={p.node.childImageSharp.gatsbyImageData}
                     alt=""
-                    className="relative top-0 w-full h-full blur-sm"
-                    objectFit="cover"
+                    className="relative top-0 w-full h-full blur-sm hue-rotate-30"
+                    objectFit="fill"
                   />
 
                   <GatsbyImage
@@ -59,12 +59,14 @@ const Projects = ({ limit }) => {
                       left: "0",
                       transform: "translate(0,-50%)",
                       width: "100%",
+                      maxHeight: "90%",
                     }}
+                    imgStyle={{ objectPosition: "50% 0%" }}
                   />
                 </div>
 
-                <header className="h-12 col-span-2 mt-0">
-                  <h2 className="mt-2 text-lg font-bold md:text-xl text-primario dark:text-secundario">
+                <header className="h-12 col-span-2">
+                  <h2 className="mt-6 text-lg font-bold md:text-xl text-primario dark:text-secundario">
                     <a
                       href={project.url}
                       itemProp="url"
@@ -77,7 +79,7 @@ const Projects = ({ limit }) => {
                     </a>
                   </h2>
                 </header>
-                <section className="col-span-2 row-span-2">
+                <section className="col-span-2">
                   <p>
                     <Trans>{project.description}</Trans>
                   </p>

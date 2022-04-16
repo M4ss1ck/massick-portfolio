@@ -49,7 +49,7 @@ const BlogIndex = ({ data, location }) => {
                           .gatsbyImageData
                       }
                       alt=""
-                      className="relative top-0 w-full h-full blur-sm"
+                      className="relative top-0 w-full h-full blur-sm hue-rotate-30"
                       objectFit="cover"
                     />
                     <GatsbyImage
@@ -66,7 +66,9 @@ const BlogIndex = ({ data, location }) => {
                         left: "0",
                         transform: "translate(0,-50%)",
                         width: "100%",
+                        maxHeight: "90%",
                       }}
+                      imgStyle={{ objectPosition: "50% 0%" }}
                     />
                   </div>
                 )}
