@@ -42,7 +42,16 @@ const BlogIndex = ({ data, location }) => {
                 itemType="http://schema.org/Article"
               >
                 {post.frontmatter.featuredImage && (
-                  <div className="row-span-2 my-4">
+                  <div className="relative flex row-span-2 my-4">
+                    <GatsbyImage
+                      image={
+                        post.frontmatter.featuredImage.childImageSharp
+                          .gatsbyImageData
+                      }
+                      alt=""
+                      className="absolute top-0 w-full h-full blur-sm"
+                      objectFit="cover"
+                    />
                     <GatsbyImage
                       image={
                         post.frontmatter.featuredImage.childImageSharp
@@ -51,6 +60,7 @@ const BlogIndex = ({ data, location }) => {
                       layout="fullWidth"
                       placeholder="tracedSVG"
                       alt={post.frontmatter.description || ""}
+                      className="w-full my-auto"
                     />
                   </div>
                 )}

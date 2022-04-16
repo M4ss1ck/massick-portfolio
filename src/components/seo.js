@@ -40,7 +40,7 @@ const Seo = ({ description, lang, meta, title, featuredImage }) => {
   const defaultTitle = site.siteMetadata?.title
   const ogImage =
     featuredImage || defaultFeaturedImage?.childImageSharp?.gatsbyImageData
-  const url = site.siteMetadata.siteUrl.replace(/\/$/, "")
+  const url = site.siteMetadata.siteUrl?.replace(/\/$/, "")
   return (
     <Helmet
       // bodyAttributes={{

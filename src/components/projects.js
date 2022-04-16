@@ -40,10 +40,19 @@ const Projects = ({ limit }) => {
                 itemScope
                 itemType="http://schema.org/Article"
               >
-                <div className="row-span-3 my-4">
+                <div className="relative flex row-span-3 my-4">
+                  <GatsbyImage
+                    image={p.node.childImageSharp.gatsbyImageData}
+                    alt=""
+                    className="absolute top-0 w-full h-full blur-sm"
+                    objectFit="cover"
+                  />
+
                   <GatsbyImage
                     image={p.node.childImageSharp.gatsbyImageData}
                     alt={project.title}
+                    layout="fullWidth"
+                    className="w-full my-auto"
                   />
                 </div>
 
