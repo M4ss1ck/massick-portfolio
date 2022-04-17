@@ -17,7 +17,7 @@ const Portfolio = ({ data, location }) => {
       <h1 className="mt-4 text-lg uppercase lg:text-2xl font-rammetto text-primario dark:text-secundario">
         <Trans>Projects</Trans>
       </h1>
-      <Projects />
+      <Projects search={true} />
       <Bio />
     </Layout>
   )
