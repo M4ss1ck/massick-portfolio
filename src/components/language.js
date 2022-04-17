@@ -5,7 +5,7 @@ const Language = () => {
   const { languages, language, originalPath } = useI18next()
   return (
     <>
-      <ul className="languages">
+      <ul className="flex my-2">
         {languages.map(lng => (
           <li
             key={lng}
