@@ -16,6 +16,9 @@ module.exports = {
       merriweather: ["Merriweather, serif"],
     },
     extend: {
+      screens: {
+        xs: "320px",
+      },
       maxWidth: {
         pantalla: "100vw",
       },
