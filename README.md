@@ -19,14 +19,16 @@ Based on gatsby Blog starter with many improvements
 4. Markdown powered (_Read time, reading progress bar..._)
 5. Optimized for Netlify
 6. Optimized for `pnpm`
+7. Categories support
+8. Fuzzy search for projects and articles
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1.  **Create a Gatsby site based on this one**
 
-    Use the Gatsby CLI ([install instructions](https://www.gatsbyjs.com/docs/tutorial/part-0/#gatsby-cli)) to create a new site, specifying the blog starter.
+    Use the Gatsby CLI ([install instructions](https://www.gatsbyjs.com/docs/tutorial/part-0/#gatsby-cli)) to create a new site, specifying this starter.
 
     ```shell
-    # create a new Gatsby site using the blog starter
-    gatsby new my-blog-starter https://github.com/gatsbyjs/gatsby-starter-blog
+    # create a new Gatsby site using this portfolio
+    gatsby new my-portfolio https://github.com/M4ss1ck/massick-portfolio
     ```
