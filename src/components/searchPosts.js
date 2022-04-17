@@ -33,10 +33,16 @@ const Search = ({ posts, keys }) => {
           <Trans>No matches found</Trans>
         </h1>
       ) : query !== "" ? (
-        <h1>
-          {results.length}&nbsp;
-          <Trans>match(es) found</Trans>
-        </h1>
+        results.length === 1 ? (
+          <h1>
+            {results.length}&nbsp;
+            <Trans>match found</Trans>
+          </h1>
+        ) : (
+          <h1>
+            {results.length}&nbsp;<Trans>matches found</Trans>
+          </h1>
+        )
       ) : null}
 
       {query === "" ? (
