@@ -20,7 +20,7 @@ Based on gatsby Blog starter with many improvements
 5. Optimized for Netlify
 6. Optimized for `pnpm`
 7. Categories support
-8. Fuzzy search for projects and articles
+8. Fuzzy search for projects and articles (using [fusejs](https://fusejs.io/))
 
 ## 🚀 Quick start
 
