@@ -6,7 +6,6 @@ import {
   Link,
 } from "gatsby-plugin-react-i18next"
 import { graphql } from "gatsby"
-
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"

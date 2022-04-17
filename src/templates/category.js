@@ -5,7 +5,6 @@ import Bio from "../components/bio"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
 import Comment from "../components/comment"
 
 const CategoryTemplate = ({ data, location, pageContext: { category } }) => {

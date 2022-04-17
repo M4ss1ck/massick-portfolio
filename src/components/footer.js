@@ -1,7 +1,6 @@
 import React from "react"
 import { Trans } from "gatsby-plugin-react-i18next"
 import GitHubSVG from "../svg/github.svg"
-//import WhatsAppSVG from "../svg/whatsapp.svg";
 import TelegramSVG from "../svg/telegram.svg"
 import SoundcloudSVG from "../svg/soundcloud.svg"
 import TwitterSVG from "../svg/twitter.svg"
