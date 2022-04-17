@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Trans, Link } from "gatsby-plugin-react-i18next"
-import Bio from "../components/bio"
+import Bio from "../components/Bio/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Comment from "../components/comment"

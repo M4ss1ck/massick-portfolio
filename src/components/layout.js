@@ -2,7 +2,7 @@ import * as React from "react"
 import Footer from "./footer"
 import Header from "./header"
 import LandingPage from "./landingPage"
-import ReadingProgress from "./readingProgress"
+import ReadingProgress from "../lib/readingProgress"
 
 const Layout = ({ location, title, children, barra }) => {
   const rootPath = `${__PATH_PREFIX__}/`
