@@ -129,14 +129,14 @@ const BlogIndex = ({ data, location }) => {
             </li>
           )
         })}
-        <li>
-          <span className="flex justify-center px-4 mb-8 text-center rounded-lg font-montserrat text-primario dark:text-secundario outline-1 outline outline-transparent hover:outline-primario dark:hover:outline-secundario">
-            <Link to="/blog">
-              <Trans>Ver más</Trans>
-            </Link>
-          </span>
-        </li>
       </ol>
+
+      <span className="flex justify-center px-4 mb-8 text-center rounded-lg font-montserrat text-primario dark:text-secundario outline-1 outline outline-transparent hover:outline-primario dark:hover:outline-secundario">
+        <Link to="/blog">
+          <Trans>Ver más</Trans>
+        </Link>
+      </span>
+
       <Bio />
     </Layout>
   )
