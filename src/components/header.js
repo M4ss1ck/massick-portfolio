@@ -98,12 +98,12 @@ function Header() {
                 className={cx(
                   "inline-flex items-center px-1 pt-1 pb-2 border-b-4 text-lg font-medium leading-5 focus:outline-none transition duration-250 ease-in-out font-montserrat",
                   {
-                    "border-primario dark:border-secundario text-primario dark:text-secundario focus:border-secundario":
+                    "border-primario dark:border-secundario text-primario dark:text-secundario focus:border-primario dark:focus:border-secundario":
                       (location.pathname.startsWith(`${link.url}`) &&
                         location.pathname.endsWith(`${link.url}`)) ||
                       (location.pathname.startsWith(`/en${link.url}`) &&
                         location.pathname.endsWith(`/en${link.url}`)),
-                    "border-transparent text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
+                    "border-transparent text-gray-500 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-300 focus:text-gray-600 focus:border-grey-600":
                       !location.pathname.startsWith(`${link.url}`) ||
                       !location.pathname.startsWith(`/en${link.url}`),
                   }
