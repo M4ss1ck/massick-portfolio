@@ -23,7 +23,7 @@ const Search = ({ posts, keys }) => {
         id="search"
         type="text"
         placeholder={t("Search")}
-        className="w-full px-2 mt-2 text-lg text-center bg-transparent border border-transparent rounded-lg outline-none max-w-prose text-primario dark:text-secundario dark:border-transparent focus:border-primario dark:focus:border-secundario focus:outline-none"
+        className="w-full px-2 mt-2 text-lg text-center bg-transparent border border-transparent rounded-lg outline-none dark:rounded-lg dark:bg-transparent dark:outline-none form-input dark:form-input max-w-prose text-primario dark:text-secundario dark:border-transparent focus:border-primario dark:focus:border-secundario focus:outline-none focus:ring-0 focus:ring-offset-transparent focus:ring-offset-0 dark:focus:ring-0 dark:focus:ring-offset-transparent dark:focus:ring-offset-0"
         onChange={onSearch}
         onFocus={e => (e.target.placeholder = "")}
         onBlur={e => (e.target.placeholder = t("Search"))}
