@@ -2,7 +2,7 @@ import React from "react"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import { graphql, useStaticQuery } from "gatsby"
 import project_list from "./projectList"
-import SearchProject from "./SearchProject/SearchProject"
+import SearchProject from "./SearchProject"
 
 const Projects = ({ limit, search }) => {
   const { t } = useTranslation()

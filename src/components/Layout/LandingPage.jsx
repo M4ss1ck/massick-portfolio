@@ -1,12 +1,11 @@
 import React from "react"
-import DarkToggle from "../lib/darkToggle"
-import Canvas from "../lib/canvas"
+import DarkToggle from "../../lib/darkToggle"
+import Canvas from "../../lib/canvas"
 import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next"
-
-import Language from "./language"
-import Hacker from "../svg/hacker.svg"
-import Massick2x3 from "../svg/massick-2x3.svg"
-import Massick1x1 from "../svg/massick-1x1.svg"
+import Language from "../Buttons/language"
+import Hacker from "../../svg/hacker.svg"
+import Massick2x3 from "../../svg/massick-2x3.svg"
+import Massick1x1 from "../../svg/massick-1x1.svg"
 
 const LandingPage = ({ title }) => {
   const { t } = useTranslation()

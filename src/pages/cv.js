@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { Link, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
-import Seo from "../components/seo"
+import Seo from "../components/SEO/seo"
 import Pdf from "react-to-pdf"
 import { useElementSize, useWindowSize } from "usehooks-ts"
 

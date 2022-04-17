@@ -1,8 +1,8 @@
 import * as React from "react"
-import Footer from "./footer"
-import Header from "./header"
-import LandingPage from "./landingPage"
-import ReadingProgress from "./readingProgress"
+import Footer from "./Footer"
+import Header from "./Header"
+import LandingPage from "./LandingPage"
+import ReadingProgress from "./ReadingProgress"
 
 const Layout = ({ location, title, children, barra }) => {
   const rootPath = `${__PATH_PREFIX__}/`

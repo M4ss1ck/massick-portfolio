@@ -1,8 +1,8 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../components/Layout/layout"
+import Seo from "../components/SEO/seo"
 import Canvas from "../lib/canvas"
 
 const NotFoundPage = ({ data, location }) => {

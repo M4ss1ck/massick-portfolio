@@ -9,7 +9,8 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { Trans } from "gatsby-plugin-react-i18next"
-//import { FormattedMessage, Link, useIntl } from "gatsby-plugin-intl"
+
+const imageurl = "../../images/profile.jpg"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -47,7 +48,7 @@ const Bio = () => {
         className="w-12 rounded-full"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
-        src="../images/profile.jpg"
+        src={imageurl}
         width={50}
         height={50}
         quality={95}
@@ -68,7 +69,7 @@ const Bio = () => {
       <span>
         <a
           href={`https://github.com/${social?.twitter || ``}`}
-          className="text-gray-600  dark:text-gray-400 hover:text-primario dark:hover:text-secundario"
+          className="text-gray-600 dark:text-gray-400 hover:text-primario dark:hover:text-secundario"
           target="_blank"
           rel="noreferrer"
         >

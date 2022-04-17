@@ -1,15 +1,14 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-
 import { StaticImage } from "gatsby-plugin-image"
-import Layout from "../components/layout"
 import {
   Link,
   Trans,
   useTranslation,
   useI18next,
 } from "gatsby-plugin-react-i18next"
-import Seo from "../components/seo"
+import Layout from "../components/Layout/layout"
+import Seo from "../components/SEO/seo"
 
 const About = ({ data, location }) => {
   const { t } = useTranslation()

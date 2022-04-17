@@ -6,10 +6,9 @@ import {
   Link,
 } from "gatsby-plugin-react-i18next"
 import { graphql } from "gatsby"
-
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Bio from "../components/Bio/bio"
+import Layout from "../components/Layout/layout"
+import Seo from "../components/SEO/seo"
 
 const Categories = ({ data, location }) => {
   const { t } = useTranslation()
