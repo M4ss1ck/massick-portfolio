@@ -51,7 +51,7 @@ const LandingPage = ({ title }) => {
           </Link>
           <DarkToggle />
           <Language />
-          <h2 className="hidden px-4 py-8 text-sm text-center xs:block lg:text-lg font-montserrat">
+          <h2 className="hidden px-4 py-8 text-sm text-center xxs:block lg:text-lg font-montserrat">
             <Link to="/about" className="text-primario dark:text-secundario">
               <Trans>who_am_I</Trans>
             </Link>

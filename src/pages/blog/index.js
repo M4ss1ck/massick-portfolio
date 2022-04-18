@@ -1,13 +1,9 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { Trans, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
-
 import Bio from "../../components/bio"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
-
-//import { GatsbyImage } from "gatsby-plugin-image"
-
 import Search from "../../components/searchPosts"
 
 const BlogIndex = ({ data, location }) => {
@@ -40,6 +36,7 @@ const BlogIndex = ({ data, location }) => {
           "frontmatter.description",
           "frontmatter.categories",
         ]}
+        search
       />
 
       <hr className="mt-auto" />

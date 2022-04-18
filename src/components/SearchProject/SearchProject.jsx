@@ -31,17 +31,17 @@ const SearchProject = ({ projects, keys, search }) => {
         />
       )}
       {results.length === 0 && query !== "" ? (
-        <h1>
+        <h1 className="flex mx-auto">
           <Trans>No matches found</Trans>
         </h1>
       ) : query !== "" ? (
         results.length === 1 ? (
-          <h1>
+          <h1 className="flex mx-auto">
             {results.length}&nbsp;
             <Trans>match found</Trans>
           </h1>
         ) : (
-          <h1>
+          <h1 className="flex mx-auto">
             {results.length}&nbsp;<Trans>matches found</Trans>
           </h1>
         )
@@ -53,9 +53,9 @@ const SearchProject = ({ projects, keys, search }) => {
             const title = p.title
             const slug = p.url
             return (
-              <li key={title}>
+              <li key={title} className="m-4">
                 <article
-                  className="grid grid-cols-3 grid-rows-2 gap-4 my-2"
+                  className="grid grid-cols-2 grid-rows-3 gap-4 my-2 xs:grid-cols-3 xs:grid-rows-2"
                   itemScope
                   itemType="http://schema.org/Article"
                 >
@@ -84,7 +84,7 @@ const SearchProject = ({ projects, keys, search }) => {
                       />
                     </div>
                   )}
-                  <header className="col-span-2 row-span-1 my-auto">
+                  <header className="row-span-2 my-auto xs:col-span-2 xs:row-span-1">
                     <h2 className="mt-2 text-lg font-bold text-primario dark:text-secundario">
                       <a
                         href={slug}
@@ -111,9 +111,9 @@ const SearchProject = ({ projects, keys, search }) => {
             const title = item.title
             const slug = item.url
             return (
-              <li key={title}>
+              <li key={title} className="m-4">
                 <article
-                  className="grid grid-cols-3 grid-rows-2 gap-4 my-2"
+                  className="grid grid-cols-2 grid-rows-3 gap-4 my-2 xs:grid-cols-3 xs:grid-rows-2"
                   itemScope
                   itemType="http://schema.org/Article"
                 >
@@ -142,7 +142,7 @@ const SearchProject = ({ projects, keys, search }) => {
                       />
                     </div>
                   )}
-                  <header className="col-span-2 row-span-1 my-auto">
+                  <header className="row-span-2 my-auto xs:col-span-2 xs:row-span-1">
                     <h2 className="mt-2 text-lg font-bold text-primario dark:text-secundario">
                       <a
                         href={slug}

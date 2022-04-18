@@ -6,13 +6,11 @@ import {
   useI18next,
   Link,
 } from "gatsby-plugin-react-i18next"
-
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Projects from "../components/projects"
-
-import { GatsbyImage } from "gatsby-plugin-image"
+import Search from "../components/searchPosts"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `home`
@@ -66,7 +64,15 @@ const BlogIndex = ({ data, location }) => {
           d="M19 13l-7 7-7-7m14-8l-7 7-7-7"
         />
       </svg>
-      <ol style={{ listStyle: `none` }} className="max-w-prose">
+      <Search
+        posts={posts}
+        keys={[
+          "frontmatter.title",
+          "frontmatter.description",
+          "frontmatter.categories",
+        ]}
+      />
+      {/* <ol style={{ listStyle: `none` }} className="max-w-prose">
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
           const slug = post.fields.slug
@@ -129,7 +135,7 @@ const BlogIndex = ({ data, location }) => {
             </li>
           )
         })}
-      </ol>
+      </ol> */}
 
       <span className="flex justify-center px-4 mb-8 text-center rounded-lg font-montserrat text-primario dark:text-secundario outline-1 outline outline-transparent hover:outline-primario dark:hover:outline-secundario">
         <Link to="/blog">
