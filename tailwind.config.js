@@ -17,7 +17,8 @@ module.exports = {
     },
     extend: {
       screens: {
-        xs: "320px",
+        xxs: "320px",
+        xs: "475px",
       },
       maxWidth: {
         pantalla: "100vw",
