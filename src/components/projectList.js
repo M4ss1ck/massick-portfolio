@@ -21,6 +21,13 @@ const proyectos = [
     imageName: "ninja.png",
   },
   {
+    url: "https://github.com/M4ss1ck/webxdc-math-battle",
+    title: "Math Battle game for Delta Chat",
+    description:
+      "Math Battle game for Delta Chat made with only HTML + CSS + Javascript",
+    imageName: "mathgame.png",
+  },
+  {
     url: "https://github.com/M4ss1ck/webxdc-react-hello-world",
     title: 'React "hello world!" app for Delta Chat',
     description:
