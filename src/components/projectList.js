@@ -7,6 +7,13 @@ const proyectos = [
     imageName: "portfolio.png",
   },
   {
+    url: "https://github.com/M4ss1ck/webxdc-rainbow",
+    title: "Rainbow game",
+    description:
+      "A color picker game for Delta Chat made using React + SCSS + Vite",
+    imageName: "rainbow.png",
+  },
+  {
     url: "https://github.com/M4ss1ck/webxdc-react-hello-world",
     title: 'React "hello world!" app for Delta Chat',
     description:
