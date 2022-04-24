@@ -14,6 +14,13 @@ const proyectos = [
     imageName: "rainbow.png",
   },
   {
+    url: "https://github.com/M4ss1ck/webxdc-whack-a-ninja",
+    title: "Whack-A-Ninja: Whack-a-mole clon for Delta Chat",
+    description:
+      "A Whack-A-Mole clon for playing in Delta Chat made with only HTML + CSS + Javascript",
+    imageName: "ninja.png",
+  },
+  {
     url: "https://github.com/M4ss1ck/webxdc-react-hello-world",
     title: 'React "hello world!" app for Delta Chat',
     description:
