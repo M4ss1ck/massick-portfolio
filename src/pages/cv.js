@@ -5,7 +5,7 @@ import Seo from "../components/seo"
 import Pdf from "react-to-pdf"
 import { useElementSize, useWindowSize } from "usehooks-ts"
 
-const CV = props => {
+const CV = () => {
   const ref = React.createRef()
 
   // using https://usehooks-ts.com/react-hook/use-element-size
