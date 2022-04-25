@@ -2,17 +2,10 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { Link, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import Seo from "../components/seo"
-import Pdf from "react-to-pdf"
-import { useElementSize, useWindowSize } from "usehooks-ts"
+//import Pdf from "react-to-pdf"
+//import { useElementSize, useWindowSize } from "usehooks-ts"
 
 const CV = () => {
-  const ref = React.createRef()
-
-  // using https://usehooks-ts.com/react-hook/use-element-size
-  const [articleRef, { height }] = useElementSize()
-  // https://usehooks-ts.com/react-hook/use-window-size
-  const { width } = useWindowSize()
-
   const { t } = useTranslation()
   const { language } = useI18next()
   return (
@@ -22,32 +15,10 @@ const CV = () => {
         <button className="p-4 mr-auto font-bold text-blue-700 border-2 border-blue-700 rounded-lg hover:text-white hover:bg-blue-700">
           <Link to="/">{t("home")}</Link>
         </button>
-        <Pdf
-          targetRef={ref}
-          filename="massick-cv.pdf"
-          options={{
-            orientation: width > height ? "landscape" : "portrait",
-            unit: "in",
-            format: [width / 96, height / 96],
-          }}
-          //scale={0.8}
-        >
-          {({ toPdf }) => (
-            <button
-              onClick={toPdf}
-              className="p-4 font-bold text-blue-700 border-2 border-blue-700 rounded-lg hover:text-white hover:bg-blue-700"
-            >
-              Generate Pdf
-            </button>
-          )}
-        </Pdf>
       </div>
 
-      <div ref={ref}>
-        <article
-          className="container grid max-w-screen-lg grid-cols-1 mx-auto sm:grid-cols-4 font-montserrat"
-          ref={articleRef}
-        >
+      <div>
+        <article className="container grid max-w-screen-lg grid-cols-1 mx-auto sm:grid-cols-4 font-montserrat">
           <section className="text-center text-white bg-blue-800 md:text-left">
             <h1 className="p-2 text-2xl font-extrabold md:text-4xl">
               Andy Raúl Palmero López
@@ -227,11 +198,6 @@ const CV = () => {
             </div>
           </section>
         </article>
-      </div>
-      <div className="flex items-center justify-end">
-        <p className="mr-4">
-          Dimensions: {width} x {height} px
-        </p>
       </div>
     </>
   )
