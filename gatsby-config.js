@@ -6,7 +6,7 @@ module.exports = {
       summary: `Matemático y desarrollador web`,
     },
     description: `Mi portafolio`,
-    siteUrl: `https://massick.netlify.app/`,
+    siteUrl: `https://massick.is-a.dev/`,
     social: {
       twitter: `M4ss1ck`,
     },
@@ -52,7 +52,7 @@ module.exports = {
         languages: [`es`, `en`],
         defaultLanguage: `es`,
         // if you are using Helmet, you must include siteUrl, and make sure you add http:https
-        siteUrl: `https://massick.netlify.app/`, // declared above too
+        siteUrl: `https://massick.is-a.dev/`, // declared above too
         // you can pass any i18next options
         i18nextOptions: {
           interpolation: {
