@@ -3,10 +3,16 @@ import Fuse from "fuse.js"
 import { Trans, useTranslation } from "gatsby-plugin-react-i18next"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-const SearchProject = ({ projects, keys, search }) => {
+interface Searchproject {
+  projects: any[]
+  keys: any
+  search: any
+}
+
+const SearchProject: React.FC<Searchproject> = ({ projects, keys, search }) => {
   const { t } = useTranslation()
   const [query, updateQuery] = React.useState("")
-  const onSearch = e => {
+  const onSearch = (e: React.FocusEvent<HTMLInputElement, Element>) => {
     updateQuery(e.target.value)
   }
   const fuse = new Fuse(projects, {
@@ -69,7 +75,7 @@ const SearchProject = ({ projects, keys, search }) => {
                       />
                       <GatsbyImage
                         image={p.image}
-                        layout="fullWidth"
+                        //layout="fullWidth"
                         alt={p.description || ""}
                         // className="absolute left-0 w-full -translate-y-1/2 top-1/2"
                         style={{
@@ -127,7 +133,7 @@ const SearchProject = ({ projects, keys, search }) => {
                       />
                       <GatsbyImage
                         image={item.image}
-                        layout="fullWidth"
+                        //layout="fullWidth"
                         alt={item.description || ""}
                         // className="absolute left-0 w-full -translate-y-1/2 top-1/2"
                         style={{
