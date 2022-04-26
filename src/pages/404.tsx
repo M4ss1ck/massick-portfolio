@@ -1,16 +1,27 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import Canvas from "../lib/canvas"
+import type { PageProps } from "gatsby"
+import {
+  Link,
+  Trans,
+  useTranslation,
+  useI18next,
+} from "gatsby-plugin-react-i18next"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
+import Canvas from "../lib/Canvas"
 
-const NotFoundPage = ({ data, location }) => {
+const NotFoundPage = ({ data, location }: PageProps<any>) => {
   const siteTitle = data.site.siteMetadata.title
   const { t } = useTranslation()
+  const { language } = useI18next()
   return (
     <Layout location={location} title={t(siteTitle)}>
-      <Seo title="Error 404" description={t("404: Not Found")} />
+      <Seo
+        title="Error 404"
+        lang={language}
+        description={t("404: Not Found")}
+      />
       <article className="flex flex-col h-full items-center justify-evenly min-h-[50vh]">
         <Canvas />
         <h1 className="text-4xl font-semibold text-primario dark:text-secundario">
