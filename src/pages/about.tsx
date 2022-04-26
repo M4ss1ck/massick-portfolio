@@ -1,17 +1,17 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-
+import type { PageProps } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import {
   Link,
   Trans,
   useTranslation,
   useI18next,
 } from "gatsby-plugin-react-i18next"
-import Seo from "../components/seo"
+import Seo from "../components/Seo"
 
-const About = ({ data, location }) => {
+const About = ({ data, location }: PageProps) => {
   const { t } = useTranslation()
   const { language } = useI18next()
   //const siteTitle = "Acerca de"

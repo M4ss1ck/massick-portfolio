@@ -5,8 +5,8 @@ import project_list from "./projectList"
 import SearchProject from "./SearchProject/SearchProject"
 
 interface Projects {
-  limit: number
-  search: string
+  limit?: number
+  search?: boolean
 }
 
 type P2S = {
@@ -20,7 +20,9 @@ const Projects: React.FC<Projects> = ({ limit, search }) => {
   const { t } = useTranslation()
 
   const proyectos =
-    limit > project_list.length ? project_list : project_list.slice(0, limit)
+    limit && limit > project_list.length
+      ? project_list
+      : project_list.slice(0, limit)
   const { allFile } = useStaticQuery(graphql`
     {
       allFile(filter: { sourceInstanceName: { eq: "projects" } }) {

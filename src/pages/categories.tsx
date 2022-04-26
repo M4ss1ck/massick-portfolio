@@ -6,21 +6,21 @@ import {
   Link,
 } from "gatsby-plugin-react-i18next"
 import { graphql } from "gatsby"
+import type { PageProps } from "gatsby"
+import Bio from "../components/Bio"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-
-const Categories = ({ data, location }) => {
+const Categories = ({ data, location }: PageProps<any>) => {
   const { t } = useTranslation()
   const { language } = useI18next()
   const allCategories = new Set(
     data.allMarkdownRemark.nodes
-      .filter(node => !!node.frontmatter.categories)
-      .map(node => node.frontmatter.categories)
-      .map(categories => categories.split(","))
+      .filter((node: any) => !!node.frontmatter.categories)
+      .map((node: any) => node.frontmatter.categories)
+      .map((categories: string) => categories.split(","))
       .flat()
-      .map(category => category.trim().toLowerCase())
+      .map((category: string) => category.trim().toLowerCase())
   )
   return (
     <Layout location={location} title={t("Categories")}>
@@ -31,7 +31,7 @@ const Categories = ({ data, location }) => {
       <ul className="flex flex-row flex-wrap items-center justify-center my-4 max-w-prose">
         {Array.from(allCategories)
           .sort()
-          .map((cat, index) => {
+          .map((cat: any, index) => {
             return (
               <li
                 key={index}
