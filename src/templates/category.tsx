@@ -8,7 +8,29 @@ import Seo from "../components/Seo"
 import Comment from "../components/Comment"
 
 interface Props {
-  data: any
+  data: {
+    allMarkdownRemark: {
+      nodes: [
+        {
+          frontmatter: {
+            categories: string
+            locale: string
+            title: string
+            description: string
+            featuredImage: {
+              childImageSharp: {
+                gatsbyImageData: any
+              }
+            }
+            date: string
+          }
+          fields: {
+            slug: string
+          }
+        }
+      ]
+    }
+  }
   location: Location
   pageContext: {
     category: string
@@ -61,7 +83,7 @@ const CategoryTemplate = ({
                 <Trans>Todas las categorías</Trans>
               </p>
             </Link>
-            {posts.nodes.map((post: any) => {
+            {posts.nodes.map(post => {
               return (
                 <section
                   key={post.frontmatter.title}

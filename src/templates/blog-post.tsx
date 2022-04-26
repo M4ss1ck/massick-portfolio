@@ -1,13 +1,66 @@
 import React from "react"
 import { graphql } from "gatsby"
-import type { PageProps } from "gatsby"
 import { Trans, Link } from "gatsby-plugin-react-i18next"
 import Bio from "../components/Bio"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Comment from "../components/Comment"
 
-const BlogPostTemplate = ({ data, location }: PageProps<any>) => {
+interface Props {
+  data: {
+    site: {
+      siteMetadata: {
+        title: string
+      }
+    }
+    locales: {
+      edges: {
+        node: {
+          ns: string
+          data: any
+          language: string
+        }
+      }
+    }
+    markdownRemark: {
+      id: string
+      excerpt: string
+      html: any
+      frontmatter: {
+        title: string
+        date: string
+        description: string
+        locale: string
+        categories: string
+        featuredImage: {
+          childImageSharp: {
+            gatsbyImageData: any
+          }
+        }
+      }
+      timeToRead: string
+    }
+    previous: {
+      fields: {
+        slug: string
+      }
+      frontmatter: {
+        title: string
+      }
+    }
+    next: {
+      fields: {
+        slug: string
+      }
+      frontmatter: {
+        title: string
+      }
+    }
+  }
+  location: Location
+}
+
+const BlogPostTemplate = ({ data, location }: Props) => {
   const post = data.markdownRemark
   const categories = post.frontmatter.categories.split(",")
   const siteTitle = data.site.siteMetadata?.title || `Blog`
