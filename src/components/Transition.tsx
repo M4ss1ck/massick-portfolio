@@ -21,7 +21,7 @@ interface CSST {
   leave: string
   leaveFrom: string
   leaveTo: string
-  appear: boolean
+  appear?: boolean
   children: any
 }
 

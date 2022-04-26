@@ -1,10 +1,15 @@
 import React from "react"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 
-const darkToggle = () => {
+interface ToggleProps {
+  theme: string
+  toggleTheme: (theme: string) => void
+}
+
+const DarkToggle = () => {
   return (
     <ThemeToggler>
-      {({ theme, toggleTheme }) => (
+      {({ theme, toggleTheme }: ToggleProps) => (
         <div className="relative m-auto">
           <input
             aria-label="dark mode toggle"
@@ -25,4 +30,4 @@ const darkToggle = () => {
   )
 }
 
-export default darkToggle
+export default DarkToggle

@@ -1,6 +1,6 @@
 import React from "react"
-import DarkToggle from "../lib/darkToggle"
-import Canvas from "../lib/canvas"
+import DarkToggle from "../lib/DarkToggle"
+import Canvas from "../lib/Canvas"
 import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next"
 
 import Language from "./Language"
