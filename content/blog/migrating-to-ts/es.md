@@ -1,7 +1,7 @@
 ---
 title: Migrando mi portafolio a TypeScript
 date: "2022-04-26"
-description: "El proceso de migración de Javascript a Typescript de mi portafolio paso a paso"
+description: "El proceso de migración de JavaScript a TypeScript de mi portafolio paso a paso"
 categories: "gatsby, typescript, javascript, blog, tutorial, portafolio"
 locale: es
 featuredImage: featured.png
@@ -14,13 +14,13 @@ draft: false
 
 # TL;DR
 
-Si quieres migrar un proyecto hecho en [Gatsby](https://www.gatsbyjs.com/) de Javascript a Typescript, esta publicación te puede ayudar. También puedes revisar directamente [el repositorio](https://github.com/M4ss1ck/massick-portfolio).
+Si quieres migrar un proyecto hecho en [Gatsby](https://www.gatsbyjs.com/) de JavaScript a TypeScript, esta publicación te puede ayudar. También puedes revisar directamente [el repositorio](https://github.com/M4ss1ck/massick-portfolio).
 
 # Las razones 💭
 
-Este portafolio va de lo que, en mi rol de desarrollador, soy capaz de crear, así que definitivamente voy a pasar de JS a TS para mejorar mis habilidades con el lenguaje y de paso mejorar también la experiencia mientras trabajo. Y es que trabajar con **Typescript** es lo máximo, _al menos cuando ya he corregido todos los problemas y voy a crear algo nuevo_.
+Este portafolio va de lo que, en mi rol de desarrollador, soy capaz de crear, así que definitivamente voy a pasar de JS a TS para mejorar mis habilidades con el lenguaje y de paso mejorar también la experiencia mientras trabajo. Y es que trabajar con **TypeScript** es lo máximo, _al menos cuando ya he corregido todos los problemas y voy a crear algo nuevo_.
 
-Ya esto lo hice antes con [mi generador de currículos](https://github.com/M4ss1ck/gatsby-cv-maker) y me fue bien, además, **Typescript** es una habilidad que, como desarrollador web, conviene aprender. La diferencia es que aquí son muchos más archivos y debe ser mucho más complejo 🚶‍♂️
+Ya esto lo hice antes con [mi generador de currículos](https://github.com/M4ss1ck/gatsby-cv-maker) y me fue bien, además, **TypeScript** es una habilidad que, como desarrollador web, conviene aprender. La diferencia es que aquí son muchos más archivos y debe ser mucho más complejo 🚶‍♂️
 
 # Antes 👀
 
@@ -194,6 +194,6 @@ Recuerda que puedes ver cómo quedó todo en [el repositorio del proyecto](https
 
 # Pendientes 😒
 
-Me hubiera gustado migrar **todos** los archivos Javascript, pero en este primer momento me quedaron fuera los archivos de configuración: algunos de Gatsby y otros de Tailwind CSS, PostCSS, etc. Tampoco sé si, en el caso de estos últimos: 1) es posible y 2) si tiene alguna utilidad práctica. Así que lo dejo para una segunda parte, cuando tenga la respuesta a esas incógnitas 🚶‍♂️
+Me hubiera gustado migrar **todos** los archivos JavaScript, pero en este primer momento me quedaron fuera los archivos de configuración: algunos de Gatsby y otros de Tailwind CSS, PostCSS, etc. Tampoco sé si, en el caso de estos últimos: 1) es posible y 2) si tiene alguna utilidad práctica. Así que lo dejo para una segunda parte, cuando tenga la respuesta a esas incógnitas 🚶‍♂️
 
 **¡Hasta la próxima!**
