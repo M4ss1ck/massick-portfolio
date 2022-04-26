@@ -4,7 +4,19 @@ import { graphql, useStaticQuery } from "gatsby"
 import project_list from "./projectList"
 import SearchProject from "./SearchProject/SearchProject"
 
-const Projects = ({ limit, search }) => {
+interface Projects {
+  limit: number
+  search: string
+}
+
+type P2S = {
+  title: string
+  description: string
+  image: any
+  url: string
+}
+
+const Projects: React.FC<Projects> = ({ limit, search }) => {
   const { t } = useTranslation()
 
   const proyectos =
@@ -24,14 +36,19 @@ const Projects = ({ limit, search }) => {
       }
     }
   `)
-  const compareFunction = (img, value, index, array) => {
+  const compareFunction = (
+    img: any,
+    value: any,
+    index?: number,
+    array?: any[]
+  ) => {
     return value.node.base === img
   }
 
-  let projectsToSearch = []
+  let projectsToSearch: P2S[] = []
 
   proyectos.forEach(project => {
-    const i = allFile.edges.findIndex(value =>
+    const i = allFile.edges.findIndex((value: P2S) =>
       compareFunction(project.imageName, value)
     )
     const p = allFile.edges[i]

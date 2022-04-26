@@ -3,10 +3,16 @@ import Fuse from "fuse.js"
 import { Trans, useTranslation } from "gatsby-plugin-react-i18next"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-const Search = ({ posts, keys, search }) => {
+interface SearchPosts {
+  posts: any
+  keys: any
+  search: string
+}
+
+const Search: React.FC<SearchPosts> = ({ posts, keys, search }) => {
   const { t } = useTranslation()
   const [query, updateQuery] = React.useState("")
-  const onSearch = e => {
+  const onSearch = (e: React.FocusEvent<HTMLInputElement, Element>) => {
     updateQuery(e.target.value)
   }
   const fuse = new Fuse(posts, {
@@ -49,7 +55,7 @@ const Search = ({ posts, keys, search }) => {
 
       {query === "" ? (
         <ol className="z-10 py-4 list-none max-w-prose">
-          {posts.map(post => {
+          {posts.map((post: any) => {
             const title = post.frontmatter.title || post.fields.slug
             const slug = post.fields.slug
             return (
@@ -75,7 +81,7 @@ const Search = ({ posts, keys, search }) => {
                           post.frontmatter.featuredImage.childImageSharp
                             .gatsbyImageData
                         }
-                        layout="fullWidth"
+                        //layout="fullWidth"
                         alt={post.frontmatter.description || ""}
                         // className="absolute left-0 w-full -translate-y-1/2 top-1/2"
                         style={{
@@ -114,7 +120,7 @@ const Search = ({ posts, keys, search }) => {
         </ol>
       ) : (
         <ol className="z-10 py-4 list-none max-w-prose">
-          {results.map(e => {
+          {results.map((e: any) => {
             const item = e.item
             const title = item.frontmatter.title || item.fields.slug
             const slug = item.fields.slug
@@ -141,7 +147,7 @@ const Search = ({ posts, keys, search }) => {
                           item.frontmatter.featuredImage.childImageSharp
                             .gatsbyImageData
                         }
-                        layout="fullWidth"
+                        //layout="fullWidth"
                         alt={item.frontmatter.description || ""}
                         // className="absolute left-0 w-full -translate-y-1/2 top-1/2"
                         style={{

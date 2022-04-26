@@ -11,7 +11,21 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
-const Seo = ({ description, lang, meta, title, featuredImage }) => {
+interface SEO {
+  description?: string
+  lang: string | undefined
+  meta: any
+  title: string
+  featuredImage?: any
+}
+
+const Seo: React.FC<SEO> = ({
+  description,
+  lang,
+  meta,
+  title,
+  featuredImage,
+}) => {
   const { site, defaultFeaturedImage } = useStaticQuery(
     graphql`
       query {
@@ -55,7 +69,7 @@ const Seo = ({ description, lang, meta, title, featuredImage }) => {
           ? t(defaultTitle) === title
             ? `${t(defaultTitle)}`
             : `%s | ${t(defaultTitle)}`
-          : null
+          : ""
       }
       //titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[

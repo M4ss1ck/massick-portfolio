@@ -7,7 +7,7 @@ import cx from "classnames"
 import Massick1x1 from "../svg/massick-1x1.svg"
 
 import Transition from "./transition"
-import Language from "./language"
+import Language from "./Language"
 
 const navLinks = [
   {
