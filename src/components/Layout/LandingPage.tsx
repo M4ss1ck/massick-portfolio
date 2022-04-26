@@ -1,12 +1,11 @@
 import React from "react"
-import DarkToggle from "../lib/DarkToggle"
-import Canvas from "../lib/Canvas"
+import DarkToggle from "../../lib/DarkToggle"
+import Canvas from "../../lib/Canvas"
 import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next"
-
-import Language from "./Language"
-import Hacker from "../svg/hacker.svg"
-import Massick2x3 from "../svg/massick-2x3.svg"
-import Massick1x1 from "../svg/massick-1x1.svg"
+import Language from "../LanguageSwitcher/Language"
+import Hacker from "../../svg/hacker.svg"
+import Massick2x3 from "../../svg/massick-2x3.svg"
+import Massick1x1 from "../../svg/massick-1x1.svg"
 
 interface LP {
   title: string

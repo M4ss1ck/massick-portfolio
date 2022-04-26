@@ -37,6 +37,8 @@ const Bio = () => {
     }
   `)
 
+  const profileImg = "../../images/profile.jpg"
+
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author
   const social = data.site.siteMetadata?.social
@@ -47,7 +49,7 @@ const Bio = () => {
         className="w-12 rounded-full"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
-        src="../images/profile.jpg"
+        src={profileImg}
         width={50}
         height={50}
         quality={95}
@@ -68,7 +70,7 @@ const Bio = () => {
       <span>
         <a
           href={`https://github.com/${social?.twitter || ``}`}
-          className="text-gray-600  dark:text-gray-400 hover:text-primario dark:hover:text-secundario"
+          className="text-gray-600 dark:text-gray-400 hover:text-primario dark:hover:text-secundario"
           target="_blank"
           rel="noreferrer"
         >

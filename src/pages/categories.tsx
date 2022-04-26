@@ -7,9 +7,9 @@ import {
 } from "gatsby-plugin-react-i18next"
 import { graphql } from "gatsby"
 import type { PageProps } from "gatsby"
-import Bio from "../components/Bio"
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
+import Bio from "../components/Bio/Bio"
+import Layout from "../components/Layout/Layout"
+import Seo from "../components/SEO/Seo"
 
 const Categories = ({ data, location }: PageProps<any>) => {
   const { t } = useTranslation()

@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Trans, Link, useTranslation } from "gatsby-plugin-react-i18next"
-import Bio from "../components/Bio"
+import Bio from "../components/Bio/Bio"
 import { GatsbyImage } from "gatsby-plugin-image"
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
-import Comment from "../components/Comment"
+import Layout from "../components/Layout/Layout"
+import Seo from "../components/SEO/Seo"
+import Comment from "../components/Comment/Comment"
 
 interface Props {
   data: {

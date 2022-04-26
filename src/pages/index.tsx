@@ -7,11 +7,11 @@ import {
   useI18next,
   Link,
 } from "gatsby-plugin-react-i18next"
-import Bio from "../components/Bio"
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
-import Projects from "../components/Projects"
-import Search from "../components/SearchPosts"
+import Bio from "../components/Bio/Bio"
+import Layout from "../components/Layout/Layout"
+import Seo from "../components/SEO/Seo"
+import Projects from "../components/Projects/Projects"
+import Search from "../components/Posts/SearchPosts"
 
 const BlogIndex = ({ data, location }: PageProps<any>) => {
   const siteTitle = data.site.siteMetadata?.title || `home`

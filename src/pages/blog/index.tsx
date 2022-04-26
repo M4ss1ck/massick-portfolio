@@ -2,10 +2,10 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import type { PageProps } from "gatsby"
 import { Trans, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
-import Bio from "../../components/Bio"
-import Layout from "../../components/Layout"
-import Seo from "../../components/Seo"
-import Search from "../../components/SearchPosts"
+import Bio from "../../components/Bio/Bio"
+import Layout from "../../components/Layout/Layout"
+import Seo from "../../components/SEO/Seo"
+import Search from "../../components/Posts/SearchPosts"
 
 type DataP = {
   allMarkdownRemark: {

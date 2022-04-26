@@ -2,14 +2,14 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import type { PageProps } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import Layout from "../components/Layout"
+import Layout from "../components/Layout/Layout"
 import {
   Link,
   Trans,
   useTranslation,
   useI18next,
 } from "gatsby-plugin-react-i18next"
-import Seo from "../components/Seo"
+import Seo from "../components/SEO/Seo"
 
 const About = ({ data, location }: PageProps) => {
   const { t } = useTranslation()

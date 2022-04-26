@@ -7,8 +7,8 @@ import {
   useTranslation,
   useI18next,
 } from "gatsby-plugin-react-i18next"
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
+import Layout from "../components/Layout/Layout"
+import Seo from "../components/SEO/Seo"
 import Canvas from "../lib/Canvas"
 
 const NotFoundPage = ({ data, location }: PageProps<any>) => {

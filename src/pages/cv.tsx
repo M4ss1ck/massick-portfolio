@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { Link, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
-import Seo from "../components/Seo"
+import Seo from "../components/SEO/Seo"
 
 const CV = () => {
   const { t } = useTranslation()

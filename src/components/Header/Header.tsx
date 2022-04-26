@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next"
 import { globalHistory, useLocation } from "@reach/router"
-import DarkToggle from "../lib/DarkToggle"
+import DarkToggle from "../../lib/DarkToggle"
 import cx from "classnames"
-
-import Massick1x1 from "../svg/massick-1x1.svg"
-
+import Massick1x1 from "../../svg/massick-1x1.svg"
 import Transition from "./Transition"
-import Language from "./Language"
+import Language from "../LanguageSwitcher/Language"
 
 const navLinks = [
   {
