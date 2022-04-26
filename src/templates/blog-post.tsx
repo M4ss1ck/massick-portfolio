@@ -1,13 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
+import type { PageProps } from "gatsby"
 import { Trans, Link } from "gatsby-plugin-react-i18next"
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Bio from "../components/Bio"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
+import Comment from "../components/Comment"
 
-import Comment from "../components/comment"
-
-const BlogPostTemplate = ({ data, location }) => {
+const BlogPostTemplate = ({ data, location }: PageProps<any>) => {
   const post = data.markdownRemark
   const categories = post.frontmatter.categories.split(",")
   const siteTitle = data.site.siteMetadata?.title || `Blog`
@@ -30,14 +30,14 @@ const BlogPostTemplate = ({ data, location }) => {
           className="grid grid-flow-col lg:grid-flow-row grid-cols-1 lg:grid-cols-3 lg:gap-6 pb-16 lg:pb-20 grid-rows-[auto_1fr] px-4 lg:px-2"
           //style={{ gridTemplateRows: "auto 1fr" }}
         >
-          <aside className="lg:sticky top-20  px-4 col-span-full lg:col-span-1">
+          <aside className="px-4 lg:sticky top-20 col-span-full lg:col-span-1">
             <Bio />
             <nav className="blog-post-nav">
-              <ul className="flex flex-row lg:flex-col flex-wrap justify-between list-none p-2 last:pb-4 text-gray-600 dark:text-gray-400">
+              <ul className="flex flex-row flex-wrap justify-between p-2 text-gray-600 list-none lg:flex-col last:pb-4 dark:text-gray-400">
                 <li>
                   {previous && (
                     <>
-                      <p className="pt-4 uppercase font-light text-primario dark:text-secundario">
+                      <p className="pt-4 font-light uppercase text-primario dark:text-secundario">
                         <Trans>Anterior</Trans>
                       </p>
                       <a
@@ -53,7 +53,7 @@ const BlogPostTemplate = ({ data, location }) => {
                 <li>
                   {next && (
                     <>
-                      <p className="pt-4 uppercase font-light text-primario dark:text-secundario">
+                      <p className="pt-4 font-light uppercase text-primario dark:text-secundario">
                         <Trans>Siguiente</Trans>
                       </p>
                       <a
@@ -71,27 +71,27 @@ const BlogPostTemplate = ({ data, location }) => {
           </aside>
 
           {/* Main article */}
-          <div className="col-span-full lg:col-span-2 lg:row-span-4 prose prose-headings:text-primario dark:prose-dark">
-            <header className="text-center py-4">
+          <div className="prose col-span-full lg:col-span-2 lg:row-span-4 prose-headings:text-primario dark:prose-dark">
+            <header className="py-4 text-center">
               <h1
                 itemProp="headline"
                 className="text-4xl font-extrabold text-primario dark:text-secundario"
               >
                 {post.frontmatter.title}
               </h1>
-              <ul className="flex flex-row flex-wrap items-center justify-center list-none text-sm">
+              <ul className="flex flex-row flex-wrap items-center justify-center text-sm list-none">
                 <Link
-                  className="text-primario dark:text-secundario hover:text-black dark:hover:text-white no-underline"
+                  className="no-underline text-primario dark:text-secundario hover:text-black dark:hover:text-white"
                   to="/categories"
                   title="See all"
                 >
                   <Trans>Categories</Trans>:{" "}
                 </Link>
-                {categories.map(category => (
+                {categories.map((category: string) => (
                   <li key={category}>
                     <Link
                       to={`/categories/${category.trim().toLowerCase()}`}
-                      className="no-underline rounded-lg outline outline-2 outline-primario dark:outline-secundario px-2 mx-2 text-primario dark:text-secundario hover:text-black dark:hover:text-white hover:outline-black dark:hover:outline-white"
+                      className="px-2 mx-2 no-underline rounded-lg outline outline-2 outline-primario dark:outline-secundario text-primario dark:text-secundario hover:text-black dark:hover:text-white hover:outline-black dark:hover:outline-white"
                     >
                       {category.trim()}
                     </Link>

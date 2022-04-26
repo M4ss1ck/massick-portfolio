@@ -13,7 +13,7 @@ import { useTranslation } from "gatsby-plugin-react-i18next"
 
 interface SEO {
   description?: string
-  lang: string | undefined
+  lang?: string
   meta?: any
   title: string
   featuredImage?: any
