@@ -14,7 +14,7 @@ import { useTranslation } from "gatsby-plugin-react-i18next"
 interface SEO {
   description?: string
   lang: string | undefined
-  meta: any
+  meta?: any
   title: string
   featuredImage?: any
 }

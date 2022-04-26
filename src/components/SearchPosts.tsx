@@ -6,7 +6,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 interface SearchPosts {
   posts: any
   keys: any
-  search: string
+  search: boolean
 }
 
 const Search: React.FC<SearchPosts> = ({ posts, keys, search }) => {

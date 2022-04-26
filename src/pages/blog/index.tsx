@@ -1,12 +1,19 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import type { PageProps } from "gatsby"
 import { Trans, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
-import Bio from "../../components/bio"
-import Layout from "../../components/layout"
-import Seo from "../../components/seo"
-import Search from "../../components/searchPosts"
+import Bio from "../../components/Bio"
+import Layout from "../../components/Layout"
+import Seo from "../../components/Seo"
+import Search from "../../components/SearchPosts"
 
-const BlogIndex = ({ data, location }) => {
+type DataP = {
+  allMarkdownRemark: {
+    nodes: any
+  }
+}
+
+const BlogIndex = ({ data, location }: PageProps<DataP>) => {
   const posts = data.allMarkdownRemark.nodes
   const { t } = useTranslation()
   const { language } = useI18next()

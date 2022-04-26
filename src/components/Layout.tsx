@@ -8,7 +8,7 @@ interface Layout {
   children: React.ReactNode
   title: string
   location: any
-  barra: any
+  barra?: any
 }
 
 const Layout: React.FC<Layout> = ({ location, title, children, barra }) => {
