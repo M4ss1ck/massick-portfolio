@@ -68,6 +68,110 @@ declare module "*.svg" {
 
 Con esto es suficiente, ya que nuestro `tsconfig.json` tiene la línea `"include": ["./src/**/*"]`.
 
+El error más común en el resto de los archivos fue en cuanto al tipo de los parámetros de los componentes de react. Tomemos por ejemplo la plantilla `blog-post.tsx`:
+
+Lo que era
+
+```js
+import React from "react"
+...
+const BlogPostTemplate = ({ data, location }: Props) => {
+  const post = data.markdownRemark
+  ...
+  return (
+    ...
+  )
+}
+
+export default BlogPostTemplate
+...
+```
+
+Pasó a ser
+
+```ts
+import React from "react"
+...
+interface Props {
+  data: {
+    site: {
+      siteMetadata: {
+        title: string
+      }
+    }
+    locales: {
+      edges: {
+        node: {
+          ns: string
+          data: any
+          language: string
+        }
+      }
+    }
+    markdownRemark: {
+      id: string
+      excerpt: string
+      html: any
+      frontmatter: {
+        title: string
+        date: string
+        description: string
+        locale: string
+        categories: string
+        featuredImage: {
+          childImageSharp: {
+            gatsbyImageData: any
+          }
+        }
+      }
+      timeToRead: string
+    }
+    previous: {
+      fields: {
+        slug: string
+      }
+      frontmatter: {
+        title: string
+      }
+    }
+    next: {
+      fields: {
+        slug: string
+      }
+      frontmatter: {
+        title: string
+      }
+    }
+  }
+  location: Location
+}
+
+const BlogPostTemplate = ({ data, location }: Props) => {
+  const post = data.markdownRemark
+  ...
+  return (
+    ...
+  )
+}
+
+export default BlogPostTemplate
+...
+```
+
+Y de la misma forma para cada archivo en dependencia de la consulta de graphQL 😅
+
+Fue trabajoso, pero no especialmente difícil. Tampoco fue un paseo de rosas... Muchas veces fue a base de prueba y error.
+
+Mención especial para `Canvas.tsx`
+
+```ts
+const canvasRef = useRef() as React.RefObject<HTMLCanvasElement>
+
+const ctx = canvas.getContext("2d") as CanvasRenderingContext2D
+```
+
+Confío en que, a medida que me familiarice con el lenguaje, todo será más fácil 🤞
+
 # Resultados
 
 ![Resultados de la migración]()
