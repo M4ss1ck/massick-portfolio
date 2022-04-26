@@ -1,24 +1,28 @@
 ---
 title: Migrando mi portafolio a TypeScript
-date: "2022-04-21"
+date: "2022-04-26"
 description: "El proceso de migración de Javascript a Typescript de mi portafolio paso a paso"
 categories: "gatsby, typescript, javascript, blog, tutorial, portafolio"
 locale: es
-featuredImage: templates.png
-draft: true
+featuredImage: featured.png
+draft: false
 ---
 
 > Empiezo hoy, pero no sé cuando terminaré.
 
 <p align="right"><strong>Massick</strong></p>
 
-# Las razones
+# TL;DR
+
+Si quieres migrar un proyecto hecho en [Gatsby](https://www.gatsbyjs.com/) de Javascript a Typescript, esta publicación te puede ayudar. También puedes revisar directamente [el repositorio](https://github.com/M4ss1ck/massick-portfolio).
+
+# Las razones 💭
 
 Este portafolio va de lo que, en mi rol de desarrollador, soy capaz de crear, así que definitivamente voy a pasar de JS a TS para mejorar mis habilidades con el lenguaje y de paso mejorar también la experiencia mientras trabajo. Y es que trabajar con **Typescript** es lo máximo, _al menos cuando ya he corregido todos los problemas y voy a crear algo nuevo_.
 
 Ya esto lo hice antes con [mi generador de currículos](https://github.com/M4ss1ck/gatsby-cv-maker) y me fue bien, además, **Typescript** es una habilidad que, como desarrollador web, conviene aprender. La diferencia es que aquí son muchos más archivos y debe ser mucho más complejo 🚶‍♂️
 
-# Antes
+# Antes 👀
 
 Los archivos que debo convertir de JS a TS son:
 
@@ -36,17 +40,17 @@ Los archivos que debo convertir de JS a TS son:
 
 En cuanto a los archivos de configuración específicos de gatsby (`gatsby-*.js`), de momento los dejaré como están.
 
-# Primeros pasos
+# Primeros pasos 👣
 
 Lo primero es instalar los paquetes necesarios, en mi caso sería:
 
 ```bash
-// npm
-npm i -D @types/react-helmet @types/node @types/react @types/react-dom typescript
-// yarn
-yarn add -D @types/react-helmet @types/node @types/react @types/react-dom typescript
-// pnpm
-pnpm add -D @types/react-helmet @types/node @types/react @types/react-dom typescript
+# npm
+npm i -D @types/react-transition-group @types/react-helmet @types/node @types/react @types/react-dom typescript
+# yarn
+yarn add -D @types/react-transition-group @types/react-helmet @types/node @types/react @types/react-dom typescript
+# pnpm
+pnpm add -D @types/react-transition-group @types/react-helmet @types/node @types/react @types/react-dom typescript
 ```
 
 Y ahora toca lo bueno: cambiar las extensiones de `.js` a `.ts` o `.tsx` y solucionar problemas 😅
@@ -172,6 +176,24 @@ const ctx = canvas.getContext("2d") as CanvasRenderingContext2D
 
 Confío en que, a medida que me familiarice con el lenguaje, todo será más fácil 🤞
 
-# Resultados
+# Resultados 🎉
 
-![Resultados de la migración]()
+Y así quedó el explorador de archivos después de renombrar los archivos, corregir errores y reordenar un poco:
+
+![componentes de react ahora con extensión .tsx](componentsTS.png)
+
+![otros archivos modificados](pagesandtemplates.png)
+
+La mejor confirmación de que todo fue bien fue no ver errores en la consola y darle la bienvenida una vez más a la página principal de mi portafolio 🤩
+
+![Salida de la consola](console.png)
+
+![Página principal](todook.png)
+
+Recuerda que puedes ver cómo quedó todo en [el repositorio del proyecto](https://github.com/M4ss1ck/massick-portfolio).
+
+# Pendientes 😒
+
+Me hubiera gustado migrar **todos** los archivos Javascript, pero en este primer momento me quedaron fuera los archivos de configuración: algunos de Gatsby y otros de Tailwind CSS, PostCSS, etc. Tampoco sé si, en el caso de estos últimos: 1) es posible y 2) si tiene alguna utilidad práctica. Así que lo dejo para una segunda parte, cuando tenga la respuesta a esas incógnitas 🚶‍♂️
+
+**¡Hasta la próxima!**
