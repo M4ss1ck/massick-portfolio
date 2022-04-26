@@ -51,9 +51,22 @@ pnpm add -D @types/react-helmet @types/node @types/react @types/react-dom typesc
 
 Y ahora toca lo bueno: cambiar las extensiones de `.js` a `.ts` o `.tsx` y solucionar problemas 😅
 
-# Migrando
+# Migrando 🛫 🛬
 
-bla bla bla
+Lo primero es copiar el archivo `tsconfig.json` de mi proyecto [cv-maker](https://github.com/M4ss1ck/gatsby-cv-maker). Luego comencé a cambiar la extensión de los archivos en `src/components` de `.js` a `.tsx` y solucionar los errores a medida que fueran apareciendo.
+
+![Error No se encuentra el módulo "../svg/name.svg" ni sus declaraciones de tipos correspondientes](svgerror.png)
+
+En mi componente `Footer.tsx` importaba archivos `.svg` como componentes de react, lo que provocaba un error: **No se encuentra el módulo "../svg/name.svg" ni sus declaraciones de tipos correspondientes**. La solución fue crear el archivo `src/custom.d.ts` con el siguiente código:
+
+```ts
+declare module "*.svg" {
+  const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>
+  export default content
+}
+```
+
+Con esto es suficiente, ya que nuestro `tsconfig.json` tiene la línea `"include": ["./src/**/*"]`.
 
 # Resultados
 
