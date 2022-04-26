@@ -1,10 +1,17 @@
-import * as React from "react"
-import Footer from "./footer"
-import Header from "./header"
-import LandingPage from "./landingPage"
-import ReadingProgress from "./readingProgress"
+import React from "react"
+import Footer from "./Footer"
+import Header from "./Header"
+import LandingPage from "./LandingPage"
+import ReadingProgress from "./ReadingProgress"
 
-const Layout = ({ location, title, children, barra }) => {
+interface Layout {
+  children: React.ReactNode
+  title: string
+  location: any
+  barra?: any
+}
+
+const Layout: React.FC<Layout> = ({ location, title, children, barra }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const rootPathEs = `${__PATH_PREFIX__}/es/`
   const rootPathEn = `${__PATH_PREFIX__}/en/`
@@ -13,7 +20,7 @@ const Layout = ({ location, title, children, barra }) => {
     location.pathname === rootPathEs ||
     location.pathname === rootPathEn
   let header
-  const target = React.createRef()
+  const target = React.createRef<HTMLDivElement>()
   if (isRootPath) {
     header = <LandingPage title={title} />
   } else {

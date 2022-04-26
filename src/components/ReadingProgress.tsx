@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react"
 
-const ReadingProgress = ({ target }) => {
+const ReadingProgress: React.FC<any> = ({ target }) => {
   const [readingProgress, setReadingProgress] = useState(0)
   const scrollListener = useCallback(() => {
     if (!target.current) {

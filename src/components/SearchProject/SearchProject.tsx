@@ -3,15 +3,21 @@ import Fuse from "fuse.js"
 import { Trans, useTranslation } from "gatsby-plugin-react-i18next"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-const Search = ({ posts, keys, search }) => {
+interface Searchproject {
+  projects: any[]
+  keys: any
+  search: any
+}
+
+const SearchProject: React.FC<Searchproject> = ({ projects, keys, search }) => {
   const { t } = useTranslation()
   const [query, updateQuery] = React.useState("")
-  const onSearch = e => {
+  const onSearch = (e: React.FocusEvent<HTMLInputElement, Element>) => {
     updateQuery(e.target.value)
   }
-  const fuse = new Fuse(posts, {
+  const fuse = new Fuse(projects, {
     isCaseSensitive: false,
-    includeMatches: true,
+    //includeMatches: true,
     keys: keys,
   })
 
@@ -21,7 +27,7 @@ const Search = ({ posts, keys, search }) => {
     <>
       {!!search && (
         <input
-          id="search"
+          id="searchProject"
           type="text"
           placeholder={t("Search")}
           className="w-full px-2 mt-2 text-lg text-center bg-transparent border border-transparent rounded-lg outline-none dark:rounded-lg dark:bg-transparent dark:outline-none form-input dark:form-input max-w-prose text-primario dark:text-secundario dark:border-transparent focus:border-primario dark:focus:border-secundario focus:outline-none focus:ring-0 focus:ring-offset-transparent focus:ring-offset-0 dark:focus:ring-0 dark:focus:ring-offset-transparent dark:focus:ring-offset-0"
@@ -48,35 +54,29 @@ const Search = ({ posts, keys, search }) => {
       ) : null}
 
       {query === "" ? (
-        <ol className="z-10 py-4 list-none max-w-prose">
-          {posts.map(post => {
-            const title = post.frontmatter.title || post.fields.slug
-            const slug = post.fields.slug
+        <ol style={{ listStyle: `none` }} className="z-10 py-4 max-w-prose">
+          {projects.map(p => {
+            const title = p.title
+            const slug = p.url
             return (
-              <li key={slug} className="m-4">
+              <li key={title} className="m-4">
                 <article
                   className="grid grid-cols-2 grid-rows-3 gap-4 my-2 xs:grid-cols-3 xs:grid-rows-2"
                   itemScope
                   itemType="http://schema.org/Article"
                 >
-                  {post.frontmatter.featuredImage && (
+                  {p.image && (
                     <div className="relative row-span-2 my-4">
                       <GatsbyImage
-                        image={
-                          post.frontmatter.featuredImage.childImageSharp
-                            .gatsbyImageData
-                        }
+                        image={p.image}
                         alt=""
                         className="relative top-0 w-full h-full blur-sm hue-rotate-30"
                         objectFit="cover"
                       />
                       <GatsbyImage
-                        image={
-                          post.frontmatter.featuredImage.childImageSharp
-                            .gatsbyImageData
-                        }
-                        layout="fullWidth"
-                        alt={post.frontmatter.description || ""}
+                        image={p.image}
+                        //layout="fullWidth"
+                        alt={p.description || ""}
                         // className="absolute left-0 w-full -translate-y-1/2 top-1/2"
                         style={{
                           position: "absolute",
@@ -92,20 +92,18 @@ const Search = ({ posts, keys, search }) => {
                   )}
                   <header className="row-span-2 my-auto xs:col-span-2 xs:row-span-1">
                     <h2 className="mt-2 text-lg font-bold text-primario dark:text-secundario">
-                      <a href={slug} itemProp="url">
+                      <a
+                        href={slug}
+                        itemProp="url"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <span itemProp="headline">{title}</span>
                       </a>
                     </h2>
-                    <small className="text-sm">{post.frontmatter.date}</small>
                   </header>
                   <section className="col-span-2 row-span-1">
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: post.frontmatter.description || post.excerpt,
-                      }}
-                      itemProp="description"
-                      className="mb-2"
-                    />
+                    <p>{p.description}</p>
                   </section>
                 </article>
               </li>
@@ -116,33 +114,27 @@ const Search = ({ posts, keys, search }) => {
         <ol className="z-10 py-4 list-none max-w-prose">
           {results.map(e => {
             const item = e.item
-            const title = item.frontmatter.title || item.fields.slug
-            const slug = item.fields.slug
+            const title = item.title
+            const slug = item.url
             return (
-              <li key={slug} className="m-4">
+              <li key={title} className="m-4">
                 <article
                   className="grid grid-cols-2 grid-rows-3 gap-4 my-2 xs:grid-cols-3 xs:grid-rows-2"
                   itemScope
                   itemType="http://schema.org/Article"
                 >
-                  {item.frontmatter.featuredImage && (
+                  {item.image && (
                     <div className="relative row-span-2 my-4">
                       <GatsbyImage
-                        image={
-                          item.frontmatter.featuredImage.childImageSharp
-                            .gatsbyImageData
-                        }
+                        image={item.image}
                         alt=""
                         className="relative top-0 w-full h-full blur-sm hue-rotate-30"
                         objectFit="cover"
                       />
                       <GatsbyImage
-                        image={
-                          item.frontmatter.featuredImage.childImageSharp
-                            .gatsbyImageData
-                        }
-                        layout="fullWidth"
-                        alt={item.frontmatter.description || ""}
+                        image={item.image}
+                        //layout="fullWidth"
+                        alt={item.description || ""}
                         // className="absolute left-0 w-full -translate-y-1/2 top-1/2"
                         style={{
                           position: "absolute",
@@ -158,20 +150,18 @@ const Search = ({ posts, keys, search }) => {
                   )}
                   <header className="row-span-2 my-auto xs:col-span-2 xs:row-span-1">
                     <h2 className="mt-2 text-lg font-bold text-primario dark:text-secundario">
-                      <a href={slug} itemProp="url">
+                      <a
+                        href={slug}
+                        itemProp="url"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <span itemProp="headline">{title}</span>
                       </a>
                     </h2>
-                    <small className="text-sm">{item.frontmatter.date}</small>
                   </header>
                   <section className="col-span-2 row-span-1">
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: item.frontmatter.description || item.excerpt,
-                      }}
-                      itemProp="description"
-                      className="mb-2"
-                    />
+                    <p>{item.description}</p>
                   </section>
                 </article>
               </li>
@@ -183,4 +173,4 @@ const Search = ({ posts, keys, search }) => {
   )
 }
 
-export default Search
+export default SearchProject

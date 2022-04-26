@@ -1,14 +1,47 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Trans, Link, useTranslation } from "gatsby-plugin-react-i18next"
-import Bio from "../components/bio"
+import Bio from "../components/Bio"
 import { GatsbyImage } from "gatsby-plugin-image"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
+import Comment from "../components/Comment"
 
-import Comment from "../components/comment"
+interface Props {
+  data: {
+    allMarkdownRemark: {
+      nodes: [
+        {
+          frontmatter: {
+            categories: string
+            locale: string
+            title: string
+            description: string
+            featuredImage: {
+              childImageSharp: {
+                gatsbyImageData: any
+              }
+            }
+            date: string
+          }
+          fields: {
+            slug: string
+          }
+        }
+      ]
+    }
+  }
+  location: Location
+  pageContext: {
+    category: string
+  }
+}
 
-const CategoryTemplate = ({ data, location, pageContext: { category } }) => {
+const CategoryTemplate = ({
+  data,
+  location,
+  pageContext: { category },
+}: Props) => {
   const posts = data.allMarkdownRemark
   const { t } = useTranslation()
   const siteTitle = `${t("Category")}: "${category}"`
@@ -22,19 +55,19 @@ const CategoryTemplate = ({ data, location, pageContext: { category } }) => {
         // itemType="http://schema.org/Article"
       >
         <div className="grid grid-flow-col lg:grid-flow-row grid-cols-1 lg:grid-cols-4 lg:gap-6 pb-16 lg:pb-20 grid-rows-[auto_1fr] px-4 lg:px-2 py-4">
-          <aside className="lg:sticky top-20  px-4">
+          <aside className="px-4 lg:sticky top-20">
             <Bio />
           </aside>
 
           {/* Main article */}
-          <div className="col-span-full lg:col-span-3 lg:row-span-4 divide-primario dark:divide-secundario prose prose-headings:text-primario dark:prose-dark">
+          <div className="prose col-span-full lg:col-span-3 lg:row-span-4 divide-primario dark:divide-secundario prose-headings:text-primario dark:prose-dark">
             <Link
               to="/categories"
-              className="no-underline text-primario dark:text-secundario flex flex-row items-center"
+              className="flex flex-row items-center no-underline text-primario dark:text-secundario"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 inline-flex"
+                className="inline-flex w-6 h-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -54,17 +87,17 @@ const CategoryTemplate = ({ data, location, pageContext: { category } }) => {
               return (
                 <section
                   key={post.frontmatter.title}
-                  className="text-center pt-4"
+                  className="pt-4 text-center"
                 >
                   {post.frontmatter.featuredImage && (
                     <div className="flex items-center justify-center">
                       <GatsbyImage
+                        //layout="fullWidth"
                         image={
                           post.frontmatter.featuredImage.childImageSharp
                             .gatsbyImageData
                         }
-                        layout="fullWidth"
-                        placeholder="tracedSVG"
+                        //placeholder="tracedSVG"
                         alt={post.frontmatter.description || ""}
                         className="outline outline-2 rounded-xl outline-primario dark:outline-secundario"
                       />
@@ -73,7 +106,7 @@ const CategoryTemplate = ({ data, location, pageContext: { category } }) => {
                   <a href={post.fields.slug} className="no-underline">
                     <h1
                       itemProp="headline"
-                      className="text-xl font-extrabold text-primario dark:text-secundario text-center mt-4"
+                      className="mt-4 text-xl font-extrabold text-center text-primario dark:text-secundario"
                     >
                       {post.frontmatter.title}
                     </h1>

@@ -3,15 +3,21 @@ import Fuse from "fuse.js"
 import { Trans, useTranslation } from "gatsby-plugin-react-i18next"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-const SearchProject = ({ projects, keys, search }) => {
+interface SearchPosts {
+  posts: any
+  keys: any
+  search?: boolean
+}
+
+const Search: React.FC<SearchPosts> = ({ posts, keys, search }) => {
   const { t } = useTranslation()
   const [query, updateQuery] = React.useState("")
-  const onSearch = e => {
+  const onSearch = (e: React.FocusEvent<HTMLInputElement, Element>) => {
     updateQuery(e.target.value)
   }
-  const fuse = new Fuse(projects, {
+  const fuse = new Fuse(posts, {
     isCaseSensitive: false,
-    //includeMatches: true,
+    includeMatches: true,
     keys: keys,
   })
 
@@ -21,7 +27,7 @@ const SearchProject = ({ projects, keys, search }) => {
     <>
       {!!search && (
         <input
-          id="searchProject"
+          id="search"
           type="text"
           placeholder={t("Search")}
           className="w-full px-2 mt-2 text-lg text-center bg-transparent border border-transparent rounded-lg outline-none dark:rounded-lg dark:bg-transparent dark:outline-none form-input dark:form-input max-w-prose text-primario dark:text-secundario dark:border-transparent focus:border-primario dark:focus:border-secundario focus:outline-none focus:ring-0 focus:ring-offset-transparent focus:ring-offset-0 dark:focus:ring-0 dark:focus:ring-offset-transparent dark:focus:ring-offset-0"
@@ -48,29 +54,35 @@ const SearchProject = ({ projects, keys, search }) => {
       ) : null}
 
       {query === "" ? (
-        <ol style={{ listStyle: `none` }} className="z-10 py-4 max-w-prose">
-          {projects.map(p => {
-            const title = p.title
-            const slug = p.url
+        <ol className="z-10 py-4 list-none max-w-prose">
+          {posts.map((post: any) => {
+            const title = post.frontmatter.title || post.fields.slug
+            const slug = post.fields.slug
             return (
-              <li key={title} className="m-4">
+              <li key={slug} className="m-4">
                 <article
                   className="grid grid-cols-2 grid-rows-3 gap-4 my-2 xs:grid-cols-3 xs:grid-rows-2"
                   itemScope
                   itemType="http://schema.org/Article"
                 >
-                  {p.image && (
+                  {post.frontmatter.featuredImage && (
                     <div className="relative row-span-2 my-4">
                       <GatsbyImage
-                        image={p.image}
+                        image={
+                          post.frontmatter.featuredImage.childImageSharp
+                            .gatsbyImageData
+                        }
                         alt=""
                         className="relative top-0 w-full h-full blur-sm hue-rotate-30"
                         objectFit="cover"
                       />
                       <GatsbyImage
-                        image={p.image}
-                        layout="fullWidth"
-                        alt={p.description || ""}
+                        image={
+                          post.frontmatter.featuredImage.childImageSharp
+                            .gatsbyImageData
+                        }
+                        //layout="fullWidth"
+                        alt={post.frontmatter.description || ""}
                         // className="absolute left-0 w-full -translate-y-1/2 top-1/2"
                         style={{
                           position: "absolute",
@@ -86,18 +98,20 @@ const SearchProject = ({ projects, keys, search }) => {
                   )}
                   <header className="row-span-2 my-auto xs:col-span-2 xs:row-span-1">
                     <h2 className="mt-2 text-lg font-bold text-primario dark:text-secundario">
-                      <a
-                        href={slug}
-                        itemProp="url"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href={slug} itemProp="url">
                         <span itemProp="headline">{title}</span>
                       </a>
                     </h2>
+                    <small className="text-sm">{post.frontmatter.date}</small>
                   </header>
                   <section className="col-span-2 row-span-1">
-                    <p>{p.description}</p>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: post.frontmatter.description || post.excerpt,
+                      }}
+                      itemProp="description"
+                      className="mb-2"
+                    />
                   </section>
                 </article>
               </li>
@@ -106,29 +120,35 @@ const SearchProject = ({ projects, keys, search }) => {
         </ol>
       ) : (
         <ol className="z-10 py-4 list-none max-w-prose">
-          {results.map(e => {
+          {results.map((e: any) => {
             const item = e.item
-            const title = item.title
-            const slug = item.url
+            const title = item.frontmatter.title || item.fields.slug
+            const slug = item.fields.slug
             return (
-              <li key={title} className="m-4">
+              <li key={slug} className="m-4">
                 <article
                   className="grid grid-cols-2 grid-rows-3 gap-4 my-2 xs:grid-cols-3 xs:grid-rows-2"
                   itemScope
                   itemType="http://schema.org/Article"
                 >
-                  {item.image && (
+                  {item.frontmatter.featuredImage && (
                     <div className="relative row-span-2 my-4">
                       <GatsbyImage
-                        image={item.image}
+                        image={
+                          item.frontmatter.featuredImage.childImageSharp
+                            .gatsbyImageData
+                        }
                         alt=""
                         className="relative top-0 w-full h-full blur-sm hue-rotate-30"
                         objectFit="cover"
                       />
                       <GatsbyImage
-                        image={item.image}
-                        layout="fullWidth"
-                        alt={item.description || ""}
+                        image={
+                          item.frontmatter.featuredImage.childImageSharp
+                            .gatsbyImageData
+                        }
+                        //layout="fullWidth"
+                        alt={item.frontmatter.description || ""}
                         // className="absolute left-0 w-full -translate-y-1/2 top-1/2"
                         style={{
                           position: "absolute",
@@ -144,18 +164,20 @@ const SearchProject = ({ projects, keys, search }) => {
                   )}
                   <header className="row-span-2 my-auto xs:col-span-2 xs:row-span-1">
                     <h2 className="mt-2 text-lg font-bold text-primario dark:text-secundario">
-                      <a
-                        href={slug}
-                        itemProp="url"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href={slug} itemProp="url">
                         <span itemProp="headline">{title}</span>
                       </a>
                     </h2>
+                    <small className="text-sm">{item.frontmatter.date}</small>
                   </header>
                   <section className="col-span-2 row-span-1">
-                    <p>{item.description}</p>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: item.frontmatter.description || item.excerpt,
+                      }}
+                      itemProp="description"
+                      className="mb-2"
+                    />
                   </section>
                 </article>
               </li>
@@ -167,4 +189,4 @@ const SearchProject = ({ projects, keys, search }) => {
   )
 }
 
-export default SearchProject
+export default Search

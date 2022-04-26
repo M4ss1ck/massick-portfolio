@@ -1,14 +1,17 @@
 import React from "react"
-import DarkToggle from "../lib/darkToggle"
-import Canvas from "../lib/canvas"
+import DarkToggle from "../lib/DarkToggle"
+import Canvas from "../lib/Canvas"
 import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next"
 
-import Language from "./language"
+import Language from "./Language"
 import Hacker from "../svg/hacker.svg"
 import Massick2x3 from "../svg/massick-2x3.svg"
 import Massick1x1 from "../svg/massick-1x1.svg"
 
-const LandingPage = ({ title }) => {
+interface LP {
+  title: string
+}
+const LandingPage: React.FC<LP> = ({ title }) => {
   const { t } = useTranslation()
   const letrasTitulo = [...title]
   return (

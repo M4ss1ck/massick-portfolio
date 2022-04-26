@@ -1,12 +1,13 @@
 import React from "react"
 import { Trans, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import { graphql } from "gatsby"
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import Projects from "../components/projects"
+import type { PageProps } from "gatsby"
+import Bio from "../components/Bio"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
+import Projects from "../components/Projects"
 
-const Portfolio = ({ data, location }) => {
+const Portfolio = ({ data, location }: PageProps) => {
   const { t } = useTranslation()
   const { language } = useI18next()
 
