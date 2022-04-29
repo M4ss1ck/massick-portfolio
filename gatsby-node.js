@@ -88,7 +88,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       .map(node => node.frontmatter.categories)
       .map(categories => categories.split(","))
       .flat()
-      .map(category => category.trim().toLowerCase())
+      .map(category => category.trim().toLowerCase().replace(/\s/g, "_"))
   )
 
   //allCategories.add("uncategorized")
@@ -97,7 +97,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     await actions.createPage({
       path: `/categories/${category}`,
       component: require.resolve("./src/templates/category.tsx"),
-      context: { category, categoryRegex: `/${category}/gi` },
+      context: {
+        category,
+        categoryRegex: `/${category.replace(/_/g, " ")}/gi`,
+      },
     })
   }
 }

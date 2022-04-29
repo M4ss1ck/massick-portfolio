@@ -65,6 +65,7 @@ const BlogPostTemplate = ({ data, location }: Props) => {
   const categories = post.frontmatter.categories.split(",")
   const siteTitle = data.site.siteMetadata?.title || `Blog`
   const { previous, next } = data
+  const remSpace = (str: string) => str.replace(/\s+/g, "_")
   return (
     <Layout location={location} title={siteTitle} barra>
       <Seo
@@ -143,7 +144,9 @@ const BlogPostTemplate = ({ data, location }: Props) => {
                 {categories.map((category: string) => (
                   <li key={category}>
                     <Link
-                      to={`/categories/${category.trim().toLowerCase()}`}
+                      to={`/categories/${remSpace(
+                        category.trim().toLowerCase()
+                      )}`}
                       className="px-2 mx-2 no-underline rounded-lg outline outline-2 outline-primario dark:outline-secundario text-primario dark:text-secundario hover:text-black dark:hover:text-white hover:outline-black dark:hover:outline-white"
                     >
                       {category.trim()}
