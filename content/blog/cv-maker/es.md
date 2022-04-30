@@ -1,6 +1,6 @@
 ---
 title: Crea tu currículo en línea con CV Maker
-date: "2022-04-29"
+date: "2022-04-30"
 description: "CV Maker es una herramienta de creación de currículos en línea que te permite crear tu currículo de forma fácil y rápida. Completamente gratuito y respetando tu privacidad."
 categories: "gatsby, typescript, aplicación, open source"
 locale: es
