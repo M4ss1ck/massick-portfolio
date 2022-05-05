@@ -1,17 +1,15 @@
 import React from "react"
 import Footer from "../Footer/Footer"
 import Header from "../Header/Header"
-import LandingPage from "./LandingPage"
 import ReadingProgress from "./ReadingProgress"
 
 interface Layout {
   children: React.ReactNode
-  title: string
   location: any
   barra?: any
 }
 
-const Layout: React.FC<Layout> = ({ location, title, children, barra }) => {
+const Layout: React.FC<Layout> = ({ location, children, barra }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const rootPathEs = `${__PATH_PREFIX__}/es/`
   const rootPathEn = `${__PATH_PREFIX__}/en/`
@@ -19,24 +17,15 @@ const Layout: React.FC<Layout> = ({ location, title, children, barra }) => {
     location.pathname === rootPath ||
     location.pathname === rootPathEs ||
     location.pathname === rootPathEn
-  let header
+
   const target = React.createRef<HTMLDivElement>()
-  if (isRootPath) {
-    header = <LandingPage title={title} />
-  } else {
-    header = <Header />
-  }
 
   return (
     <div
-      className="w-full global-wrapper text-primario dark:text-gray-400 dark:bg-black "
+      className="w-full overflow-none global-wrapper text-primario dark:text-gray-400 dark:bg-black"
       data-is-root-path={isRootPath}
     >
-      <header
-        className={isRootPath ? "w-full h-[100vh]" : "w-full sticky top-0 z-30"}
-      >
-        {header}
-      </header>
+      {!isRootPath ? <Header /> : null}
       {barra ? <ReadingProgress target={target} /> : null}
       <main
         ref={target}

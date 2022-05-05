@@ -12,17 +12,24 @@ import Layout from "../components/Layout/Layout"
 import Seo from "../components/SEO/Seo"
 import Projects from "../components/Projects/Projects"
 import Search from "../components/Posts/SearchPosts"
+import Language from "../components/LanguageSwitcher/Language"
+import Canvas from "../lib/Canvas"
+import DarkToggle from "../lib/DarkToggle"
+import Hacker from "../svg/hacker.svg"
+import Massick2x3 from "../svg/massick-2x3.svg"
+import Massick1x1 from "../svg/massick-1x1.svg"
 
 const BlogIndex = ({ data, location }: PageProps<any>) => {
   const siteTitle = data.site.siteMetadata?.title || `home`
   const description = data.site.siteMetadata?.description || `home`
   const posts = data.allMarkdownRemark.nodes
-
   const { t } = useTranslation()
+  const title = t("titulo_portada")
+  const letrasTitulo = [...title]
   const { language } = useI18next()
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={t("titulo_portada")}>
+      <Layout location={location}>
         <Seo
           lang={language}
           title={t("no_posts")}
@@ -37,9 +44,70 @@ const BlogIndex = ({ data, location }: PageProps<any>) => {
   }
 
   return (
-    <Layout location={location} title={t("titulo_portada")}>
+    <Layout location={location}>
       <Seo lang={language} title={t(siteTitle)} />
+      <section className="flex flex-col items-center justify-center w-full h-screen pt-6 pb-2">
+        <Canvas />
+        <Link
+          to="/"
+          aria-label={t("home")}
+          className="absolute z-20 hidden rounded-md shadow-md md:block top-8 right-12 dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario dark:z-20 "
+        >
+          <Massick2x3 className="w-32 h-48 fill-current text-primario dark:text-secundario" />
+        </Link>
+        <aside className="flex flex-row py-1 px-4 md:flex-col justify-between items-center absolute w-full md:w-fit left-0 top-0 md:top-[60vh] z-20  md:border-4 border-b-4 border-primario dark:border-secundario md:-rotate-45 hover:rotate-0  rounded-lg md:-translate-x-2 md:hover:translate-x-12 lg:transition md:hover:scale-150 shadow-md dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario bg-slate-200 dark:bg-black">
+          <Link to="/" className="md:hidden" aria-label={t("home")}>
+            <Massick1x1 className="w-12 h-12 rounded-md text-primario dark:text-secundario" />
+          </Link>
+          <DarkToggle />
+          <Language />
+          <h2 className="hidden px-4 py-8 text-sm text-center xxs:block lg:text-lg font-montserrat">
+            <Link to="/about" className="text-primario dark:text-secundario">
+              <Trans>who_am_I</Trans>
+            </Link>
+          </h2>
+        </aside>
+        <h1
+          aria-label={title}
+          className="absolute z-10 flex flex-wrap items-center justify-center text-2xl text-center uppercase md:text-5xl lg:text-7xl font-rammetto"
+        >
+          {letrasTitulo.map((letra, index) => {
+            return (
+              <span
+                key={index}
+                className={
+                  letra === " "
+                    ? "min-w-[1rem] mr-auto w-full"
+                    : "transition duration-300 hover:skew-y-12 hover:even:-skew-y-12 hover:-translate-y-16 hover:even:-translate-y-14 hover:scale-150 text-primario dark:text-secundario min-w-[1rem] cursor-default "
+                }
+              >
+                {letra}
+              </span>
+            )
+          })}
+        </h1>
 
+        <Hacker className="absolute bottom-0 w-full opacity-90 dark:opacity-20" />
+        <h2 className="absolute z-20 text-lg uppercase bottom-12 lg:text-2xl font-montserrat text-primario dark:text-secundario animate-bounce dark:z-20">
+          <Trans>Projects</Trans>
+        </h2>
+
+        {/* scroll-down button */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute w-6 h-6 my-4 bottom-2 animate-bounce text-primario dark:text-secundario"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 13l-7 7-7-7m14-8l-7 7-7-7"
+          />
+        </svg>
+      </section>
       <Projects limit={5} />
       <span className="px-4 mb-8 rounded-lg font-montserrat text-primario dark:text-secundario outline-1 outline outline-transparent hover:outline-primario dark:hover:outline-secundario">
         <Link to="/portfolio">
@@ -73,71 +141,6 @@ const BlogIndex = ({ data, location }: PageProps<any>) => {
           "frontmatter.categories",
         ]}
       />
-      {/* <ol style={{ listStyle: `none` }} className="max-w-prose">
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-          const slug = post.fields.slug
-          return (
-            <li key={slug} className="">
-              <article
-                className="grid grid-cols-3 grid-rows-2 gap-4 my-2"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                {post.frontmatter.featuredImage && (
-                  <div className="relative row-span-2 my-4">
-                    <GatsbyImage
-                      image={
-                        post.frontmatter.featuredImage.childImageSharp
-                          .gatsbyImageData
-                      }
-                      alt=""
-                      className="relative top-0 w-full h-full blur-sm hue-rotate-30"
-                      objectFit="cover"
-                    />
-                    <GatsbyImage
-                      image={
-                        post.frontmatter.featuredImage.childImageSharp
-                          .gatsbyImageData
-                      }
-                      layout="fullWidth"
-                      alt={post.frontmatter.description || ""}
-                      // className="absolute left-0 w-full -translate-y-1/2 top-1/2"
-                      style={{
-                        position: "absolute",
-                        top: "50%",
-                        left: "0",
-                        transform: "translate(0,-50%)",
-                        width: "100%",
-                        maxHeight: "90%",
-                      }}
-                      imgStyle={{ objectPosition: "50% 0%" }}
-                    />
-                  </div>
-                )}
-                <header className="col-span-2 row-span-1 my-auto">
-                  <h2 className="mt-2 text-lg font-bold text-primario dark:text-secundario">
-                    <a href={slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </a>
-                  </h2>
-                  <small className="text-sm">{post.frontmatter.date}</small>
-                </header>
-                <section className="col-span-2 row-span-1">
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                    className="mb-2"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol> */}
-
       <span className="flex justify-center px-4 mb-8 text-center rounded-lg font-montserrat text-primario dark:text-secundario outline-1 outline outline-transparent hover:outline-primario dark:hover:outline-secundario">
         <Link to="/blog">
           <Trans>Ver más</Trans>

@@ -42,7 +42,7 @@ const socialLinks = [
 
 function Footer() {
   return (
-    <footer className="overflow-x-scroll bg-primario dark:bg-gradient-to-r dark:from-black dark:via-gray-900 dark:to-black dark:text-white">
+    <footer className="overflow-x-scroll scrollbar-thin bg-primario dark:bg-gradient-to-r dark:from-black dark:via-gray-900 dark:to-black dark:text-white">
       <div className="flex flex-col items-center max-w-3xl px-4 py-6 mx-auto space-y-6 md:flex-row md:justify-between sm:px-6 lg:max-w-5xl md:space-y-0">
         <p className="text-white dark:text-secundario">
           <Trans>Construido con</Trans>{" "}
