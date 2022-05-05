@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    @apply scrollbar-none
+}
+
 .autolinks {
     @apply hidden hover:inline-flex px-2 text-primario dark:text-secundario
 }
