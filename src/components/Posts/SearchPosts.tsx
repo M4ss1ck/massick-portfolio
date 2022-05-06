@@ -102,7 +102,9 @@ const Search: React.FC<SearchPosts> = ({ posts, keys, search }) => {
                         <span itemProp="headline">{title}</span>
                       </a>
                     </h2>
-                    <small className="text-sm">{post.frontmatter.date}</small>
+                    <small className="text-sm outline outline-1 rounded-md px-1 text-primario dark:text-secundario">
+                      {post.frontmatter.date}
+                    </small>
                   </header>
                   <section className="col-span-2 row-span-1">
                     <p
