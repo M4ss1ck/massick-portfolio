@@ -43,5 +43,11 @@
   "Search": "Search",
   "No matches found": "No matches found",
   "match found": "match found",
-  "matches found": "matches found"
+  "matches found": "matches found",
+  "Snake game for Delta Chat made using HTML + CSS + JS + Vite": "Snake game for Delta Chat made using HTML + CSS + JS + Vite",
+  "A color picker game for Delta Chat made using React + SCSS + Vite": "A color picker game for Delta Chat made using React + SCSS + Vite",
+  "Whack-A-Ninja: Whack-a-mole clon for Delta Chat": "Whack-A-Ninja: Whack-a-mole clon for Delta Chat",
+  "A Whack-A-Mole clon for playing in Delta Chat made with only HTML + CSS + Javascript": "A Whack-A-Mole clon for playing in Delta Chat made with only HTML + CSS + Javascript",
+  "Math Battle game for Delta Chat": "Math Battle game for Delta Chat",
+  "Math Battle game for Delta Chat made with only HTML + CSS + Javascript": "Math Battle game for Delta Chat made with only HTML + CSS + Javascript"
 }

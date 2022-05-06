@@ -43,5 +43,11 @@
   "Search": "Buscar",
   "No matches found": "No se encontraron coincidencias",
   "match found": "coincidencia encontrada",
-  "matches found": "coincidencias encontradas"
+  "matches found": "coincidencias encontradas",
+  "Snake game for Delta Chat made using HTML + CSS + JS + Vite": "Juego de la serpiente para Delta Chat hecho con HTML + CSS + JS + Vite",
+  "A color picker game for Delta Chat made using React + SCSS + Vite": "Juego de escoger el color para Delta Chat hecho con React + SCSS + Vite",
+  "Whack-A-Ninja: Whack-a-mole clon for Delta Chat": "Whack-A-Ninja: clon de Whack-a-mole para Delta Chat",
+  "A Whack-A-Mole clon for playing in Delta Chat made with only HTML + CSS + Javascript": "Un clon del clásico Whack-A-Mole para jugar en Delta Chat hecho con HTML + CSS + Javascript",
+  "Math Battle game for Delta Chat": "Math Battle para Delta Chat",
+  "Math Battle game for Delta Chat made with only HTML + CSS + Javascript": "Juego de matemáticas para Delta Chat hecho con HTML + CSS + Javascript"
 }
