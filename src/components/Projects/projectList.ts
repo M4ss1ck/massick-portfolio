@@ -58,7 +58,7 @@ const proyectos = [
     url: "https://github.com/M4ss1ck/longPollRobot",
     title: "Long Poll Robot",
     description:
-      "Envía encuestas con más de 10 opciones y serán divididas equitativamente usando el comando /poll.",
+      "Envía encuestas con más de 10 opciones y serán divididas equitativamente usando el comando /poll",
     imageName: "pollbot.png",
     tags: ["NodeJS", "Telegram Bot", "Telegraf"],
   },

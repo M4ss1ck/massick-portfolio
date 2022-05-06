@@ -17,7 +17,7 @@
   "Comments": "Comentarios",
   "Projects": "Proyectos",
   "Mi portafolio (esta página)": "Mi portafolio (esta página)",
-  "Página web creada con GatsbyJS usando Markdown para las publicaciones y TailwindCSS para los estilos. Soporte para modo oscuro y múltiples idiomas.": "Página web creada con GatsbyJS usando Markdown para las publicaciones y TailwindCSS para los estilos. Soporte para modo oscuro y múltiples idiomas.",
+  "Página web creada con GatsbyJS usando Markdown para las publicaciones y TailwindCSS para los estilos. Soporte para modo oscuro y múltiples idiomas.": "Página web creada con GatsbyJS usando Markdown para las publicaciones con soporte para modo oscuro, múltiples idiomas y mucho más.",
   "Telegram bot using nodejs and telebot": "Bot de Telegram usando nodejs y telebot",
   "Next.js Blog Template": "Blog con Next.js",
   "Blog template using Next.js and TailwindCSS": "Plantilla de Blog usando Next.js y TailwindCSS",
@@ -29,7 +29,7 @@
   "here": "aquí",
   "CV title": "Mi CV",
   "CV maker": "Generador de CVs",
-  "Crear un hermoso CV a partir de un formulario.": "Crea un hermoso CV a partir de un formulario. Hecho con Typescript, GatbsyJS y TailwindCSS.",
+  "Crear un hermoso CV a partir de un formulario.": "Crea un hermoso CV a partir de un formulario. Sporte para múltiples idiomas.",
   "Massick's Blog": "Blog de Massick",
   "Mi portafolio": "Mi portafolio",
   "Ver más": "Ver más",
@@ -44,10 +44,10 @@
   "No matches found": "No se encontraron coincidencias",
   "match found": "coincidencia encontrada",
   "matches found": "coincidencias encontradas",
-  "Snake game for Delta Chat made using HTML + CSS + JS + Vite": "Juego de la serpiente para Delta Chat hecho con HTML + CSS + JS + Vite",
-  "A color picker game for Delta Chat made using React + SCSS + Vite": "Juego de escoger el color para Delta Chat hecho con React + SCSS + Vite",
-  "Whack-A-Ninja: Whack-a-mole clon for Delta Chat": "Whack-A-Ninja: clon de Whack-a-mole para Delta Chat",
-  "A Whack-A-Mole clon for playing in Delta Chat made with only HTML + CSS + Javascript": "Un clon del clásico Whack-A-Mole para jugar en Delta Chat hecho con HTML + CSS + Javascript",
+  "Snake game for Delta Chat made using HTML + CSS + JS + Vite": "Juego de la serpiente para Delta Chat.",
+  "A color picker game for Delta Chat made using React + SCSS + Vite": "Juego de escoger el color para Delta Chat.",
+  "Whack-A-Ninja: Whack-a-mole clon for Delta Chat": "Whack-A-Ninja",
+  "A Whack-A-Mole clon for playing in Delta Chat made with only HTML + CSS + Javascript": "Un clon del clásico Whack-A-Mole para jugar en Delta Chat.",
   "Math Battle game for Delta Chat": "Math Battle para Delta Chat",
-  "Math Battle game for Delta Chat made with only HTML + CSS + Javascript": "Juego de matemáticas para Delta Chat hecho con HTML + CSS + Javascript"
+  "Math Battle game for Delta Chat made with only HTML + CSS + Javascript": "Juego de matemáticas para Delta Chat."
 }
