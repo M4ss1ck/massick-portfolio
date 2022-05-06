@@ -7,6 +7,13 @@ const proyectos = [
     imageName: "portfolio.png",
   },
   {
+    url: "https://github.com/M4ss1ck/webxdc-snake",
+    title: "Snake game",
+    description:
+      "Snake game for Delta Chat made using HTML + CSS + JS + Vite",
+    imageName: "snake.png",
+  },
+  {
     url: "https://github.com/M4ss1ck/webxdc-rainbow",
     title: "Rainbow game",
     description:
