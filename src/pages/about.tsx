@@ -16,7 +16,7 @@ const About = ({ data, location }: PageProps) => {
   const { language } = useI18next()
   //const siteTitle = "Acerca de"
   return (
-    <Layout location={location} title={t("about")}>
+    <Layout location={location}>
       <Seo lang={language} title={t("about")} />
       <h1 className="mt-4 text-lg uppercase lg:text-2xl font-rammetto text-primario dark:text-secundario">
         <Trans>who_am_I</Trans>

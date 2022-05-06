@@ -20,7 +20,7 @@ const BlogIndex = ({ data, location }: PageProps<DataP>) => {
 
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={t("articles")}>
+      <Layout location={location}>
         <Seo lang={language} title={t("no_posts")} description={t("nada")} />
         <Bio />
         <p>
@@ -31,7 +31,7 @@ const BlogIndex = ({ data, location }: PageProps<DataP>) => {
   }
 
   return (
-    <Layout location={location} title={t("articles")}>
+    <Layout location={location}>
       <Seo lang={language} title={t("articles")} />
       <h1 className="mt-4 text-lg uppercase lg:text-2xl font-rammetto text-primario dark:text-secundario">
         <Trans>articles</Trans>

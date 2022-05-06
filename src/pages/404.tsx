@@ -16,7 +16,7 @@ const NotFoundPage = ({ data, location }: PageProps<any>) => {
   const { t } = useTranslation()
   const { language } = useI18next()
   return (
-    <Layout location={location} title={t(siteTitle)}>
+    <Layout location={location}>
       <Seo
         title="Error 404"
         lang={language}

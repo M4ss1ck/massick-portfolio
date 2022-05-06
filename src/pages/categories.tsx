@@ -23,7 +23,7 @@ const Categories = ({ data, location }: PageProps<any>) => {
       .map((category: string) => category.trim().toLowerCase())
   )
   return (
-    <Layout location={location} title={t("Categories")}>
+    <Layout location={location}>
       <Seo lang={language} title={t("Categories")} />
       <h1 className="mt-4 text-lg uppercase lg:text-2xl font-rammetto text-primario dark:text-secundario">
         <Trans>Categories</Trans>
