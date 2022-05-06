@@ -14,6 +14,7 @@ type P2S = {
   description: string
   image: any
   url: string
+  tags?: string[]
 }
 
 const Projects: React.FC<Projects> = ({ limit, search }) => {
@@ -60,6 +61,7 @@ const Projects: React.FC<Projects> = ({ limit, search }) => {
         description: t(project.description),
         image: p.node.childImageSharp.gatsbyImageData,
         url: project.url,
+        tags: project.tags,
       })
     }
   })
@@ -68,7 +70,7 @@ const Projects: React.FC<Projects> = ({ limit, search }) => {
     <div className="z-20 flex flex-col">
       <SearchProject
         projects={projectsToSearch}
-        keys={["title", "description"]}
+        keys={["title", "description", "tags"]}
         search={search ? true : false}
       />
     </div>

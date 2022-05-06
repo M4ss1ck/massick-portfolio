@@ -3,8 +3,15 @@ import Fuse from "fuse.js"
 import { Trans, useTranslation } from "gatsby-plugin-react-i18next"
 import { GatsbyImage } from "gatsby-plugin-image"
 
+type Project = {
+  title: string
+  description: string
+  image: any
+  url: string
+  tags?: string[]
+}
 interface Searchproject {
-  projects: any[]
+  projects: Project[]
   keys: any
   search: any
 }
@@ -101,6 +108,16 @@ const SearchProject: React.FC<Searchproject> = ({ projects, keys, search }) => {
                         <span itemProp="headline">{title}</span>
                       </a>
                     </h2>
+                    <div className="col-span-2 row-span-1 flex flex-row flex-wrap">
+                      {p.tags?.map((tag: string) => (
+                        <span
+                          key={tag}
+                          className="px-1 m-1 text-xs rounded-md outline outline-1 text-primario dark:text-secundario"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </header>
                   <section className="col-span-2 row-span-1">
                     <p>{p.description}</p>
