@@ -16,6 +16,13 @@ const proyectos = [
     tags: ["HTML", "CSS", "JavaScript", "Vite"],
   },
   {
+    url: "https://github.com/M4ss1ck/gatsby-cv-maker",
+    title: "CV maker",
+    description: "Crear un hermoso CV a partir de un formulario.",
+    imageName: "cv.png",
+    tags: ["Gatsby", "Tailwind CSS", "TypeScript"],
+  },
+  {
     url: "https://github.com/M4ss1ck/webxdc-rainbow",
     title: "Rainbow game",
     description:
@@ -46,13 +53,6 @@ const proyectos = [
       "A template for creating webxdc apps using react and Tailwind CSS.",
     imageName: "webxdc-react-template.png",
     tags: ["React", "Tailwind CSS","Vite"],
-  },
-  {
-    url: "https://github.com/M4ss1ck/gatsby-cv-maker",
-    title: "CV maker",
-    description: "Crear un hermoso CV a partir de un formulario.",
-    imageName: "cv.png",
-    tags: ["Gatsby", "Tailwind CSS", "TypeScript"],
   },
   {
     url: "https://github.com/M4ss1ck/longPollRobot",
