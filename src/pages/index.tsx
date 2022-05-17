@@ -27,6 +27,21 @@ const BlogIndex = ({ data, location }: PageProps<any>) => {
   const title = t("titulo_portada")
   const letrasTitulo = [...title]
   const { language } = useI18next()
+
+  React.useEffect(() => {
+    const letters = document.querySelectorAll(".animateletter")
+    for (let i = 0; i < letters.length; i++) {
+      const letter = letters[i]
+      letter.animate(
+        [
+          { transform: `translateY(-100vh) scale(0,0)` },
+          { transform: `translateY(0) scale(1,1)` },
+        ],
+        { duration: 500 + i * 300, iterations: 1, easing: "ease-in-out" }
+      )
+    }
+  })
+
   if (posts.length === 0) {
     return (
       <Layout location={location}>
@@ -78,7 +93,7 @@ const BlogIndex = ({ data, location }: PageProps<any>) => {
                 className={
                   letra === " "
                     ? "min-w-[1rem] mr-auto w-full"
-                    : "transition duration-300 hover:skew-y-12 hover:even:-skew-y-12 hover:-translate-y-16 hover:even:-translate-y-14 hover:scale-150 text-primario dark:text-secundario min-w-[1rem] cursor-default "
+                    : "animateletter transition duration-300 hover:skew-y-12 hover:even:-skew-y-12 hover:-translate-y-16 hover:even:-translate-y-14 hover:scale-150 text-primario dark:text-secundario min-w-[1rem] cursor-default"
                 }
               >
                 {letra}
