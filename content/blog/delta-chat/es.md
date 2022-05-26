@@ -86,6 +86,6 @@ Con webxdc también puedes entretenerte con juegos como Cadáver Exquisito, crea
 
 # Conclusiones
 
-Podría utilizar una tabla para comparar Delta Chat con telegram, WhatsApp, Signal, etc, y todavía estoy a tiempo, pero creo que no es necesario, porque esta aplicación no entra en conflicto con ninguna de ellas. Incluso si ya tienes un cliente de correo preferido al que le tengas mucho cariño, puedes utilizar Delta Chat sin problemas para los correos que recibas desde otro Delta Chat, con todas las ventajas que esto conlleva.
+Podría utilizar una tabla para comparar Delta Chat con Telegram, WhatsApp, Signal, etc, y todavía estoy a tiempo, pero creo que no es necesario, porque esta aplicación no entra en conflicto con ninguna de ellas. Incluso si ya tienes un cliente de correo preferido al que le tengas mucho cariño, puedes utilizar Delta Chat sin problemas para los correos que recibas desde otro Delta Chat, con todas las ventajas que esto conlleva.
 
 Esta no ha sido una lista exhaustiva, estoy convencido de que he olvidado caracterísiticas, pero sí mostré las más importantes a mi juicio y que convierten a Delta Chat en una aplicación a tener en cuenta.
