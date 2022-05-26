@@ -47,7 +47,7 @@ const CategoryTemplate = ({
   const siteTitle = `${t("Category")}: "${category}"`
   const description = `${t("Blogposts with category")} "${category}"`
   return (
-    <Layout location={location} title={siteTitle} barra>
+    <Layout location={location} barra>
       <Seo title={siteTitle} description={description} />
       <article
         className="categories"

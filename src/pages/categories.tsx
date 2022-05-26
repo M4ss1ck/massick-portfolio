@@ -37,7 +37,7 @@ const Categories = ({ data, location }: PageProps<any>) => {
                 key={index}
                 className="px-2 m-2 rounded-lg outline outline-1 text-primario dark:text-secundario hover:text-black dark:hover:text-white"
               >
-                <Link to={`/categories/${cat}`}>{cat}</Link>
+                <Link to={`/categories/${cat.replace(/\s/g, "_")}`}>{cat}</Link>
               </li>
             )
           })}
