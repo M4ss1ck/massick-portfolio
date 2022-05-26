@@ -1,7 +1,7 @@
 ---
 title: "Delta Chat: instant messenger over email"
 date: "2022-05-26"
-description: "Delta Chat is a messaging app that works over e-mail. It's free and open source."
+description: "Delta Chat is a messaging app that works over email. It's free and open source."
 categories: "Delta Chat, email, app, open source"
 locale: en
 featuredImage: delta.png
