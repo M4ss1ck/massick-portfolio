@@ -67,7 +67,7 @@ const BlogPostTemplate = ({ data, location }: Props) => {
   const { previous, next } = data
   const remSpace = (str: string) => str.replace(/\s+/g, "_")
   return (
-    <Layout location={location} title={siteTitle} barra>
+    <Layout location={location} barra>
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
