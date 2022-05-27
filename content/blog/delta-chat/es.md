@@ -48,7 +48,7 @@ Así, a secas. Ya lo mencionaba antes: si alguien tiene una dirección de correo
 
 ## Cifrado
 
-Delta Chat usa [Atocrypt](https://autocrypt.org/), un cifrado de extremo a extremo para el correo electrónico. No necesita configuración por parte del usuario (aunque se puede deshabilitar en las opciones) pero todos los compañeros de chat deben usar aplicaciones de correo electrónico compatibles con Autocrypt.
+Delta Chat usa [Autocrypt](https://autocrypt.org/), un cifrado de extremo a extremo para el correo electrónico. No necesita configuración por parte del usuario (aunque se puede deshabilitar en las opciones) pero todos los compañeros de chat deben usar aplicaciones de correo electrónico compatibles con Autocrypt.
 
 Este cifrado nos protege de los ataques pasivos. Para el caso de ataques activos, existen también los contactos y grupos verificados (usando [countermitm](https://countermitm.readthedocs.io/en/latest/new.html), documentación en inglés)
 

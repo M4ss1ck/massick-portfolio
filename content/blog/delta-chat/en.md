@@ -48,7 +48,7 @@ Just like that. I mentioned it before: if someone has an email address, they can
 
 ## Encryption
 
-Delta Chat uses [Atocrypt](https://autocrypt.org/), an end-to-end encryption for email. It requires no configuration by the user (although it can be disabled in the settings) but all chat partners must use Autocrypt-compliant email applications.
+Delta Chat uses [Autocrypt](https://autocrypt.org/), an end-to-end encryption for email. It requires no configuration by the user (although it can be disabled in the settings) but all chat partners must use Autocrypt-compliant email applications.
 
 This encryption protects us from passive attacks. For active attacks, there are also verified contacts and groups (using [countermitm](https://countermitm.readthedocs.io/en/latest/new.html)).
 
