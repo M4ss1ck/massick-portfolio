@@ -71,4 +71,3 @@ yarn-error.log
 # others
 package-lock.json
 pnpm-lock.yaml
-.npmrc
