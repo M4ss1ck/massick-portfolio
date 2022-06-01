@@ -30,14 +30,16 @@ const BlogIndex = ({ data, location }: PageProps<any>) => {
 
   React.useEffect(() => {
     const letters = document.querySelectorAll(".animateletter")
+    let duration = 500
     for (let i = 0; i < letters.length; i++) {
       const letter = letters[i]
+      duration += 400
       letter.animate(
         [
           { transform: `translateY(-100vh) scale(0,0)` },
           { transform: `translateY(0) scale(1,1)` },
         ],
-        { duration: 500 + i * 300, iterations: 1, easing: "ease-in-out" }
+        { duration: duration, iterations: 1, easing: "ease-in-out" }
       )
     }
   })
