@@ -20,7 +20,6 @@
     "gatsby-plugin-google-analytics": "^4.12.1",
     "gatsby-plugin-image": "^2.12.1",
     "gatsby-plugin-manifest": "^4.12.1",
-    "gatsby-plugin-netlify": "^4.3.0",
     "gatsby-plugin-offline": "^5.12.1",
     "gatsby-plugin-pnpm": "^1.2.10",
     "gatsby-plugin-react-helmet": "^5.12.1",
