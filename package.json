@@ -55,6 +55,7 @@
     "@types/react-transition-group": "^4.4.4",
     "autoprefixer": "^10.4.7",
     "babel-plugin-i18next-extract": "^0.8.3",
+    "gatsby-plugin-perf-budgets": "^0.0.18",
     "gatsby-plugin-postcss": "^5.15.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.27",
     "postcss": "^8.4.14",

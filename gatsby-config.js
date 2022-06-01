@@ -15,6 +15,7 @@ module.exports = {
     `gatsby-plugin-pnpm`,
     `gatsby-plugin-image`,
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-perf-budgets`,
     `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-dark-mode`,
     {
