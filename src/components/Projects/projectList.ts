@@ -8,10 +8,9 @@ const proyectos = [
     tags: ["Gatsby", "Tailwind CSS", "Markdown", "TypeScript"],
   },
   {
-    url: "https://github.com/M4ss1ck/webxdc-snake",
+    url: "https://github.com/DeltaZen/webxdc-snake",
     title: "Snake game",
-    description:
-      "Snake game for Delta Chat made using HTML + CSS + JS + Vite",
+    description: "Snake game for Delta Chat made using HTML + CSS + JS + Vite",
     imageName: "snake.png",
     tags: ["HTML", "CSS", "JavaScript", "Vite"],
   },
@@ -23,7 +22,7 @@ const proyectos = [
     tags: ["Gatsby", "Tailwind CSS", "TypeScript"],
   },
   {
-    url: "https://github.com/M4ss1ck/webxdc-rainbow",
+    url: "https://github.com/DeltaZen/rainbow.xdc",
     title: "Rainbow game",
     description:
       "A color picker game for Delta Chat made using React + SCSS + Vite",
@@ -31,7 +30,7 @@ const proyectos = [
     tags: ["React", "SCSS", "Vite"],
   },
   {
-    url: "https://github.com/M4ss1ck/webxdc-whack-a-ninja",
+    url: "https://github.com/DeltaZen/webxdc-whack-a-ninja",
     title: "Whack-A-Ninja: Whack-a-mole clon for Delta Chat",
     description:
       "A Whack-A-Mole clon for playing in Delta Chat made with only HTML + CSS + Javascript",
@@ -39,7 +38,7 @@ const proyectos = [
     tags: ["HTML", "CSS", "JavaScript"],
   },
   {
-    url: "https://github.com/M4ss1ck/webxdc-math-battle",
+    url: "https://github.com/DeltaZen/webxdc-math-battle",
     title: "Math Battle game for Delta Chat",
     description:
       "Math Battle game for Delta Chat made with only HTML + CSS + Javascript",
@@ -52,7 +51,7 @@ const proyectos = [
     description:
       "A template for creating webxdc apps using react and Tailwind CSS.",
     imageName: "webxdc-react-template.png",
-    tags: ["React", "Tailwind CSS","Vite"],
+    tags: ["React", "Tailwind CSS", "Vite"],
   },
   {
     url: "https://github.com/M4ss1ck/longPollRobot",
