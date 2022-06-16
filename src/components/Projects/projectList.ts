@@ -8,6 +8,14 @@ const proyectos = [
     tags: ["Gatsby", "Tailwind CSS", "Markdown", "TypeScript"],
   },
   {
+    url: "https://github.com/DeltaZen/webxdc-exquisite-corpse",
+    title: "Exquisite Corpse",
+    description:
+      "A social creative writing game for Delta Chat made using React + TypeScript + TailwindCSS + Vite",
+    imageName: "corpse.png",
+    tags: ["React", "Tailwind CSS", "TypeScript", "Vite"],
+  },
+  {
     url: "https://github.com/DeltaZen/webxdc-snake",
     title: "Snake game",
     description: "Snake game for Delta Chat made using HTML + CSS + JS + Vite",
