@@ -7,6 +7,7 @@ const proyectos = [
     imageName: "portfolio.png",
     tags: ["Gatsby", "Tailwind CSS", "Markdown", "TypeScript"],
     demo: "https://massick.is-a.dev/",
+    date: "Present",
     cv: true
   },
   {
@@ -16,6 +17,7 @@ const proyectos = [
       "A social creative writing game for Delta Chat made using React + TypeScript + TailwindCSS + Vite",
     imageName: "corpse.png",
     tags: ["React", "Tailwind CSS", "TypeScript", "Vite"],
+    date: "2022-06",
   },
   {
     url: "https://github.com/DeltaZen/webxdc-snake",
@@ -23,6 +25,7 @@ const proyectos = [
     description: "Snake game for Delta Chat made using HTML + CSS + JS + Vite",
     imageName: "snake.png",
     tags: ["HTML", "CSS", "JavaScript", "Vite"],
+    date: "2022-06",
   },
   {
     url: "https://github.com/M4ss1ck/gatsby-cv-maker",
@@ -31,6 +34,7 @@ const proyectos = [
     imageName: "cv.png",
     tags: ["Gatsby", "Tailwind CSS", "TypeScript"],
     demo: "https://cool-cv-maker.netlify.app/",
+    date: "Present",
     cv: true
   },
   {
@@ -40,6 +44,7 @@ const proyectos = [
       "A color picker game for Delta Chat made using React + SCSS + Vite",
     imageName: "rainbow.png",
     tags: ["React", "SCSS", "Vite"],
+    date: "2022-06",
   },
   {
     url: "https://github.com/DeltaZen/webxdc-whack-a-ninja",
@@ -48,6 +53,7 @@ const proyectos = [
       "A Whack-A-Mole clon for playing in Delta Chat made with only HTML + CSS + Javascript",
     imageName: "ninja.png",
     tags: ["HTML", "CSS", "JavaScript"],
+    date: "2022-06",
   },
   {
     url: "https://github.com/DeltaZen/webxdc-math-battle",
@@ -56,6 +62,7 @@ const proyectos = [
       "Math Battle game for Delta Chat made with only HTML + CSS + Javascript",
     imageName: "mathgame.png",
     tags: ["HTML", "CSS", "JavaScript"],
+    date: "2022-06",
   },
   {
     url: "https://github.com/M4ss1ck/webxdc-react-hello-world",
@@ -64,6 +71,7 @@ const proyectos = [
       "A template for creating webxdc apps using react and Tailwind CSS.",
     imageName: "webxdc-react-template.png",
     tags: ["React", "Tailwind CSS", "Vite"],
+    date: "2022-05",
   },
   {
     url: "https://github.com/M4ss1ck/longPollRobot",
@@ -72,6 +80,7 @@ const proyectos = [
       "Envía encuestas con más de 10 opciones y serán divididas equitativamente usando el comando /poll",
     imageName: "pollbot.png",
     tags: ["NodeJS", "Telegram Bot", "Telegraf"],
+    date: "2022-05",
   },
   {
     url: "https://github.com/M4ss1ck/tg-telegraf-bot",
@@ -79,7 +88,8 @@ const proyectos = [
     description: "Telegram bot using nodejs and Telegraf.js",
     imageName: "wastingbotremix.png",
     tags: ["NodeJS", "Telegram Bot", "Telegraf"],
-    demo: "https://t.me/massickRemixBot"
+    demo: "https://t.me/massickRemixBot",
+    date: "2022-06",
   },
   {
     url: "https://github.com/M4ss1ck/ciec-frontend-gatsby",
@@ -88,6 +98,7 @@ const proyectos = [
       "Página web del Centro de Investigaciones de Ecosistemas Costeros (CIEC).",
     imageName: "ciec.jpg",
     tags: ["Gatsby", "Tailwind CSS"],
+    date: "2022-01",
     cv: true
   },
   {
@@ -96,6 +107,7 @@ const proyectos = [
     description: "Telegram bot using nodejs and telebot",
     imageName: "wastingbot.png",
     tags: ["NodeJS", "Telegram Bot", "Telebot"],
+    date: "2022-02",
   },
   {
     url: "https://github.com/M4ss1ck/nextjs-blog-template",
@@ -103,6 +115,7 @@ const proyectos = [
     description: "Blog template using Next.js and TailwindCSS",
     imageName: "next-blog.png",
     tags: ["Next.js", "Tailwind CSS"],
+    date: "2021-11",
   },
 ]
 
