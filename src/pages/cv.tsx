@@ -2,10 +2,12 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { Link, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import Seo from "../components/SEO/Seo"
+import proyectos from "../components/Projects/projectList"
 
 const CV = () => {
   const { t } = useTranslation()
   const { language } = useI18next()
+  const filteredProjects = proyectos.filter(p => p.cv === true)
   return (
     <div className="w-full h-full m-0 text-black dark:text-gray-400 dark:bg-black">
       <Seo lang={language} title={t("CV title")} />
@@ -43,7 +45,8 @@ const CV = () => {
             <ul className="p-4 mt-2">
               <li>HTML</li>
               <li>CSS</li>
-              <li>Javascript</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
               <li>Git</li>
               <li>React</li>
               <li>GatsbyJS</li>
@@ -66,91 +69,31 @@ const CV = () => {
             <hr />
             <h1 className="py-4 text-lg font-bold text-blue-800">Projects</h1>
             <hr />
-            <div className="flex flex-col py-2 md:grid md:grid-cols-6">
-              <p className="md:w-24">Present</p>
-              <div className="col-span-5">
-                <h2 className="text-lg font-bold">My portfolio</h2>
-                <small>
-                  <a
-                    href="https://github.com/M4ss1ck/massick-portfolio"
-                    className="font-thin text-blue-700"
-                  >
-                    https://github.com/M4ss1ck/massick-portfolio
-                  </a>
-                </small>
-                <p>
-                  Markdown powered Gatsby website with dark mode and multiple
-                  languages support. Styled with Tailwind CSS. Optimized for
-                  Netlify.
-                </p>
-                <p>
-                  Available at{" "}
-                  <a href="https://massick.is-a.dev" className="text-blue-700">
-                    massick.is-a.dev
-                  </a>
-                </p>
+            {filteredProjects.map(project => (
+              <div className="flex flex-col py-2 md:grid md:grid-cols-6">
+                <p className="md:w-24">{project.date ? project.date : "Present"}</p>
+                <div className="col-span-5">
+                  <h2 className="text-lg font-bold">{project.title}</h2>
+                  <small>
+                    <a
+                      href={project.url}
+                      className="font-thin text-blue-700"
+                    >
+                      {project.url}
+                    </a>
+                  </small>
+                  <p>
+                    {project.description}
+                  </p>
+                  {project.demo && <p>
+                    Available at{" "}
+                    <a href={project.demo} className="text-blue-700">
+                      {project.demo}
+                    </a>
+                  </p>}
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col py-2 md:grid md:grid-cols-6">
-              <p className="md:w-24">2022-02</p>
-              <div className="col-span-5">
-                <h2 className="text-lg font-bold">CV maker</h2>
-                <small>
-                  <a
-                    href="https://github.com/M4ss1ck/gatsby-cv-maker"
-                    className="font-thin text-blue-700"
-                  >
-                    https://github.com/M4ss1ck/gatsby-cv-maker
-                  </a>
-                </small>
-                <p>
-                  Typescript + GatsbyJS + TailwindCSS web app for creating
-                  professional CVs.
-                </p>
-                <p>
-                  Demo at{" "}
-                  <a
-                    href="https://cool-cv-maker.netlify.app/"
-                    className="text-blue-700"
-                  >
-                    cool-cv-maker.netlify.app
-                  </a>
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col py-2 md:grid md:grid-cols-6">
-              <p className="md:w-24">2022-01</p>
-              <div className="col-span-5">
-                <h2 className="text-lg font-bold">CIEC website</h2>
-                <small>
-                  <a
-                    href="https://github.com/M4ss1ck/ciec-frontend-gatsby"
-                    className="font-thin text-blue-700"
-                  >
-                    https://github.com/M4ss1ck/ciec-frontend-gatsby
-                  </a>
-                </small>
-                <p>
-                  Coastal Ecosystems Research Center (CIEC) website. Strapi
-                  backend, dark mode. Styled with Tailwind CSS.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col py-2 md:grid md:grid-cols-6">
-              <p className="md:w-24">2021-11</p>
-              <div className="col-span-5">
-                <h2 className="text-lg font-bold">Next.js Blog Template</h2>
-                <small>
-                  <a
-                    href="https://github.com/M4ss1ck/nextjs-blog-template"
-                    className="font-thin text-blue-700"
-                  >
-                    https://github.com/M4ss1ck/nextjs-blog-template
-                  </a>
-                </small>
-                <p>Blog template using Next.js and Tailwind CSS</p>
-              </div>
-            </div>
+            ))}
 
             <h1 className="py-4 text-lg font-bold text-blue-800">
               Work History
