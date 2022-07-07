@@ -30,8 +30,8 @@ const CV = () => {
             <h2 className="px-4 font-bold">E-mail</h2>
             <p className="px-4">4ndyraul@gmail.com</p>
             <h2 className="px-4 font-bold">Website</h2>
-            <a className="px-4" href="http://massick.netlify.app/">
-              massick.netlify.app
+            <a className="px-4" href="https://massick.is-a.dev/">
+              massick.is-a.dev
             </a>
             <h2 className="px-4 font-bold">Twitter</h2>
             <a className="px-4" href="https://twitter.com/M4ss1ck">
