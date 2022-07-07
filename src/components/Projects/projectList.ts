@@ -44,7 +44,7 @@ const proyectos = [
     description:
       "A social creative writing game for Delta Chat made using React + TypeScript + TailwindCSS + Vite",
     imageName: "corpse.png",
-    tags: ["React", "Tailwind CSS", "TypeScript", "Vite"],
+    tags: ["React", "Tailwind CSS", "TypeScript", "Vite", "webxdc", "game"],
     date: "2022-06",
   },
   {
@@ -52,7 +52,7 @@ const proyectos = [
     title: "Snake game",
     description: "Snake game for Delta Chat made using HTML + CSS + JS + Vite",
     imageName: "snake.png",
-    tags: ["HTML", "CSS", "JavaScript", "Vite"],
+    tags: ["HTML", "CSS", "JavaScript", "Vite", "webxdc", "game"],
     date: "2022-06",
   },
   {
@@ -61,7 +61,7 @@ const proyectos = [
     description:
       "A color picker game for Delta Chat made using React + SCSS + Vite",
     imageName: "rainbow.png",
-    tags: ["React", "SCSS", "Vite"],
+    tags: ["React", "SCSS", "Vite", "webxdc", "game"],
     date: "2022-06",
   },
   {
@@ -70,7 +70,7 @@ const proyectos = [
     description:
       "A Whack-A-Mole clon for playing in Delta Chat made with only HTML + CSS + Javascript",
     imageName: "ninja.png",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["HTML", "CSS", "JavaScript", "webxdc", "game"],
     date: "2022-06",
   },
   {
@@ -79,7 +79,7 @@ const proyectos = [
     description:
       "Math Battle game for Delta Chat made with only HTML + CSS + Javascript",
     imageName: "mathgame.png",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["HTML", "CSS", "JavaScript", "webxdc", "game"],
     date: "2022-06",
   },
   {
