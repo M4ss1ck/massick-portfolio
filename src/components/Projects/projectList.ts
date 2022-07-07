@@ -11,6 +11,34 @@ const proyectos = [
     cv: true
   },
   {
+    url: "https://github.com/M4ss1ck/gatsby-cv-maker",
+    title: "CV maker",
+    description: "Crear un hermoso CV a partir de un formulario.",
+    imageName: "cv.png",
+    tags: ["Gatsby", "Tailwind CSS", "TypeScript"],
+    demo: "https://cool-cv-maker.netlify.app/",
+    date: "Present",
+    cv: true
+  },
+  {
+    url: "https://github.com/DeltaZen/webxdc-sudoku",
+    title: "Sudoku",
+    description: "Sudoku game with scoreboard to compete in Delta Chat groups with friends!",
+    imageName: "sudoku.png",
+    tags: ["DeltaChat", "webxdc", "game", "TypeScript"],
+    date: "2022-07",
+    cv: true
+  },
+  {
+    url: "https://github.com/DeltaZen/webxdc-color-lines",
+    title: "Color Lines",
+    description: "Color Lines (a.k.a. WinLines or WinLinez) game to compete with friends in groups on Delta Chat.",
+    imageName: "color-lines.png",
+    tags: ["DeltaChat", "webxdc", "game"],
+    date: "2022-07",
+    cv: true
+  },
+  {
     url: "https://github.com/DeltaZen/webxdc-exquisite-corpse",
     title: "Exquisite Corpse",
     description:
@@ -26,16 +54,6 @@ const proyectos = [
     imageName: "snake.png",
     tags: ["HTML", "CSS", "JavaScript", "Vite"],
     date: "2022-06",
-  },
-  {
-    url: "https://github.com/M4ss1ck/gatsby-cv-maker",
-    title: "CV maker",
-    description: "Crear un hermoso CV a partir de un formulario.",
-    imageName: "cv.png",
-    tags: ["Gatsby", "Tailwind CSS", "TypeScript"],
-    demo: "https://cool-cv-maker.netlify.app/",
-    date: "Present",
-    cv: true
   },
   {
     url: "https://github.com/DeltaZen/rainbow.xdc",
