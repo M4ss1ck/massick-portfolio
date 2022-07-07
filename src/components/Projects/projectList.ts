@@ -6,6 +6,7 @@ const proyectos = [
       "Página web creada con GatsbyJS usando Markdown para las publicaciones y TailwindCSS para los estilos. Soporte para modo oscuro y múltiples idiomas.",
     imageName: "portfolio.png",
     tags: ["Gatsby", "Tailwind CSS", "Markdown", "TypeScript"],
+    demo: "https://massick.is-a.dev/",
     cv: true
   },
   {
@@ -29,6 +30,7 @@ const proyectos = [
     description: "Crear un hermoso CV a partir de un formulario.",
     imageName: "cv.png",
     tags: ["Gatsby", "Tailwind CSS", "TypeScript"],
+    demo: "https://cool-cv-maker.netlify.app/",
     cv: true
   },
   {
@@ -77,6 +79,7 @@ const proyectos = [
     description: "Telegram bot using nodejs and Telegraf.js",
     imageName: "wastingbotremix.png",
     tags: ["NodeJS", "Telegram Bot", "Telegraf"],
+    demo: "https://t.me/massickRemixBot"
   },
   {
     url: "https://github.com/M4ss1ck/ciec-frontend-gatsby",
