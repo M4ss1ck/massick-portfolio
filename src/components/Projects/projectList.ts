@@ -6,6 +6,7 @@ const proyectos = [
       "Página web creada con GatsbyJS usando Markdown para las publicaciones y TailwindCSS para los estilos. Soporte para modo oscuro y múltiples idiomas.",
     imageName: "portfolio.png",
     tags: ["Gatsby", "Tailwind CSS", "Markdown", "TypeScript"],
+    cv: true
   },
   {
     url: "https://github.com/DeltaZen/webxdc-exquisite-corpse",
@@ -28,6 +29,7 @@ const proyectos = [
     description: "Crear un hermoso CV a partir de un formulario.",
     imageName: "cv.png",
     tags: ["Gatsby", "Tailwind CSS", "TypeScript"],
+    cv: true
   },
   {
     url: "https://github.com/DeltaZen/rainbow.xdc",
@@ -83,6 +85,7 @@ const proyectos = [
       "Página web del Centro de Investigaciones de Ecosistemas Costeros (CIEC).",
     imageName: "ciec.jpg",
     tags: ["Gatsby", "Tailwind CSS"],
+    cv: true
   },
   {
     url: "https://github.com/M4ss1ck/wastingBot",
