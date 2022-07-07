@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { Link, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
+import { Link, useTranslation, useI18next, Trans } from "gatsby-plugin-react-i18next"
 import Seo from "../components/SEO/Seo"
 import proyectos from "../components/Projects/projectList"
 
@@ -73,7 +73,7 @@ const CV = () => {
               <div className="flex flex-col py-2 md:grid md:grid-cols-6">
                 <p className="md:w-24">{project.date ? project.date : "Present"}</p>
                 <div className="col-span-5">
-                  <h2 className="text-lg font-bold">{project.title}</h2>
+                  <h2 className="text-lg font-bold"><Trans>{project.title}</Trans></h2>
                   <small>
                     <a
                       href={project.url}
@@ -83,7 +83,7 @@ const CV = () => {
                     </a>
                   </small>
                   <p>
-                    {project.description}
+                    <Trans>{project.description}</Trans>
                   </p>
                   {project.demo && <p>
                     Available at{" "}
