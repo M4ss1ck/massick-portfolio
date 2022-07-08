@@ -52,5 +52,8 @@
   "Math Battle game for Delta Chat": "Math Battle para Delta Chat",
   "Math Battle game for Delta Chat made with only HTML + CSS + Javascript": "Juego de matemáticas para Delta Chat.",
   "Exquisite Corpse": "Cadáver Exquisito",
-  "A social creative writing game for Delta Chat made using React + TypeScript + TailwindCSS + Vite": "Un juego colaborativo de escritura creativa para Delta Chat hecho con React + TypeScript + TailwindCSS + Vite"
+  "A social creative writing game for Delta Chat made using React + TypeScript + TailwindCSS + Vite": "Un juego colaborativo de escritura creativa para Delta Chat hecho con React + TypeScript + TailwindCSS + Vite",
+  "Make your own gamebook modifying a single file.": "Haz tu propio librojuego modificando un solo archivo.",
+  "Sudoku game with scoreboard to compete in Delta Chat groups with friends!": "Sudoku con tabla de puntuaciones para competir con tus amigos en grupos de Delta Chat.",
+  "Color Lines (a.k.a. WinLines or WinLinez) game to compete with friends in groups on Delta Chat.": "El clásico Color Lines para competir con tus amigos en grupos de Delta Chat."
 }
