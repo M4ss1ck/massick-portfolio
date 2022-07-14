@@ -21,16 +21,6 @@ const proyectos = [
     cv: true
   },
   {
-    url: "https://github.com/M4ss1ck/gatsby-gamebook",
-    title: "Gamebook",
-    description: "Make your own gamebook modifying a single file.",
-    imageName: "gamebook.png",
-    tags: ["Gatsby", "TypeScript"],
-    demo: "https://gamebook.gatsbyjs.io/",
-    date: "2022-06",
-    cv: true
-  },
-  {
     url: "https://github.com/DeltaZen/webxdc-sudoku",
     title: "Sudoku",
     description: "Sudoku game with scoreboard to compete in Delta Chat groups with friends!",
@@ -46,6 +36,16 @@ const proyectos = [
     imageName: "color-lines.png",
     tags: ["DeltaChat", "webxdc", "game"],
     date: "2022-07",
+    cv: true
+  },
+  {
+    url: "https://github.com/M4ss1ck/gatsby-gamebook",
+    title: "Gamebook",
+    description: "Make your own gamebook modifying a single file.",
+    imageName: "gamebook.png",
+    tags: ["Gatsby", "TypeScript"],
+    demo: "https://gamebook.gatsbyjs.io/",
+    date: "2022-06",
     cv: true
   },
   {
