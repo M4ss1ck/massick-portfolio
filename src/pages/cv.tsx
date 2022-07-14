@@ -9,16 +9,16 @@ const CV = () => {
   const { language } = useI18next()
   const filteredProjects = proyectos.filter(p => p.cv === true)
   return (
-    <div className="w-full h-full m-0 text-black dark:text-gray-400 dark:bg-black">
+    <div className="w-full h-full m-0 text-black">
       <Seo lang={language} title={t("CV title")} />
-      <div className="container flex flex-row items-center justify-center max-w-screen-lg mx-auto mb-4 dark:text-gray-400 dark:bg-black">
-        <button className="p-4 mt-4 mr-auto font-bold text-blue-700 border-2 border-blue-700 rounded-lg hover:text-white hover:bg-blue-700 dark:text-gray-400 dark:hover:text-white">
+      <div className="container flex flex-row items-center justify-center max-w-screen-lg mx-auto mb-4">
+        <button className="p-4 mt-4 mr-auto font-bold text-blue-700 border-2 border-blue-700 rounded-lg hover:text-white hover:bg-blue-700">
           <Link to="/">{t("home")}</Link>
         </button>
       </div>
 
       <div>
-        <article className="container grid max-w-screen-lg grid-cols-1 mx-auto sm:grid-cols-4 font-montserrat dark:text-gray-400 dark:bg-black">
+        <article className="container grid max-w-screen-lg grid-cols-1 mx-auto sm:grid-cols-4 font-montserrat">
           <section className="text-center text-gray-300 bg-blue-800 md:text-left">
             <h1 className="p-2 text-2xl font-extrabold md:text-4xl">
               Andy Raúl Palmero López
