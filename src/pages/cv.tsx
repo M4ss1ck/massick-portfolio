@@ -100,7 +100,7 @@ const CV = () => {
             </h1>
             <hr />
             <div className="flex flex-col py-2 md:grid md:grid-cols-6">
-              <p className="md:w-24">2017-9 - Present</p>
+              <p className="md:w-24">2017-09 - Present</p>
               <div className="col-span-5">
                 <h2 className="text-lg font-bold">Science Specialist</h2>
                 <small className="font-thin">
@@ -127,7 +127,7 @@ const CV = () => {
             <h1 className="py-4 text-lg font-bold text-blue-800">Education</h1>
             <hr />
             <div className="flex flex-col md:grid md:grid-cols-6">
-              <p className="md:w-24">2012-9 - 2017-7</p>
+              <p className="md:w-24">2012-09 - 2017-07</p>
               <div className="col-span-5">
                 <h2 className="text-lg font-bold">
                   Bachelor of Science: Mathematics
