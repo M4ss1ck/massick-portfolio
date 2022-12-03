@@ -86,7 +86,7 @@ const CV = () => {
                     <Trans>{project.description}</Trans>
                   </p>
                   {project.demo && <p>
-                    Available at{" "}
+                    <Trans>Available at</Trans>{" "}
                     <a href={project.demo} className="text-blue-700">
                       {project.demo}
                     </a>

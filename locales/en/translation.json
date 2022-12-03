@@ -16,6 +16,7 @@
   "Go to": "Go to",
   "Comments": "Comments",
   "Projects": "Projects",
+  "Available at": "Available at",
   "Mi portafolio (esta página)": "My portfolio (this website)",
   "Página web creada con GatsbyJS usando Markdown para las publicaciones y TailwindCSS para los estilos. Soporte para modo oscuro y múltiples idiomas.": "Markdown powered Gatsby website with dark mode, multiple languages and many more features.",
   "Telegram bot using nodejs and telebot": "Telegram bot using nodejs and telebot",
