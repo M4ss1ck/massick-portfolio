@@ -21,6 +21,15 @@ const proyectos = [
     cv: true
   },
   {
+    url: "https://github.com/DeltaZen/webxdc-bejeweled",
+    title: "Dejeweled",
+    description: "Bejeweled board game clon for Delta Chat",
+    imageName: "dejeweled.png",
+    tags: ["DeltaChat", "webxdc", "game", "typescript", "phaser3"],
+    date: "2022-09",
+    cv: true
+  },
+  {
     url: "https://github.com/DeltaZen/webxdc-c4",
     title: "DeltaConnect",
     description: "Connect 4 board game clon for Delta Chat",
