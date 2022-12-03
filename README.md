@@ -16,7 +16,7 @@ Based on gatsby Blog starter with many improvements
 1. Everything in the original starter
 2. Styled with TailwindCSS (Dark Mode by default)
 3. Multi-language (English and Spanish)
-4. Markdown powered (_Read time, reading progress bar..._)
+4. Markdown powered blog (_Read time, reading progress bar..._)
 5. Optimized for Netlify
 6. Optimized for `pnpm`
 7. Categories support
