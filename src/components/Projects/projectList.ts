@@ -17,7 +17,7 @@ const proyectos = [
     imageName: "cv.png",
     tags: ["Gatsby", "Tailwind CSS", "TypeScript"],
     demo: "https://cool-cv-maker.netlify.app/",
-    date: "Present",
+    date: "2022-06",
     cv: true
   },
   {
