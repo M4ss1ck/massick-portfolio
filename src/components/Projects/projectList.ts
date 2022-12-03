@@ -21,6 +21,15 @@ const proyectos = [
     cv: true
   },
   {
+    url: "https://github.com/DeltaZen/webxdc-chain-reaction",
+    title: "Chain Reaction",
+    description: "Version of popular Chain Reaction game for Delta Chat",
+    imageName: "chain-reaction.png",
+    tags: ["DeltaChat", "webxdc", "game", "typescript", "React", "Redux"],
+    date: "2022-11",
+    cv: true
+  },
+  {
     url: "https://github.com/DeltaZen/webxdc-bejeweled",
     title: "Dejeweled",
     description: "Bejeweled board game clon for Delta Chat",
