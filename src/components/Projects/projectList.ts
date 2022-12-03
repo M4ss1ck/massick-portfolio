@@ -21,6 +21,15 @@ const proyectos = [
     cv: true
   },
   {
+    url: "https://github.com/DeltaZen/webxdc-c4",
+    title: "DeltaConnect",
+    description: "Connect 4 board game clon for Delta Chat",
+    imageName: "c4.png",
+    tags: ["DeltaChat", "webxdc", "game", "typescript"],
+    date: "2022-08",
+    cv: true
+  },
+  {
     url: "https://github.com/DeltaZen/webxdc-sudoku",
     title: "Sudoku",
     description: "Sudoku game with scoreboard to compete in Delta Chat groups with friends!",
