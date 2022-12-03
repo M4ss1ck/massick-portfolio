@@ -29,6 +29,7 @@ const Card = ({ image, description, title, url, tags }: Project) => {
                             transform: "translate(0,-50%)",
                             width: "100%",
                             maxHeight: "90%",
+                            boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5)"
                         }}
                         imgStyle={{ objectPosition: "50% 0%" }}
                     />
