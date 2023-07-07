@@ -67,11 +67,11 @@ const Projects: React.FC<Projects> = ({ limit, search }) => {
   })
 
   return (
-    <div className="z-20 flex flex-col">
+    <div className="flex z-20 flex-col">
       <SearchProject
         projects={projectsToSearch}
         keys={["title", "description", "tags"]}
-        search={search ? true : false}
+        search={search}
       />
     </div>
   )
