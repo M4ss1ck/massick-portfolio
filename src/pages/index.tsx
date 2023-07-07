@@ -18,6 +18,8 @@ import DarkToggle from "../lib/DarkToggle"
 import Hacker from "../svg/hacker.svg"
 import Massick2x3 from "../svg/massick-2x3.svg"
 import Massick1x1 from "../svg/massick-1x1.svg"
+import { ScrollDown } from "../components/Icons/ScrollDown"
+import { Arrow } from "../components/Icons/Arrow"
 
 const BlogIndex = ({ data, location }: PageProps<any>) => {
   const siteTitle = data.site.siteMetadata?.title || `home`
@@ -63,12 +65,12 @@ const BlogIndex = ({ data, location }: PageProps<any>) => {
   return (
     <Layout location={location}>
       <Seo lang={language} title={t(siteTitle)} />
-      <section className="flex flex-col items-center justify-center w-full h-screen pt-6 pb-2">
+      <section className="flex flex-col justify-center items-center pt-6 pb-2 w-full h-screen">
         <Canvas />
         <Link
           to="/"
           aria-label={t("home")}
-          className="absolute z-20 hidden rounded-md shadow-md md:block top-8 right-12 dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario dark:z-20 "
+          className="hidden absolute top-8 right-12 z-20 rounded-md shadow-md md:block dark:shadow-2xl hover:shadow-primario dark:hover:shadow-secundario dark:z-20"
         >
           <Massick2x3 className="w-32 h-48 fill-current text-primario dark:text-secundario" />
         </Link>
@@ -86,7 +88,7 @@ const BlogIndex = ({ data, location }: PageProps<any>) => {
         </aside>
         <h1
           aria-label={title}
-          className="absolute z-10 flex flex-wrap items-center justify-center text-2xl text-center uppercase md:text-5xl lg:text-7xl font-rammetto"
+          className="flex absolute z-10 flex-wrap justify-center items-center text-2xl text-center uppercase md:text-5xl lg:text-7xl font-rammetto"
         >
           {letrasTitulo.map((letra, index) => {
             return (
@@ -105,25 +107,11 @@ const BlogIndex = ({ data, location }: PageProps<any>) => {
         </h1>
 
         <Hacker className="absolute bottom-0 w-full opacity-90 dark:opacity-20" />
-        <h2 className="absolute z-20 text-lg uppercase bottom-12 lg:text-2xl font-montserrat text-primario dark:text-secundario animate-bounce dark:z-20">
+        <h2 className="absolute bottom-12 z-20 text-lg uppercase animate-bounce lg:text-2xl font-montserrat text-primario dark:text-secundario dark:z-20">
           <Trans>Projects</Trans>
         </h2>
 
-        {/* scroll-down button */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute w-6 h-6 my-4 bottom-2 animate-bounce text-primario dark:text-secundario"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 13l-7 7-7-7m14-8l-7 7-7-7"
-          />
-        </svg>
+        <ScrollDown absolute={true} />
       </section>
       <Projects limit={5} />
       <span className="px-4 mb-8 rounded-lg font-montserrat text-primario dark:text-secundario outline-1 outline outline-transparent hover:outline-primario dark:hover:outline-secundario">
@@ -132,25 +120,11 @@ const BlogIndex = ({ data, location }: PageProps<any>) => {
           <Arrow />
         </Link>
       </span>
-      <h2 className="z-20 mt-2 text-lg uppercase lg:text-2xl font-montserrat text-primario dark:text-secundario animate-bounce dark:z-20">
+      <h2 className="z-20 mt-2 text-lg uppercase animate-bounce lg:text-2xl font-montserrat text-primario dark:text-secundario dark:z-20">
         <Trans>articles</Trans>
       </h2>
 
-      {/* scroll-down button */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-6 h-6 my-4 animate-bounce text-primario dark:text-secundario"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M19 13l-7 7-7-7m14-8l-7 7-7-7"
-        />
-      </svg>
+      <ScrollDown />
       <Search
         posts={posts}
         keys={[
@@ -171,24 +145,6 @@ const BlogIndex = ({ data, location }: PageProps<any>) => {
   )
 }
 
-const Arrow = () => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="inline-flex w-6 h-6 mx-2 animate-pulse"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M17 8l4 4m0 0l-4 4m4-4H3"
-      />
-    </svg>
-  )
-}
 export default BlogIndex
 
 export const pageQuery = graphql`
