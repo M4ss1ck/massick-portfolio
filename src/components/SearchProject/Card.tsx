@@ -10,27 +10,17 @@ const Card = ({ image, description, title, url, tags }: Project) => {
             itemType="http://schema.org/Article"
         >
             {image && (
-                <div className="relative row-span-2 my-4">
+                <div className="overflow-hidden relative row-span-2 my-4 group">
                     <GatsbyImage
                         image={image}
                         alt=""
-                        className="relative top-0 w-full h-full blur-sm hue-rotate-30 -rotate-12"
+                        className="relative top-0 w-full h-full blur-sm hue-rotate-30 transition duration-300 ease-in-out -rotate-12 group-hover:rotate-0 group-hover:blur-none"
                         objectFit="cover"
                     />
                     <GatsbyImage
                         image={image}
-                        //layout="fullWidth"
                         alt={description || ""}
-                        // className="absolute left-0 w-full -translate-y-1/2 top-1/2"
-                        style={{
-                            position: "absolute",
-                            top: "50%",
-                            left: "0",
-                            transform: "translate(0,-50%)",
-                            width: "100%",
-                            maxHeight: "90%",
-                            boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5)"
-                        }}
+                        className="transition duration-300 ease-in-out card-image group-hover:scale-110 group-hover:blur-sm group-hover:rotate-12"
                         imgStyle={{ objectPosition: "50% 0%" }}
                     />
                 </div>
