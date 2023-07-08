@@ -14,13 +14,13 @@ const Card = ({ image, description, title, url, tags }: Project) => {
                     <GatsbyImage
                         image={image}
                         alt=""
-                        className="relative top-0 w-full h-full blur-sm hue-rotate-30 transition duration-300 ease-in-out -rotate-12 group-hover:rotate-0 group-hover:blur-none"
+                        className="relative top-0 w-full h-full blur-sm hue-rotate-30 transition duration-300 ease-in-out -rotate-12 group-hover:rotate-0 group-hover:blur-none group-hover:hue-rotate-0"
                         objectFit="cover"
                     />
                     <GatsbyImage
                         image={image}
                         alt={description || ""}
-                        className="transition duration-300 ease-in-out card-image group-hover:scale-110 group-hover:blur-sm group-hover:rotate-12"
+                        className="transition duration-500 ease-in-out card-image group-hover:scale-110 group-hover:blur-sm group-hover:rotate-12 group-hover:opacity-0"
                         imgStyle={{ objectPosition: "50% 0%" }}
                     />
                 </div>
