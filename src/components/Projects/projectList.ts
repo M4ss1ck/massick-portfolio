@@ -11,6 +11,25 @@ const proyectos = [
     cv: true
   },
   {
+    url: "https://github.com/M4ss1ck/anime-bot",
+    title: "Anime bot",
+    description: "Search for anime in AniList, make your own list, schedule reminders and many more through Telegram.",
+    imageName: "animebot.png",
+    tags: ["TypeScript"],
+    demo: "https://t.me/anim3robot",
+    date: "2023-07",
+    cv: true
+  },
+  {
+    url: "https://github.com/M4ss1ck/thunderbird-plugin",
+    title: "Daily Report Thunderbird plugin",
+    description: "Store commonly used values for To, CC and Subject fields.",
+    imageName: "dailyreport.png",
+    tags: ["HTML", "JavaScript"],
+    date: "2023-06",
+    cv: true
+  },
+  {
     url: "https://github.com/M4ss1ck/gatsby-cv-maker",
     title: "CV maker",
     description: "Crear un hermoso CV a partir de un formulario.",
